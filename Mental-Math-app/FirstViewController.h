@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Operation.h"
+#import "OperationList.h"
 
 @interface FirstViewController : UIViewController
-
+{
+    NSTimer *timer;
+    int secondsLeft;
+}
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIButton *button2;
 @property (weak, nonatomic) IBOutlet UIButton *button3;
@@ -28,7 +32,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *arg1Label;
 @property (weak, nonatomic) IBOutlet UILabel *arg2Label;
 @property (weak, nonatomic) IBOutlet UILabel *operatorLabel;
-@property (readwrite) Operation *currentOperation;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
+@property (readwrite) OperationList *operationList;
 
 - (IBAction)button1Click:(id)sender;
 - (IBAction)button2Click:(id)sender;
@@ -44,6 +50,8 @@
 - (IBAction)buttonDelClick:(id)sender;
 - (IBAction)buttonConfirmClick:(id)sender;
 
+- (void) onTimerTick;
+- (void) updateTimeLeft;
 - (void) setNewOperation;
 - (void) appendNumber:(id)input;
 - (void) deleteLastNumber;

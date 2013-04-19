@@ -10,58 +10,32 @@
 
 @implementation Operation
 
--(id)initWith:(float)aArg1 andWithArg2:(float)aArg2 andWithOperation:(char)aOperation {
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super init] ) {
         self.arg1 = aArg1;
         self.arg2 = aArg2;
-        self.operation = aOperation;
     }
 
     return self;
 }
 
-+(id)createRandom {
-    float smallNumber = 0;
-    float bigNumber = 10;
-    
-    float diff = bigNumber - smallNumber;
-    float rArg1 = (int)(((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
-    float rArg2 = (int)(((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
-
-    char operations[] = { '+', '-', '*', '/', '%' };
-    int position = arc4random() % 5;
-
-    return [[Operation alloc] initWith:rArg1 andWithArg2:rArg2 andWithOperation:operations[position]];
-}
-
 -(float)execute {
-    float result;
-    switch (self.operation) {
-        case '+':
-            result = self.arg1 + self.arg2;
-            break;
-        case '-':
-            result = self.arg1 - self.arg2;
-            break;
-        case '*':
-            result = self.arg1 * self.arg2;
-            break;
-        case '/':
-            result = self.arg1 / self.arg2;
-            break;
-        case '%':
-            result = self.arg1/100 *  self.arg2;
-            break;
-        default:
-            result = -10000000000;
-            break;
-    }
-    
+    float result = -100000;
+
     return result;
 }
 
+-(BOOL)isCorrect {
+    return fabs([self execute] - self.result) < 0.0000001;
+}
+
 -(BOOL)isTheResult:(float)possibleResult {
-    return fabs([self execute] - possibleResult) < 0.0000001;
+	self.result = possibleResult; // Check if this is a good strategy
+    return [self isCorrect];
+}
+
+-(BOOL)isValid {
+    return FALSE;
 }
 
 -(NSString *)executeAsString {
@@ -78,6 +52,106 @@
 
 -(NSString *)operationAsString {
     return [NSString stringWithFormat:@"%c", self.operation];
+}
+
+@end
+
+@implementation PlusOperation
+
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
+    if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
+        self.operation = '+';
+    }
+    
+    return self;
+}
+
+-(BOOL) isValid {
+    return TRUE;
+}
+
+-(float)execute {
+    return self.arg1 + self.arg2;
+}
+
+@end
+
+@implementation MinusOperation
+
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
+    if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
+        self.operation = '-';
+    }
+    
+    return self;
+}
+
+-(BOOL) isValid {
+    return self.arg1 > self.arg2;
+}
+
+-(float)execute {
+    return self.arg1 - self.arg2;
+}
+
+@end
+
+@implementation MultipOperation
+
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
+    if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
+        self.operation = '*';
+    }
+    
+    return self;
+}
+
+-(BOOL) isValid {
+    return TRUE;
+}
+
+-(float)execute {
+    return self.arg1 * self.arg2;
+}
+
+@end
+
+@implementation DivOperation
+
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
+    if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
+        self.operation = '/';
+    }
+    
+    return self;
+}
+
+-(BOOL) isValid {
+    return self.arg1 > self.arg2 && (int)self.arg1 % (int)self.arg2 == 0;
+}
+
+-(float)execute {
+    return self.arg1 / self.arg2;
+}
+
+@end
+
+@implementation PercOperation
+
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
+    if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
+        self.operation = '%';
+    }
+    
+    return self;
+}
+
+-(BOOL) isValid {
+    return TRUE;
+}
+
+-(float)execute {
+    return self.arg1 / 100 * self.arg2;
 }
 
 @end

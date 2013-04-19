@@ -12,15 +12,31 @@
 
 @property (readwrite) float arg1;
 @property (readwrite) float arg2;
+@property (readwrite) float result;
 @property (readwrite) char operation;
 
-+(id)createRandom;
--(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 andWithOperation:(char)aOperation;
+-(id)initWith: (float)aArg1 andWithArg2:(float)aArg2;
 -(float)execute;
 -(NSString *)executeAsString;
 -(NSString *)arg1AsString;
 -(NSString *)arg2AsString;
 -(NSString *)operationAsString;
 -(BOOL)isTheResult:(float)possibleResult;
+-(BOOL)isCorrect;
+-(BOOL)isValid;
+@end
 
+@interface PlusOperation: Operation
+@end
+
+@interface MinusOperation: Operation
+@end
+
+@interface MultipOperation: Operation
+@end
+
+@interface DivOperation: Operation
+@end
+
+@interface PercOperation: Operation
 @end

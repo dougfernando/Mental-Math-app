@@ -30,6 +30,8 @@
 		A5191F03171E1FD400CA83A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5191F01171E1FD400CA83A6 /* InfoPlist.strings */; };
 		A5191F06171E1FD400CA83A6 /* Mental_Math_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */; };
 		A5191F11171E3F7200CA83A6 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F10171E3F7200CA83A6 /* Operation.m */; };
+		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
+		A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909083171F6DA3005C63AF /* OperationFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mental_Math_appTests.m; sourceTree = "<group>"; };
 		A5191F0F171E3F7200CA83A6 /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
 		A5191F10171E3F7200CA83A6 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
+		A57C8508171ECEED00C5C4F0 /* OperationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationList.h; sourceTree = "<group>"; };
+		A57C8509171ECEED00C5C4F0 /* OperationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationList.m; sourceTree = "<group>"; };
+		A5909082171F6DA3005C63AF /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
+		A5909083171F6DA3005C63AF /* OperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +204,10 @@
 			children = (
 				A5191F0F171E3F7200CA83A6 /* Operation.h */,
 				A5191F10171E3F7200CA83A6 /* Operation.m */,
+				A57C8508171ECEED00C5C4F0 /* OperationList.h */,
+				A57C8509171ECEED00C5C4F0 /* OperationList.m */,
+				A5909082171F6DA3005C63AF /* OperationFactory.h */,
+				A5909083171F6DA3005C63AF /* OperationFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -329,6 +339,8 @@
 				A5191EE6171E1FD400CA83A6 /* FirstViewController.m in Sources */,
 				A5191EED171E1FD400CA83A6 /* SecondViewController.m in Sources */,
 				A5191F11171E3F7200CA83A6 /* Operation.m in Sources */,
+				A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */,
+				A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +531,7 @@
 				A5191F0B171E1FD400CA83A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5191F0C171E1FD400CA83A6 /* Build configuration list for PBXNativeTarget "Mental-Math-appTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +540,7 @@
 				A5191F0E171E1FD400CA83A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

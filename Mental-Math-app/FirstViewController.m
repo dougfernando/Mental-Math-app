@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "Operation.h"
+#import "OperationFactory.h"
 
 @interface FirstViewController ()
 
@@ -18,24 +19,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.operationList = [[OperationList alloc] initWithFactory:[[RandomOperationFactory alloc] init]];
     [self setNewOperation];
-}
+    
+    secondsLeft = 0;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
+    self.timeLeftLabel.text = @"60s";    
+ }
 
 -(void)setNewOperation {
-    self.currentOperation = [Operation createRandom];
-    
-    self.arg1Label.text = [self.currentOperation arg1AsString];
-    self.arg2Label.text = [self.currentOperation arg2AsString];
-    self.operatorLabel.text = [self.currentOperation operationAsString];
+    Operation *currentOperation = [self.operationList currentOperation];
+    self.arg1Label.text = [currentOperation arg1AsString];
+    self.arg2Label.text = [currentOperation arg2AsString];
+    self.operatorLabel.text = [currentOperation operationAsString];
     self.resultLabel.text = @"";
+    self.scoreLabel.text = [self.operationList scoreAsString];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (timer != nil) {
+        [timer invalidate];   
+    }
 }
 
+-(void)onTimerTick {
+    [self updateTimeLeft];
+}
+
+-(void)updateTimeLeft {
+    if (secondsLeft < 60) {
+        secondsLeft++;
+        self.timeLeftLabel.text = [NSString stringWithFormat:@"%is", 60 - secondsLeft];
+    } else {
+        [timer invalidate];        
+    }
+}
 
 -(IBAction)doSomething:(id)sender {
     //code for doing what you want your button to do.
@@ -91,13 +111,15 @@
 
 - (IBAction)buttonConfirmClick:(id)sender {
     float typedResult = [self.resultLabel.text floatValue];
-    
-    if ([self.currentOperation isTheResult:typedResult]) {
+    Operation *currentOperation = [self.operationList currentOperation];
+
+    if ([currentOperation isTheResult:typedResult]) {
         NSLog(@"OK");
     } else {
         NSLog(@"NOK");
     }
-         
+    
+    [self.operationList nextOperation];
     [self setNewOperation];
 }
 
