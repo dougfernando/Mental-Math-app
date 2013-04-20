@@ -10,6 +10,7 @@
 
 @implementation Operation
 
+
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super init] ) {
         self.arg1 = aArg1;
@@ -17,6 +18,10 @@
     }
 
     return self;
+}
+
+-(id)initWithPair: (OperatorsPair *)pair {
+    return [self initWith:pair.arg1 andWithArg2:pair.arg2];
 }
 
 -(float)execute {
@@ -29,29 +34,24 @@
     return fabs([self execute] - self.result) < 0.0000001;
 }
 
--(BOOL)isTheResult:(float)possibleResult {
-	self.result = possibleResult; // Check if this is a good strategy
-    return [self isCorrect];
-}
-
--(BOOL)isValid {
-    return FALSE;
-}
-
 -(NSString *)executeAsString {
     return [NSString stringWithFormat:@"%f", [self execute]];
 }
 
 -(NSString *)arg1AsString {
-    return [NSString stringWithFormat:@"%f", self.arg1];
+    return [NSString stringWithFormat:@"%i", (int)self.arg1];
 }
 
 -(NSString *)arg2AsString {
-    return [NSString stringWithFormat:@"%f", self.arg2];
+    return [NSString stringWithFormat:@"%i", (int)self.arg2];
 }
 
 -(NSString *)operationAsString {
     return [NSString stringWithFormat:@"%c", self.operation];
+}
+
+-(NSString *)description {
+   return [NSString stringWithFormat: @"%i %c %i = %f; is correct? %@", (int)self.arg1, self.operation, (int)self.arg2, self.result, ([self isCorrect] ? @"TRUE" : @"FALSE")];
 }
 
 @end
@@ -64,10 +64,6 @@
     }
     
     return self;
-}
-
--(BOOL) isValid {
-    return TRUE;
 }
 
 -(float)execute {
@@ -86,10 +82,6 @@
     return self;
 }
 
--(BOOL) isValid {
-    return self.arg1 > self.arg2;
-}
-
 -(float)execute {
     return self.arg1 - self.arg2;
 }
@@ -106,9 +98,6 @@
     return self;
 }
 
--(BOOL) isValid {
-    return TRUE;
-}
 
 -(float)execute {
     return self.arg1 * self.arg2;
@@ -126,10 +115,6 @@
     return self;
 }
 
--(BOOL) isValid {
-    return self.arg1 > self.arg2 && (int)self.arg1 % (int)self.arg2 == 0;
-}
-
 -(float)execute {
     return self.arg1 / self.arg2;
 }
@@ -144,10 +129,6 @@
     }
     
     return self;
-}
-
--(BOOL) isValid {
-    return TRUE;
 }
 
 -(float)execute {

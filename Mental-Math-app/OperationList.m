@@ -48,7 +48,9 @@
 }
 
 -(NSString *)scoreAsString {
-    return [NSString stringWithFormat:@"%i/%i", [self rightAnswers], [self size]];
+    int percentage = (int)((float)[self rightAnswers] * 100 / [self size]);
+    percentage = percentage < 0? 0: percentage;
+    return [NSString stringWithFormat:@"%i/%i - %i%%", [self rightAnswers], [self size], percentage];
 }
 
 @end

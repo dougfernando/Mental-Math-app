@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OperatorsPair.h"
 
 @interface Operation : NSObject
 
@@ -16,14 +17,14 @@
 @property (readwrite) char operation;
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2;
+-(id)initWithPair: (OperatorsPair *)pair;
 -(float)execute;
 -(NSString *)executeAsString;
 -(NSString *)arg1AsString;
 -(NSString *)arg2AsString;
 -(NSString *)operationAsString;
--(BOOL)isTheResult:(float)possibleResult;
+-(NSString *)description;
 -(BOOL)isCorrect;
--(BOOL)isValid;
 @end
 
 @interface PlusOperation: Operation

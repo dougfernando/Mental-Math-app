@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "Operation.h"
 #import "OperationFactory.h"
+#import "ConfigHelper.h"
 
 @interface FirstViewController ()
 
@@ -19,13 +20,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+    [self startSetup];
+    
+    [self configButtons];
+ }
+
+-(void)configButtons {
+    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    NSArray  *buttons = [NSArray arrayWithObjects: self.button1, self.button2, self.button3,
+                        self.button4, self.button5, self.button6, self.button7,
+                        self.button8, self.button9, self.button0, self.button000, self.buttonDel,
+                         nil ];
+    for (BButton *button in buttons) {
+        button.color = color;
+    }
+    self.myConfirmButton.color = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+}
+
+-(void)startSetup {
     self.operationList = [[OperationList alloc] initWithFactory:[[RandomOperationFactory alloc] init]];
     [self setNewOperation];
-    
     secondsLeft = 0;
+    self.timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration]];
+    self.timeProgressBar.progress = 0;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
-    self.timeLeftLabel.text = @"60s";    
- }
+}
 
 -(void)setNewOperation {
     Operation *currentOperation = [self.operationList currentOperation];
@@ -34,6 +54,7 @@
     self.operatorLabel.text = [currentOperation operationAsString];
     self.resultLabel.text = @"";
     self.scoreLabel.text = [self.operationList scoreAsString];
+    self.myConfirmButton.enabled = true;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,11 +70,21 @@
 }
 
 -(void)updateTimeLeft {
-    if (secondsLeft < 60) {
+    if (secondsLeft < [ConfigHelper maxDuration]) {
         secondsLeft++;
-        self.timeLeftLabel.text = [NSString stringWithFormat:@"%is", 60 - secondsLeft];
+        self.timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration] - secondsLeft];
+        float progress = (float)secondsLeft / [ConfigHelper maxDuration];
+        self.timeProgressBar.progress = progress;
     } else {
-        [timer invalidate];        
+        self.myConfirmButton.enabled = false;
+        [timer invalidate];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Result"
+                                                        message:@"Time is up"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
@@ -101,23 +132,25 @@
     [self appendNumber: @"0"];
 }
 
-- (IBAction)buttonDotClick:(id)sender {
-    [self appendNumber: @","];
+- (IBAction)button000Click:(id)sender {
+    [self appendNumber: @"000"];
 }
 
 - (IBAction)buttonDelClick:(id)sender {
     [self deleteLastNumber];
 }
 
-- (IBAction)buttonConfirmClick:(id)sender {
-    float typedResult = [self.resultLabel.text floatValue];
-    Operation *currentOperation = [self.operationList currentOperation];
+- (IBAction)restartClick:(id)sender {
+    [timer invalidate];
+    [self startSetup];
+}
 
-    if ([currentOperation isTheResult:typedResult]) {
-        NSLog(@"OK");
-    } else {
-        NSLog(@"NOK");
-    }
+- (IBAction)confirmButtonClick:(id)sender {
+    Operation *currentOperation = [self.operationList currentOperation];
+    float typedResult = [self.resultLabel.text floatValue];
+	currentOperation.result = typedResult;
+	
+    NSLog(@"%@", [currentOperation description]);
     
     [self.operationList nextOperation];
     [self setNewOperation];

@@ -7,7 +7,8 @@
 //
 
 #import "OperationFactory.h"
-
+#import "ConfigHelper.h"
+#import "LevelFactory.h"
 
 @implementation OperationFactory
 
@@ -30,40 +31,32 @@
 }
 
 -(Operation *)create {
+    NSArray *operations = [ConfigHelper operationsToConsider];
+    int position = arc4random() % [operations count];
+    
+	char operationChar = [[operations objectAtIndex:position] characterAtIndex:0];
     Operation *op = nil;
-    do {
-        float smallNumber = 0;
-        float bigNumber = 10;
-    
-        float diff = bigNumber - smallNumber;
-        float rArg1 = (int)(((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
-        float rArg2 = (int)(((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
-    
-        char operations[] = { '+', '-', '*', '/', '%' };
-        int position = arc4random() % 4;
-        
-        char operationChar = operations[position];
-        switch (operationChar) {
-            case '+':
-                op = [[PlusOperation alloc] initWith:rArg1 andWithArg2:rArg2];
-                break;
-            case '-':
-                op = [[MinusOperation alloc] initWith:rArg1 andWithArg2:rArg2];
-                break;
-            case '*':
-                op = [[MultipOperation alloc] initWith:rArg1 andWithArg2:rArg2];
-                break;
-            case '/':
-                op = [[DivOperation alloc] initWith:rArg1 andWithArg2:rArg2];
-                break;
-            case '%':
-                op = [[PercOperation alloc] initWith:rArg1 andWithArg2:rArg2];
-                break;
-            default:
-                op = nil;
-                break;
-        }
-    } while(![op isValid]);
+	OperatorsFactory *factory = [LevelFactory createOperatorsFactory];
+    switch (operationChar) {
+        case '+':
+            op = [[PlusOperation alloc] initWithPair:[factory createPairForAdd]];
+            break;
+        case '-':
+            op = [[MinusOperation alloc] initWithPair:[factory createPairForSub]];
+            break;
+        case '*':
+            op = [[MultipOperation alloc] initWithPair:[factory createPairForMultip]];
+            break;
+        case '/':
+            op = [[DivOperation alloc] initWithPair:[factory createPairForDiv]];
+            break;
+        case '%':
+            op = [[PercOperation alloc] initWithPair:[factory createPairForPerc]];
+            break;
+        default:
+            op = nil;
+            break;
+    }
     return op;
 }
 @end

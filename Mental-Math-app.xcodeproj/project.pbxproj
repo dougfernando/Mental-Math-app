@@ -30,8 +30,17 @@
 		A5191F03171E1FD400CA83A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5191F01171E1FD400CA83A6 /* InfoPlist.strings */; };
 		A5191F06171E1FD400CA83A6 /* Mental_Math_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */; };
 		A5191F11171E3F7200CA83A6 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F10171E3F7200CA83A6 /* Operation.m */; };
+		A53A62801721566D00B7DE87 /* LevelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A627F1721566D00B7DE87 /* LevelFactory.m */; };
+		A5404C721722228500B1A69E /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C6B1722228500B1A69E /* BButton.m */; };
+		A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */; };
+		A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5404C6F1722228500B1A69E /* FontAwesome.ttf */; };
+		A5404C751722228500B1A69E /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C711722228500B1A69E /* UIColor+BButton.m */; };
+		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
 		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
 		A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909083171F6DA3005C63AF /* OperationFactory.m */; };
+		A5B904FD1720DB6800AD889B /* OperatorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FC1720DB6800AD889B /* OperatorsFactory.m */; };
+		A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FF1720DB9D00AD889B /* OperatorsPair.m */; };
+		A5B905031720E6FB00AD889B /* MathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B905021720E6FB00AD889B /* MathHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +85,27 @@
 		A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mental_Math_appTests.m; sourceTree = "<group>"; };
 		A5191F0F171E3F7200CA83A6 /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
 		A5191F10171E3F7200CA83A6 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
+		A53A627E1721566D00B7DE87 /* LevelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFactory.h; sourceTree = "<group>"; };
+		A53A627F1721566D00B7DE87 /* LevelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFactory.m; sourceTree = "<group>"; };
+		A5404C6A1722228500B1A69E /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
+		A5404C6B1722228500B1A69E /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
+		A5404C6C1722228500B1A69E /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		A5404C6F1722228500B1A69E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		A5404C701722228500B1A69E /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
+		A5404C711722228500B1A69E /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
+		A567115D17220056009A6414 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
+		A567115E17220056009A6414 /* ConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHelper.m; sourceTree = "<group>"; };
 		A57C8508171ECEED00C5C4F0 /* OperationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationList.h; sourceTree = "<group>"; };
 		A57C8509171ECEED00C5C4F0 /* OperationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationList.m; sourceTree = "<group>"; };
 		A5909082171F6DA3005C63AF /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
 		A5909083171F6DA3005C63AF /* OperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactory.m; sourceTree = "<group>"; };
+		A5B904FB1720DB6800AD889B /* OperatorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorsFactory.h; sourceTree = "<group>"; };
+		A5B904FC1720DB6800AD889B /* OperatorsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorsFactory.m; sourceTree = "<group>"; };
+		A5B904FE1720DB9D00AD889B /* OperatorsPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorsPair.h; sourceTree = "<group>"; };
+		A5B904FF1720DB9D00AD889B /* OperatorsPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorsPair.m; sourceTree = "<group>"; };
+		A5B905011720E6FB00AD889B /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
+		A5B905021720E6FB00AD889B /* MathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +135,7 @@
 		A5191EBA171E1FD300CA83A6 = {
 			isa = PBXGroup;
 			children = (
+				A5404C691722228500B1A69E /* BButton */,
 				A5191ECC171E1FD300CA83A6 /* Mental-Math-app */,
 				A5191EFE171E1FD400CA83A6 /* Mental-Math-appTests */,
 				A5191EC5171E1FD300CA83A6 /* Frameworks */,
@@ -202,12 +229,20 @@
 		A5191F13171E50EC00CA83A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A567115D17220056009A6414 /* ConfigHelper.h */,
+				A567115E17220056009A6414 /* ConfigHelper.m */,
+				A5B904FB1720DB6800AD889B /* OperatorsFactory.h */,
+				A5B904FC1720DB6800AD889B /* OperatorsFactory.m */,
 				A5191F0F171E3F7200CA83A6 /* Operation.h */,
 				A5191F10171E3F7200CA83A6 /* Operation.m */,
 				A57C8508171ECEED00C5C4F0 /* OperationList.h */,
 				A57C8509171ECEED00C5C4F0 /* OperationList.m */,
 				A5909082171F6DA3005C63AF /* OperationFactory.h */,
 				A5909083171F6DA3005C63AF /* OperationFactory.m */,
+				A5B904FE1720DB9D00AD889B /* OperatorsPair.h */,
+				A5B904FF1720DB9D00AD889B /* OperatorsPair.m */,
+				A53A627E1721566D00B7DE87 /* LevelFactory.h */,
+				A53A627F1721566D00B7DE87 /* LevelFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -215,8 +250,32 @@
 		A5191F14171E510900CA83A6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A5B905011720E6FB00AD889B /* MathHelper.h */,
+				A5B905021720E6FB00AD889B /* MathHelper.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A5404C691722228500B1A69E /* BButton */ = {
+			isa = PBXGroup;
+			children = (
+				A5404C6A1722228500B1A69E /* BButton.h */,
+				A5404C6B1722228500B1A69E /* BButton.m */,
+				A5404C6C1722228500B1A69E /* NSString+FontAwesome.h */,
+				A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */,
+				A5404C6E1722228500B1A69E /* resources */,
+				A5404C701722228500B1A69E /* UIColor+BButton.h */,
+				A5404C711722228500B1A69E /* UIColor+BButton.m */,
+			);
+			path = BButton;
+			sourceTree = "<group>";
+		};
+		A5404C6E1722228500B1A69E /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5404C6F1722228500B1A69E /* FontAwesome.ttf */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +359,7 @@
 				A5191EEA171E1FD400CA83A6 /* first@2x.png in Resources */,
 				A5191EEF171E1FD400CA83A6 /* second.png in Resources */,
 				A5191EF1171E1FD400CA83A6 /* second@2x.png in Resources */,
+				A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +401,14 @@
 				A5191F11171E3F7200CA83A6 /* Operation.m in Sources */,
 				A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */,
 				A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */,
+				A5B904FD1720DB6800AD889B /* OperatorsFactory.m in Sources */,
+				A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */,
+				A5B905031720E6FB00AD889B /* MathHelper.m in Sources */,
+				A53A62801721566D00B7DE87 /* LevelFactory.m in Sources */,
+				A567115F17220056009A6414 /* ConfigHelper.m in Sources */,
+				A5404C721722228500B1A69E /* BButton.m in Sources */,
+				A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */,
+				A5404C751722228500B1A69E /* UIColor+BButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

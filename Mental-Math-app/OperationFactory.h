@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Operation.h"
+#import "OperatorsFactory.h"
 
 @interface OperationFactory : NSObject
 -(id)init;
