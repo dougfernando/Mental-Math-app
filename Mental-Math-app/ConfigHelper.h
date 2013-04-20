@@ -12,5 +12,18 @@
 
 +(int)maxDuration;
 +(NSArray *)operationsToConsider;
-
++(void) saveLevel:(NSInteger) level;
++(NSInteger) getLevel;
++(void) saveAddOp:(BOOL) onOff;
++(BOOL) getaddOp;
++(void) saveSubOp:(BOOL) onOff;
++(BOOL) getSubOp;
++(void) saveMultipOp:(BOOL) onOff;
++(BOOL) getMultipOp;
++(void) saveDivOp:(BOOL) onOff;
++(BOOL) getDivOp;
++(void) savePercOp:(BOOL) onOff;
++(BOOL) getPercOp;
++(void) saveTime:(NSInteger) time;
++(NSInteger) getTime;
 @end

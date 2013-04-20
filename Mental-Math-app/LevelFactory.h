@@ -13,4 +13,12 @@
 
 +(OperatorsFactory *)createOperatorsFactory;
 
+extern NSString *kSettingsLevelKey;
+extern NSString *kSettingsAddOpKey;
+extern NSString *kSettingsSubOpKey;
+extern NSString *kSettingsMultipOpKey;
+extern NSString *kSettingsDivOpKey;
+extern NSString *kSettingsPercOpKey;
+extern NSString *kSettingsTimeOpKey;
+
 @end

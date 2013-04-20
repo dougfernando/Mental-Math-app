@@ -7,16 +7,108 @@
 //
 
 #import "ConfigHelper.h"
+#import "LevelFactory.h"
 
 @implementation ConfigHelper
 
 +(int)maxDuration {
-	return 60;
+	return ([self getTime] + 1) * 60 ;
 }
 
 +(NSArray *)operationsToConsider {
-    NSArray  *result = [NSArray arrayWithObjects:@"+",@"-",@"*", @"/", @"%", nil];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    if ([self getaddOp]) [result addObject:@"+"];
+    if ([self getSubOp]) [result addObject:@"-"];
+    if ([self getMultipOp]) [result addObject:@"*"];
+    if ([self getDivOp]) [result addObject:@"/"];
+    if ([self getPercOp]) [result addObject:@"%"];
     return result;
 }
+
++(void)saveLevel:(NSInteger)level {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:level forKey:kSettingsLevelKey];
+}
+
++(NSInteger)getLevel {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger level = [defaults integerForKey:kSettingsLevelKey];
+    return level;
+}
+
++(void)saveTime:(NSInteger)time {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:time forKey:kSettingsTimeOpKey];
+}
+
++(NSInteger)getTime {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger result = [defaults integerForKey:kSettingsTimeOpKey];
+    return result;
+}
+
++(void)saveAddOp:(BOOL)onOff {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:onOff forKey:kSettingsAddOpKey];
+}
+
++(BOOL)getaddOp {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:kSettingsAddOpKey]) return true;
+    NSInteger result= [defaults integerForKey:kSettingsAddOpKey];
+    return result;
+}
+
++(void)saveSubOp:(BOOL)onOff {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:onOff forKey:kSettingsSubOpKey];
+}
+
++(BOOL)getSubOp {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:kSettingsSubOpKey]) return true;
+    NSInteger result= [defaults integerForKey:kSettingsSubOpKey];
+    return result;
+}
+
++(void)saveMultipOp:(BOOL)onOff {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:onOff forKey:kSettingsMultipOpKey];
+}
+
++(BOOL)getMultipOp {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:kSettingsMultipOpKey]) return true;
+
+    NSInteger result= [defaults integerForKey:kSettingsMultipOpKey];
+    return result;
+}
+
++(void)saveDivOp:(BOOL)onOff {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:onOff forKey:kSettingsDivOpKey];
+}
+
++(BOOL)getDivOp {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:kSettingsDivOpKey]) return true;
+
+    NSInteger result= [defaults integerForKey:kSettingsDivOpKey];
+    return result;
+}
+
++(void)savePercOp:(BOOL)onOff {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:onOff forKey:kSettingsPercOpKey];
+}
+
++(BOOL)getPercOp {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:kSettingsPercOpKey]) return true;
+
+    NSInteger result= [defaults integerForKey:kSettingsPercOpKey];
+    return result;
+}
+
 
 @end

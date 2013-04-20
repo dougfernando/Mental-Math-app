@@ -17,6 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    self.runButton.color = color;
+    self.settingsButton.color = color;
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

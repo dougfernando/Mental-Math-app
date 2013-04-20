@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BButton.h"
 
 @interface SecondViewController : UIViewController
+@property (weak, nonatomic) IBOutlet BButton *runButton;
+@property (weak, nonatomic) IBOutlet BButton *settingsButton;
 
 @end

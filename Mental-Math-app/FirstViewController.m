@@ -88,10 +88,6 @@
     }
 }
 
--(IBAction)doSomething:(id)sender {
-    //code for doing what you want your button to do.
-}
-
 - (IBAction)button1Click:(id)sender {
     [self appendNumber: @"1"];
 }

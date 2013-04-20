@@ -38,6 +38,7 @@
 		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
 		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
 		A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909083171F6DA3005C63AF /* OperationFactory.m */; };
+		A5A6FE8817233204003D3EB4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A6FE8717233204003D3EB4 /* SettingsViewController.m */; };
 		A5B904FD1720DB6800AD889B /* OperatorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FC1720DB6800AD889B /* OperatorsFactory.m */; };
 		A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FF1720DB9D00AD889B /* OperatorsPair.m */; };
 		A5B905031720E6FB00AD889B /* MathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B905021720E6FB00AD889B /* MathHelper.m */; };
@@ -100,6 +101,8 @@
 		A57C8509171ECEED00C5C4F0 /* OperationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationList.m; sourceTree = "<group>"; };
 		A5909082171F6DA3005C63AF /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
 		A5909083171F6DA3005C63AF /* OperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactory.m; sourceTree = "<group>"; };
+		A5A6FE8617233204003D3EB4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A5A6FE8717233204003D3EB4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A5B904FB1720DB6800AD889B /* OperatorsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorsFactory.h; sourceTree = "<group>"; };
 		A5B904FC1720DB6800AD889B /* OperatorsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorsFactory.m; sourceTree = "<group>"; };
 		A5B904FE1720DB9D00AD889B /* OperatorsPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorsPair.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				A5191EEC171E1FD400CA83A6 /* SecondViewController.m */,
 				A5191EE4171E1FD400CA83A6 /* FirstViewController.h */,
 				A5191EE5171E1FD400CA83A6 /* FirstViewController.m */,
+				A5A6FE8617233204003D3EB4 /* SettingsViewController.h */,
+				A5A6FE8717233204003D3EB4 /* SettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				A5404C721722228500B1A69E /* BButton.m in Sources */,
 				A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */,
 				A5404C751722228500B1A69E /* UIColor+BButton.m in Sources */,
+				A5A6FE8817233204003D3EB4 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

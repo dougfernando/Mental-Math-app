@@ -13,7 +13,25 @@
 @implementation LevelFactory
 
 +(OperatorsFactory *)createOperatorsFactory {
-	return [[MediumOperatorsFactory alloc] init];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger level = [defaults integerForKey:kSettingsLevelKey];
+    
+    if (level == 0) {
+       	return [[EasyOperatorsFactory alloc] init];
+    } else if (level == 1) {
+       	return [[MediumOperatorsFactory alloc] init];
+    }
+
+	return [[HardOperatorsFactory alloc] init];
 }
 
+NSString *kSettingsLevelKey = @"kSettingsLevelKey";
+NSString *kSettingsAddOpKey = @"kSettingsAddOpKey";
+NSString *kSettingsSubOpKey = @"kSettingsSubOpKey";
+NSString *kSettingsMultipOpKey = @"kSettingsMultipOpKey";
+NSString *kSettingsDivOpKey = @"kSettingsDivOpKey";
+NSString *kSettingsPercOpKey = @"kSettingsPercOpKey";
+NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
+
 @end
+
