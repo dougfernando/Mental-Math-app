@@ -229,8 +229,6 @@
 		A5191F13171E50EC00CA83A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A567115D17220056009A6414 /* ConfigHelper.h */,
-				A567115E17220056009A6414 /* ConfigHelper.m */,
 				A5B904FB1720DB6800AD889B /* OperatorsFactory.h */,
 				A5B904FC1720DB6800AD889B /* OperatorsFactory.m */,
 				A5191F0F171E3F7200CA83A6 /* Operation.h */,
@@ -250,6 +248,8 @@
 		A5191F14171E510900CA83A6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A567115D17220056009A6414 /* ConfigHelper.h */,
+				A567115E17220056009A6414 /* ConfigHelper.m */,
 				A5B905011720E6FB00AD889B /* MathHelper.h */,
 				A5B905021720E6FB00AD889B /* MathHelper.m */,
 			);
