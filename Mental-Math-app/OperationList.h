@@ -24,5 +24,7 @@
 -(int)rightAnswers;
 -(int)size;
 -(NSString *)scoreAsString;
+-(NSString *)detailedResult;
+-(NSString *)macroScore;
 
 @end

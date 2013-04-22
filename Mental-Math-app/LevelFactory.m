@@ -8,13 +8,12 @@
 
 #import "LevelFactory.h"
 #import "OperatorsFactory.h"
-#import "OperationFactory.h"
+#import "ConfigHelper.h"
 
 @implementation LevelFactory
 
 +(OperatorsFactory *)createOperatorsFactory {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger level = [defaults integerForKey:kSettingsLevelKey];
+    NSInteger level = [ConfigHelper getLevel];
     
     if (level == 0) {
        	return [[EasyOperatorsFactory alloc] init];
@@ -25,13 +24,6 @@
 	return [[HardOperatorsFactory alloc] init];
 }
 
-NSString *kSettingsLevelKey = @"kSettingsLevelKey";
-NSString *kSettingsAddOpKey = @"kSettingsAddOpKey";
-NSString *kSettingsSubOpKey = @"kSettingsSubOpKey";
-NSString *kSettingsMultipOpKey = @"kSettingsMultipOpKey";
-NSString *kSettingsDivOpKey = @"kSettingsDivOpKey";
-NSString *kSettingsPercOpKey = @"kSettingsPercOpKey";
-NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
 
 @end
 

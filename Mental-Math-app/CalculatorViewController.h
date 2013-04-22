@@ -11,7 +11,7 @@
 #import "OperationList.h"
 #import "BButton.h"
 
-@interface FirstViewController : UIViewController
+@interface CalculatorViewController : UIViewController
 {
     NSTimer *timer;
     int secondsLeft;

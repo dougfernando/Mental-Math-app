@@ -9,10 +9,18 @@
 #import "ConfigHelper.h"
 #import "LevelFactory.h"
 
+NSString *kSettingsLevelKey = @"kSettingsLevelKey";
+NSString *kSettingsAddOpKey = @"kSettingsAddOpKey";
+NSString *kSettingsSubOpKey = @"kSettingsSubOpKey";
+NSString *kSettingsMultipOpKey = @"kSettingsMultipOpKey";
+NSString *kSettingsDivOpKey = @"kSettingsDivOpKey";
+NSString *kSettingsPercOpKey = @"kSettingsPercOpKey";
+NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
+
 @implementation ConfigHelper
 
 +(int)maxDuration {
-	return ([self getTime] + 1) * 60 ;
+	return ([self getTime] + 1) * 20 ;
 }
 
 +(NSArray *)operationsToConsider {

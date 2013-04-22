@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Douglas Fernando da Silva. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CalculatorViewController.h"
 #import "Operation.h"
 #import "OperationFactory.h"
 #import "ConfigHelper.h"
+#import "SummaryViewController.h"
 
-@interface FirstViewController ()
+@interface CalculatorViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation CalculatorViewController
 
 - (void)viewDidLoad
 {
@@ -78,13 +79,18 @@
     } else {
         self.myConfirmButton.enabled = false;
         [timer invalidate];
+                
+        [self performSegueWithIdentifier:@"toSummarySegue" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"toSummarySegue"]) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Result"
-                                                        message:@"Time is up"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        // Get destination view
+        SummaryViewController *vc = [segue destinationViewController];
+        
+        vc.operationList = self.operationList;
     }
 }
 
