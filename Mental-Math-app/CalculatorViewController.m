@@ -11,8 +11,13 @@
 #import "OperationFactory.h"
 #import "ConfigHelper.h"
 #import "SummaryViewController.h"
+#import "UIHelper.h"
 
 @interface CalculatorViewController ()
+{
+    NSNumberFormatter *formatter;
+    NSNumber *currentNumber;
+}
 
 @end
 
@@ -25,10 +30,15 @@
     [self startSetup];
     
     [self configButtons];
+    
+    formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    [UIHelper addBackground:self];
  }
 
 -(void)configButtons {
-    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    UIColor *color = [UIHelper getBlueButtonColor];
     NSArray  *buttons = [NSArray arrayWithObjects: self.button1, self.button2, self.button3,
                         self.button4, self.button5, self.button6, self.button7,
                         self.button8, self.button9, self.button0, self.button000, self.buttonDel,
@@ -36,6 +46,7 @@
     for (BButton *button in buttons) {
         button.color = color;
     }
+    //green
     self.myConfirmButton.color = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
 }
 
@@ -56,6 +67,7 @@
     self.resultLabel.text = @"";
     self.scoreLabel.text = [self.operationList scoreAsString];
     self.myConfirmButton.enabled = true;
+    currentNumber = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,10 +98,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"toSummarySegue"]) {
-        
-        // Get destination view
         SummaryViewController *vc = [segue destinationViewController];
-        
         vc.operationList = self.operationList;
     }
 }
@@ -149,8 +158,7 @@
 
 - (IBAction)confirmButtonClick:(id)sender {
     Operation *currentOperation = [self.operationList currentOperation];
-    float typedResult = [self.resultLabel.text floatValue];
-	currentOperation.result = typedResult;
+	currentOperation.result = [currentNumber floatValue];
 	
     NSLog(@"%@", [currentOperation description]);
     
@@ -159,9 +167,10 @@
 }
 
 - (void)appendNumber:(id)input {
-    NSString *current = self.resultLabel.text;
-    NSString *new = [current stringByAppendingString: input];
-    self.resultLabel.text = new;
+    NSString *current = currentNumber == nil? @"": [currentNumber stringValue];
+    NSString *newValue = [current stringByAppendingString: input];
+    currentNumber = [formatter numberFromString:newValue];
+    self.resultLabel.text = [formatter stringFromNumber:currentNumber];
 }
 
 - (void) deleteLastNumber {

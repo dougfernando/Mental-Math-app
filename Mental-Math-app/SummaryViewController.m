@@ -7,6 +7,7 @@
 //
 
 #import "SummaryViewController.h"
+#import "UIHelper.h"
 
 @interface SummaryViewController ()
 
@@ -26,12 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    UIColor *color = [UIHelper getBlueButtonColor];;
 
     self.tryAgainButton.color = color;
     self.settingsButton.color = color;
     
     self.detailedResultLabel.text = [self.operationList detailedResult];
+    [UIHelper addBackground:self];
 }
 
 - (void)didReceiveMemoryWarning

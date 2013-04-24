@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "ConfigHelper.h"
+#import "UIHelper.h"
 
 @interface SettingsViewController ()
 
@@ -34,6 +35,7 @@
     self.divOp.on = [ConfigHelper getDivOp];
     self.percOp.on = [ConfigHelper getPercOp];
     self.timeSegment.selectedSegmentIndex = [ConfigHelper getTime];
+    [UIHelper addBackground:self];
 }
 
 - (void)didReceiveMemoryWarning

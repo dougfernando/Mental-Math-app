@@ -50,7 +50,6 @@
     
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
-
 @end
 
 @implementation MediumOperatorsFactory
@@ -107,7 +106,7 @@
 
 // TODO implement new strategy
 -(OperatorsPair *)createPairForSub {
-    int arg1 = [MathHelper rndFrom:1 to:200];
+    int arg1 = [MathHelper rndFrom:1 to:500];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
@@ -126,14 +125,24 @@
 }
 
 -(OperatorsPair *)createPairForDiv {
-    int arg2 = [MathHelper rndFrom:1 to:10];
-    int arg1 = [MathHelper rndFrom:1 to:10] * arg2;
+	int resulta[] = {10000, 100000, 1000000, 10000000, 100000000};
+	int factor2 = resulta[[MathHelper rndFrom:0 to:4]];
+	int result = [MathHelper rndFrom:1 to:20] * factor2;
+	
+    int factor3a[] = {1, 10};
+    int factor3 = factor3a[[MathHelper rndFrom:0 to:1]];
+    int arg2 = [MathHelper rndFrom:1 to:20] * factor3;
 
-    return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
+    return [[OperatorsPair alloc] initWith:(result * arg2) andWithArg2: arg2];
 }
+
 -(OperatorsPair *)createPairForPerc {
-    int arg1 = [MathHelper rndFrom:1 to:9] * 10;
-    int arg2 = [MathHelper rndFrom:1 to:10] * 10;
+    int arg1a[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 25, 75 };
+    int arg1 = arg1a[[MathHelper rndFrom:0 to:10]];
+
+	int arg2a[] = {10000, 100000, 1000000, 10000000, 100000000};
+	int arg2 = arg2a[[MathHelper rndFrom:0 to:4]] * [MathHelper rndFrom:1 to:20];
+    
     
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }

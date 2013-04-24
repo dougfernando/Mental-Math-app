@@ -6,23 +6,23 @@
 //  Copyright (c) 2013 Douglas Fernando da Silva. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "MainViewController.h"
+#import "UIHelper.h"
 
-@interface SecondViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation MainViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    UIColor *color = [UIHelper getBlueButtonColor];
     self.runButton.color = color;
     self.settingsButton.color = color;
-
-	// Do any additional setup after loading the view, typically from a nib.
+    [UIHelper addBackground:self];
 }
 
 - (void)didReceiveMemoryWarning

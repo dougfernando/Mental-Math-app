@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
+
     UIImage *imageToReturn = [UIImage imageNamed:@"Splash.png"];
     imageToReturn = [UIImage imageWithCGImage:imageToReturn.CGImage scale:2 orientation:imageToReturn.imageOrientation];
     

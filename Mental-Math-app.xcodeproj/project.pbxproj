@@ -24,7 +24,7 @@
 		A5191EE6171E1FD400CA83A6 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191EE5171E1FD400CA83A6 /* CalculatorViewController.m */; };
 		A5191EE8171E1FD400CA83A6 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A5191EE7171E1FD400CA83A6 /* first.png */; };
 		A5191EEA171E1FD400CA83A6 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5191EE9171E1FD400CA83A6 /* first@2x.png */; };
-		A5191EED171E1FD400CA83A6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191EEC171E1FD400CA83A6 /* SecondViewController.m */; };
+		A5191EED171E1FD400CA83A6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191EEC171E1FD400CA83A6 /* MainViewController.m */; };
 		A5191EEF171E1FD400CA83A6 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A5191EEE171E1FD400CA83A6 /* second.png */; };
 		A5191EF1171E1FD400CA83A6 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5191EF0171E1FD400CA83A6 /* second@2x.png */; };
 		A5191EF9171E1FD400CA83A6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5191EF8171E1FD400CA83A6 /* SenTestingKit.framework */; };
@@ -46,6 +46,8 @@
 		A5B904FD1720DB6800AD889B /* OperatorsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FC1720DB6800AD889B /* OperatorsFactory.m */; };
 		A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FF1720DB9D00AD889B /* OperatorsPair.m */; };
 		A5B905031720E6FB00AD889B /* MathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B905021720E6FB00AD889B /* MathHelper.m */; };
+		A5EF3E3A17260F1900BCE63E /* main-background.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF3E3917260F1900BCE63E /* main-background.png */; };
+		A5EF3E3D17261F8300BCE63E /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF3E3C17261F8300BCE63E /* UIHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +84,8 @@
 		A5191EE5171E1FD400CA83A6 /* CalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		A5191EE7171E1FD400CA83A6 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		A5191EE9171E1FD400CA83A6 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		A5191EEB171E1FD400CA83A6 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		A5191EEC171E1FD400CA83A6 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A5191EEB171E1FD400CA83A6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A5191EEC171E1FD400CA83A6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A5191EEE171E1FD400CA83A6 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		A5191EF0171E1FD400CA83A6 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		A5191EF7171E1FD400CA83A6 /* Mental-Math-appTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mental-Math-appTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,9 @@
 		A5B904FF1720DB9D00AD889B /* OperatorsPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorsPair.m; sourceTree = "<group>"; };
 		A5B905011720E6FB00AD889B /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
 		A5B905021720E6FB00AD889B /* MathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathHelper.m; sourceTree = "<group>"; };
+		A5EF3E3917260F1900BCE63E /* main-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background.png"; sourceTree = "<group>"; };
+		A5EF3E3B17261F8300BCE63E /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
+		A5EF3E3C17261F8300BCE63E /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +201,7 @@
 		A5191ECD171E1FD300CA83A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5EF3E3917260F1900BCE63E /* main-background.png */,
 				A5169BD41724E0570075E873 /* Splash.png */,
 				A5191ECE171E1FD300CA83A6 /* Mental-Math-app-Info.plist */,
 				A5191ECF171E1FD300CA83A6 /* InfoPlist.strings */,
@@ -234,8 +240,8 @@
 				A5191EE9171E1FD400CA83A6 /* first@2x.png */,
 				A5191EEE171E1FD400CA83A6 /* second.png */,
 				A5191EF0171E1FD400CA83A6 /* second@2x.png */,
-				A5191EEB171E1FD400CA83A6 /* SecondViewController.h */,
-				A5191EEC171E1FD400CA83A6 /* SecondViewController.m */,
+				A5191EEB171E1FD400CA83A6 /* MainViewController.h */,
+				A5191EEC171E1FD400CA83A6 /* MainViewController.m */,
 				A5191EE4171E1FD400CA83A6 /* CalculatorViewController.h */,
 				A5191EE5171E1FD400CA83A6 /* CalculatorViewController.m */,
 				A5A6FE8617233204003D3EB4 /* SettingsViewController.h */,
@@ -274,6 +280,8 @@
 				A567115E17220056009A6414 /* ConfigHelper.m */,
 				A5B905011720E6FB00AD889B /* MathHelper.h */,
 				A5B905021720E6FB00AD889B /* MathHelper.m */,
+				A5EF3E3B17261F8300BCE63E /* UIHelper.h */,
+				A5EF3E3C17261F8300BCE63E /* UIHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -383,6 +391,7 @@
 				A5191EF1171E1FD400CA83A6 /* second@2x.png in Resources */,
 				A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */,
 				A5169BD51724E0570075E873 /* Splash.png in Resources */,
+				A5EF3E3A17260F1900BCE63E /* main-background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +429,7 @@
 				A5191ED3171E1FD300CA83A6 /* main.m in Sources */,
 				A5191ED7171E1FD300CA83A6 /* AppDelegate.m in Sources */,
 				A5191EE6171E1FD400CA83A6 /* CalculatorViewController.m in Sources */,
-				A5191EED171E1FD400CA83A6 /* SecondViewController.m in Sources */,
+				A5191EED171E1FD400CA83A6 /* MainViewController.m in Sources */,
 				A5191F11171E3F7200CA83A6 /* Operation.m in Sources */,
 				A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */,
 				A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */,
@@ -435,6 +444,7 @@
 				A5A6FE8817233204003D3EB4 /* SettingsViewController.m in Sources */,
 				A5526C171723655C007967AA /* SummaryViewController.m in Sources */,
 				A5169BD31724DA350075E873 /* SplashViewController.m in Sources */,
+				A5EF3E3D17261F8300BCE63E /* UIHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
