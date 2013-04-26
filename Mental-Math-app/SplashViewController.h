@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SplashViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end

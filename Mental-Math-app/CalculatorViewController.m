@@ -12,11 +12,13 @@
 #import "ConfigHelper.h"
 #import "SummaryViewController.h"
 #import "UIHelper.h"
+#import "MathHelper.h"
 
 @interface CalculatorViewController ()
 {
-    NSNumberFormatter *formatter;
     NSNumber *currentNumber;
+    UIProgressView *timeProgressBar;
+    UILabel *timeLeftLabel;
 }
 
 @end
@@ -30,11 +32,6 @@
     [self startSetup];
     
     [self configButtons];
-    
-    formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    
-    [UIHelper addBackground:self];
  }
 
 -(void)configButtons {
@@ -46,16 +43,19 @@
     for (BButton *button in buttons) {
         button.color = color;
     }
-    //green
-    self.myConfirmButton.color = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+    [self.myConfirmButton setType:BButtonTypeSuccess];
 }
 
 -(void)startSetup {
     self.operationList = [[OperationList alloc] initWithFactory:[[RandomOperationFactory alloc] init]];
     [self setNewOperation];
     secondsLeft = 0;
-    self.timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration]];
-    self.timeProgressBar.progress = 0;
+    timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration]];
+    [self progress:0 withMessage:@"Mental Math"];
+    self.numOfQuestionsLabel.text = @"0";
+    self.precisionLabel.text = @"100%";
+    self.diffLabel.text = [ConfigHelper getLevelDescr];
+    timeProgressBar.progress = 0;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
 }
 
@@ -64,10 +64,47 @@
     self.arg1Label.text = [currentOperation arg1AsString];
     self.arg2Label.text = [currentOperation arg2AsString];
     self.operatorLabel.text = [currentOperation operationAsString];
+    self.numOfQuestionsLabel.text = [NSString stringWithFormat:@"%i", [self.operationList size]];
+    self.precisionLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList precision]];
     self.resultLabel.text = @"";
-    self.scoreLabel.text = [self.operationList scoreAsString];
     self.myConfirmButton.enabled = true;
     currentNumber = nil;
+}
+
+- (void)progress:(int)progress withMessage:(NSString*)message {
+    UIView* v = [[UIView alloc] init];
+    v.frame = CGRectMake(0, 0, 200, 30);
+    v.backgroundColor = [UIColor clearColor];
+    
+    UILabel* lbl = [[UILabel alloc] init];
+    lbl.frame = CGRectMake(0,0, 200, 20);
+    lbl.backgroundColor = [UIColor clearColor];
+    lbl.textColor = [UIColor whiteColor];
+    lbl.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
+    lbl.shadowOffset = CGSizeMake(0, -1);
+    lbl.font = [UIFont boldSystemFontOfSize:25];
+    lbl.text = message;
+    lbl.textAlignment = NSTextAlignmentCenter;
+    [v addSubview:lbl];
+    
+    timeProgressBar = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+    timeProgressBar.frame = CGRectMake(0, 36-timeProgressBar.frame.size.height, 185, timeProgressBar.frame.size.height);
+    timeProgressBar.progress = progress/100.0;
+    [v addSubview:timeProgressBar];
+    
+    timeLeftLabel = [[UILabel alloc] init];
+    timeLeftLabel.frame = CGRectMake(182,33-timeProgressBar.frame.size.height, 40, 15);
+    timeLeftLabel.backgroundColor = [UIColor clearColor];
+    timeLeftLabel.textColor = [UIColor whiteColor];
+    timeLeftLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
+    timeLeftLabel.shadowOffset = CGSizeMake(0, -1);
+    timeLeftLabel.font = [UIFont boldSystemFontOfSize:12];
+    timeLeftLabel.text = @"60s";
+    timeLeftLabel.textAlignment = NSTextAlignmentCenter;
+    [v addSubview:timeLeftLabel];
+
+    
+    self.navItem.titleView = v;
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,9 +122,9 @@
 -(void)updateTimeLeft {
     if (secondsLeft < [ConfigHelper maxDuration]) {
         secondsLeft++;
-        self.timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration] - secondsLeft];
+        timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration] - secondsLeft];
         float progress = (float)secondsLeft / [ConfigHelper maxDuration];
-        self.timeProgressBar.progress = progress;
+        timeProgressBar.progress = progress;
     } else {
         self.myConfirmButton.enabled = false;
         [timer invalidate];
@@ -169,8 +206,8 @@
 - (void)appendNumber:(id)input {
     NSString *current = currentNumber == nil? @"": [currentNumber stringValue];
     NSString *newValue = [current stringByAppendingString: input];
-    currentNumber = [formatter numberFromString:newValue];
-    self.resultLabel.text = [formatter stringFromNumber:currentNumber];
+    currentNumber = [MathHelper asNumber:newValue];
+    self.resultLabel.text = [MathHelper formatAsString:currentNumber];
 }
 
 - (void) deleteLastNumber {

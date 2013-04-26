@@ -10,4 +10,6 @@
 
 @interface MathHelper : NSObject
 +(int)rndFrom:(int)arg1 to:(int)arg2;
++(NSString *)formatAsString:(NSNumber *)input;
++(NSNumber *)asNumber:(NSString *)input;
 @end

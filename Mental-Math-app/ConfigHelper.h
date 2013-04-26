@@ -26,4 +26,5 @@
 +(BOOL) getPercOp;
 +(void) saveTime:(NSInteger) time;
 +(NSInteger) getTime;
++(NSString *)getLevelDescr;
 @end

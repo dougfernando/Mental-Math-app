@@ -44,6 +44,14 @@ NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
     return level;
 }
 
++(NSString *)getLevelDescr {
+    NSInteger level = [self getLevel];
+    
+    if (level == 0) return @"Easy";
+    if (level == 1) return @"Medium";
+    return @"Hard";
+}
+
 +(void)saveTime:(NSInteger)time {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:time forKey:kSettingsTimeOpKey];

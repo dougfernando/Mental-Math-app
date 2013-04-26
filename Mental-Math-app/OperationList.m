@@ -44,6 +44,10 @@
     return [result count];
 }
 
+-(int)precision {
+    return (float)[self rightAnswers]/[self size] * 100;
+}
+
 -(NSString *)scoreAsString {
     int percentage = (int)((float)[self rightAnswers] * 100 / [self size]);
     percentage = percentage < 0? 0: percentage;
@@ -83,13 +87,13 @@
 
     return [NSString stringWithFormat:
             @"Operation  Right  Wrong  Total\n"
-            "-------------------------------\n"
+            "________________________________\n"
             "ADD         %i        %i     %i \n"
             "SUB         %i        %i     %i \n"
             "MULTIP      %i        %i     %i \n"
             "DIV         %i        %i     %i \n"
             "PERC        %i        %i     %i \n"
-            "-------------------------------\n"
+            "________________________________\n"
             "TOTAL       %i        %i     %i \n",
             [rightAddOps count], ([addOps count] - [rightAddOps count]), [addOps count],
             [rightSubOps count], ([subOps count] - [rightSubOps count]), [subOps count],

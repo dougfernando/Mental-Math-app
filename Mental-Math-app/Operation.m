@@ -7,6 +7,7 @@
 //
 
 #import "Operation.h"
+#import "MathHelper.h"
 
 @implementation Operation
 
@@ -40,11 +41,11 @@
 }
 
 -(NSString *)arg1AsString {
-    return [NSString stringWithFormat:@"%i", (int)self.arg1];
+    return [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg1]];
 }
 
 -(NSString *)arg2AsString {
-    return [NSString stringWithFormat:@"%i", (int)self.arg2];
+    return [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg2]];
 }
 
 -(NSString *)operationAsString {

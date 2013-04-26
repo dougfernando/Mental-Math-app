@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A511C35A1728A78E002CC6B1 /* main-background2.png in Resources */ = {isa = PBXBuildFile; fileRef = A511C3581728A78E002CC6B1 /* main-background2.png */; };
+		A511C35B1728A78E002CC6B1 /* Splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = A511C3591728A78E002CC6B1 /* Splash2.png */; };
 		A5169BD01724BD3D0075E873 /* OCTotallyLazy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */; };
 		A5169BD31724DA350075E873 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5169BD21724DA350075E873 /* SplashViewController.m */; };
 		A5169BD51724E0570075E873 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = A5169BD41724E0570075E873 /* Splash.png */; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A511C3581728A78E002CC6B1 /* main-background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background2.png"; sourceTree = "<group>"; };
+		A511C3591728A78E002CC6B1 /* Splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash2.png; sourceTree = "<group>"; };
 		A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCTotallyLazy.framework; path = "../External-Libs/OCTotallyLazy.framework"; sourceTree = "<group>"; };
 		A5169BD11724DA350075E873 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		A5169BD21724DA350075E873 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 		A5191ECD171E1FD300CA83A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A511C3581728A78E002CC6B1 /* main-background2.png */,
+				A511C3591728A78E002CC6B1 /* Splash2.png */,
 				A5EF3E3917260F1900BCE63E /* main-background.png */,
 				A5169BD41724E0570075E873 /* Splash.png */,
 				A5191ECE171E1FD300CA83A6 /* Mental-Math-app-Info.plist */,
@@ -392,6 +398,8 @@
 				A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */,
 				A5169BD51724E0570075E873 /* Splash.png in Resources */,
 				A5EF3E3A17260F1900BCE63E /* main-background.png in Resources */,
+				A511C35A1728A78E002CC6B1 /* main-background2.png in Resources */,
+				A511C35B1728A78E002CC6B1 /* Splash2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

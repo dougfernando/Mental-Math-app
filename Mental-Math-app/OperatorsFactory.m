@@ -110,6 +110,8 @@
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
+
+// BUG: B may be zero
 -(OperatorsPair *)createPairForMultip {
     int factor1a[] = {100, 1000, 10000, 100000, 1000000};
     int factor1 = factor1a[[MathHelper rndFrom:0 to:4]];
@@ -124,6 +126,7 @@
     return [[OperatorsPair alloc] initWith: arg1*factor1 andWithArg2: arg2*factor2];
 }
 
+// TODO: too hard
 -(OperatorsPair *)createPairForDiv {
 	int resulta[] = {10000, 100000, 1000000, 10000000, 100000000};
 	int factor2 = resulta[[MathHelper rndFrom:0 to:4]];

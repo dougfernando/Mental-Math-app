@@ -22,6 +22,7 @@
     UIColor *color = [UIHelper getBlueButtonColor];
     self.runButton.color = color;
     self.settingsButton.color = color;
+    [self.settingsButton addAwesomeIcon:FAIconEdit beforeTitle:TRUE];
     [UIHelper addBackground:self];
 }
 

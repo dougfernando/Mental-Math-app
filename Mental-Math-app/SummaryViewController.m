@@ -33,7 +33,7 @@
     self.settingsButton.color = color;
     
     self.detailedResultLabel.text = [self.operationList detailedResult];
-    [UIHelper addBackground:self];
+//    [UIHelper addBackground:self];
 }
 
 - (void)didReceiveMemoryWarning

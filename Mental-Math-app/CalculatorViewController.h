@@ -32,12 +32,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *arg1Label;
 @property (weak, nonatomic) IBOutlet UILabel *arg2Label;
 @property (weak, nonatomic) IBOutlet UILabel *operatorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
-@property (weak, nonatomic) IBOutlet UIProgressView *timeProgressBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *restartButton;
 @property (weak, nonatomic) IBOutlet BButton *myConfirmButton;
 @property (readwrite) OperationList *operationList;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UILabel *diffLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numOfQuestionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *precisionLabel;
 
 - (IBAction)button1Click:(id)sender;
 - (IBAction)button2Click:(id)sender;

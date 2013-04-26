@@ -23,6 +23,7 @@
 -(Operation *)nextOperation;
 -(int)rightAnswers;
 -(int)size;
+-(int)precision;
 -(NSString *)scoreAsString;
 -(NSString *)detailedResult;
 -(NSString *)macroScore;

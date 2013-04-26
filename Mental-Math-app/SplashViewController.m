@@ -28,15 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
 
-    UIImage *imageToReturn = [UIImage imageNamed:@"Splash.png"];
+    UIImage *imageToReturn = [UIImage imageNamed:@"Splash2.png"];
     imageToReturn = [UIImage imageWithCGImage:imageToReturn.CGImage scale:2 orientation:imageToReturn.imageOrientation];
     
-    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:imageToReturn];
+    self.backgroundImage.image = imageToReturn;
     
-    [self.view addSubview:backgroundImage];
-    [self.view sendSubviewToBack:backgroundImage];
+    [self.view addSubview:self.backgroundImage];
+    [self.view sendSubviewToBack:self.backgroundImage];
 }
 
 -(void)onTimerTick {

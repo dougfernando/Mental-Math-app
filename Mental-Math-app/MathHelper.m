@@ -8,6 +8,8 @@
 
 #import "MathHelper.h"
 
+NSNumberFormatter *formatter;
+
 @implementation MathHelper
 +(int)rndFrom:(int)arg1 to:(int)arg2 {
     int lowerBound = arg1;
@@ -15,4 +17,25 @@
     int rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
     return rndValue;
 }
+
++(NSString *)formatAsString:(NSNumber *)input {
+    if (formatter == nil) {
+        formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    }
+    
+    return [formatter stringFromNumber:input];
+}
+
++(NSNumber *)asNumber:(NSString *)input {
+    if (formatter == nil) {
+        formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    }
+    
+    return [formatter numberFromString:input];
+}
+
+
+
 @end
