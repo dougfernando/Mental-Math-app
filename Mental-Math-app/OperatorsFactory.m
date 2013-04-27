@@ -26,6 +26,7 @@
     int arg2 = [MathHelper rndFrom:1 to:20];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
+
 -(OperatorsPair *)createPairForSub {
     int arg1 = [MathHelper rndFrom:1 to:40];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
@@ -44,6 +45,7 @@
 
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
+
 -(OperatorsPair *)createPairForPerc {
     int arg1 = [MathHelper rndFrom:1 to:9] * 10;
     int arg2 = [MathHelper rndFrom:1 to:10] * 10;
@@ -59,18 +61,22 @@
     int arg2 = [MathHelper rndFrom:1 to:100];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
+
 -(OperatorsPair *)createPairForSub {
     int arg1 = [MathHelper rndFrom:1 to:200];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
+
 -(OperatorsPair *)createPairForMultip {
     int factor1a[] = {1, 10, 100};
     int factor1 = factor1a[[MathHelper rndFrom:0 to:2]];
     int arg1 = [MathHelper rndFrom:1 to:20];
+    
     int factor2a[] = {1, 10, 100};
     int factor2 = factor2a[[MathHelper rndFrom:0 to:2]];
     int arg2 = [MathHelper rndFrom:1 to:20];
+    
     return [[OperatorsPair alloc] initWith: arg1*factor1 andWithArg2: arg2*factor2];
 }
 
@@ -82,8 +88,10 @@
     int factor1a[] = {1, 10};
     int factor1 = factor1a[[MathHelper rndFrom:0 to:1]];
     int arg1 = [MathHelper rndFrom:1 to:10];
+
     return [[OperatorsPair alloc] initWith: arg1*factor1*arg2*factor2 andWithArg2: arg2*factor2];
 }
+
 -(OperatorsPair *)createPairForPerc {
     int arg1a[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 25, 75 };
     int arg1 = arg1a[[MathHelper rndFrom:0 to:10]];
@@ -96,7 +104,6 @@
 }
 @end
 
-
 @implementation HardOperatorsFactory
 -(OperatorsPair *)createPairForAdd {
     int arg1 = [MathHelper rndFrom:1 to:1000];
@@ -104,23 +111,21 @@
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
 
-// TODO implement new strategy
 -(OperatorsPair *)createPairForSub {
     int arg1 = [MathHelper rndFrom:1 to:500];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
 
-// BUG: B may be zero
 -(OperatorsPair *)createPairForMultip {
     int factor1a[] = {100, 1000, 10000, 100000, 1000000};
     int factor1 = factor1a[[MathHelper rndFrom:0 to:4]];
-    int arg1 = [MathHelper rndFrom:1 to:10];
+    int arg1 = [MathHelper rndFrom:1 to:19];
     
 	int finalArg1 = factor1 * arg1;
 	
 	int maxFactor = 9 - (int)log10(finalArg1); // max 10 billion
-	int factor2 = pow(10, [MathHelper rndFrom:0 to:maxFactor - 1] % maxFactor);
+	int factor2 = pow(10, [MathHelper rndFrom:0 to:maxFactor - 1]);
     int arg2 = [MathHelper rndFrom:1 to:10];
 	
     return [[OperatorsPair alloc] initWith: arg1*factor1 andWithArg2: arg2*factor2];

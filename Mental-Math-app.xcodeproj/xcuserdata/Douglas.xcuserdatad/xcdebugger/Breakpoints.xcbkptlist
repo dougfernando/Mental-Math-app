@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/OperationList.m"
-         timestampString = "388641576.234044"
+         timestampString = "388782051.473101"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-scoreAsString"
          landmarkType = "5">
       </FileBreakpoint>
@@ -78,7 +78,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "68"
          endingLineNumber = "68"
-         landmarkName = "-createPairForMultip"
+         landmarkName = "-createPairForSub"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -91,7 +91,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "69"
          endingLineNumber = "69"
-         landmarkName = "-createPairForMultip"
+         landmarkName = "-createPairForSub"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -209,6 +209,19 @@
          startingLineNumber = "44"
          endingLineNumber = "44"
          landmarkName = "-arg1AsString"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mental-Math-app/OperationList.m"
+         timestampString = "388791345.518799"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
+         landmarkName = "-globalScore"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

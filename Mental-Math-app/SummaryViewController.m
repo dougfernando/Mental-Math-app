@@ -31,21 +31,38 @@
 
     self.tryAgainButton.color = color;
     self.settingsButton.color = color;
-    self.addPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList addPrecision]];
-    self.subPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList subPrecision]];
-    self.mulPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList multipPrecision]];
-    self.divPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList divPrecision]];
-    self.perPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList percPrecision]];
-    int totalPrec = (int)((float)[self.operationList rightAnswers]*100/[self.operationList size]);
-    self.totalPrecLabel.text = [NSString stringWithFormat:@"%i%%", totalPrec];
-    
 
-    self.numAddLabel.text = [NSString stringWithFormat:@"%i", [self.operationList addTotal]];
-    self.numSubLabel.text = [NSString stringWithFormat:@"%i", [self.operationList subTotal]];
-    self.numMulLabel.text = [NSString stringWithFormat:@"%i", [self.operationList multipTotal]];
-    self.numDivLabel.text = [NSString stringWithFormat:@"%i", [self.operationList divTotal]];
-    self.numPercLabel.text = [NSString stringWithFormat:@"%i", [self.operationList percTotal]];
-    self.numTotalLabel.text = [NSString stringWithFormat:@"%i", [self.operationList size]];
+    int addTotal = [self.operationList addTotal];
+    self.numAddLabel.text = [NSString stringWithFormat:@"%i", addTotal];
+    int subTotal = [self.operationList subTotal];
+    self.numSubLabel.text = [NSString stringWithFormat:@"%i", subTotal];
+    int mulTotal = [self.operationList multipTotal];
+    self.numMulLabel.text = [NSString stringWithFormat:@"%i", mulTotal];
+    int divTotal = [self.operationList divTotal];
+    self.numDivLabel.text = [NSString stringWithFormat:@"%i", divTotal];
+    int percTotal = [self.operationList percTotal];
+    self.numPercLabel.text = [NSString stringWithFormat:@"%i", percTotal];
+    int total = [self.operationList size];
+    self.numTotalLabel.text = [NSString stringWithFormat:@"%i", total];
+    
+    if (addTotal > 0)
+        self.addPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList addPrecision]];
+    if (subTotal > 0)
+        self.subPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList subPrecision]];
+    if (mulTotal > 0)
+        self.mulPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList multipPrecision]];
+    if (divTotal > 0)
+        self.divPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList divPrecision]];
+    if (percTotal > 0)
+        self.perPrecLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList percPrecision]];
+    if (total > 0) {
+        int totalPrec = (int)((float)[self.operationList rightAnswers]*100/[self.operationList size]);
+        self.totalPrecLabel.text = [NSString stringWithFormat:@"%i%%", totalPrec];
+    }
+    
+    self.summaryResult.text = [NSString stringWithFormat:@"%.02f", [self.operationList globalScore]];
+
+    self.phraseResultLabel.text = [self.operationList globalScoreRange];
 }
 
 - (void)didReceiveMemoryWarning

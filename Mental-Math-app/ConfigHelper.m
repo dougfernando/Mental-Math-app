@@ -20,7 +20,7 @@ NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
 @implementation ConfigHelper
 
 +(int)maxDuration {
-	return ([self getTime] + 1) * 20 ;
+	return ([self getTime] + 1) * 60 ;
 }
 
 +(NSArray *)operationsToConsider {

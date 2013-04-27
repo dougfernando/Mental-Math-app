@@ -8,6 +8,7 @@
 
 #import "OperationList.h"
 #import "OperationFactory.h"
+#import "ConfigHelper.h"
 #import <OCTotallyLazy/OCTotallyLazy.h>
 
 @implementation OperationList
@@ -68,7 +69,7 @@
 
 -(int)getPrecision: (NSString *)input {
     NSArray *percOps = [self getOperationsBySymbol:input];
-    if ([percOps count] == 0) return 0;
+    if ([percOps count] == 0) return -1;
     NSArray *rightOps = [self getRightOperations:percOps];
     return (int)((float)[rightOps count]*100/[percOps count]);
 }
@@ -105,9 +106,40 @@
 -(int)percTotal {
     return  [[self getOperationsBySymbol:@"%"] count];
 }
+-(float)globalScore {
+    int level = [ConfigHelper getLevel];
+    int minutes = [ConfigHelper maxDuration] / 60;
+    int factor = 0;
+    switch (level) {
+        case 0:
+            factor = 50;
+            break;
+        case 1:
+            factor = 35;
+            break;
+        case 2:
+            factor = 20;
+            break;
+        default:
+            break;
+    }
+    
+    float rightness = (float)[self rightAnswers] / [self size];
 
--(NSString *)macroScore {
-    return nil;
+    float total = (float)[self size] / (factor * minutes);
+    
+    if (rightness < 0.5)
+        return total * rightness + rightness * (1 - rightness);
+
+    return(total * 0.5 + rightness * 0.5);
+}
+
+-(NSString *)globalScoreRange {
+    if ([self globalScore] < 0.5)
+        return @"Not good!";
+    else if ([self globalScore] < 0.7)
+        return @"Good!";
+    return @"Great!";
 }
 
 @end

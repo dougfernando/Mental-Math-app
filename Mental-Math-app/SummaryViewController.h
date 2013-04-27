@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numDivLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numPercLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numTotalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phraseResultLabel;
 
 - (IBAction)tryAgainClick:(id)sender;
 - (IBAction)settingsClick:(id)sender;

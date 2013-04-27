@@ -24,7 +24,6 @@
 -(int)rightAnswers;
 -(int)size;
 -(int)precision;
--(NSString *)macroScore;
 -(int)addPrecision;
 -(int)addTotal;
 -(int)subPrecision;
@@ -35,4 +34,6 @@
 -(int)divTotal;
 -(int)percPrecision;
 -(int)percTotal;
+-(float)globalScore;
+-(NSString *)globalScoreRange;
 @end
