@@ -126,15 +126,14 @@
     return [[OperatorsPair alloc] initWith: arg1*factor1 andWithArg2: arg2*factor2];
 }
 
-// TODO: too hard
 -(OperatorsPair *)createPairForDiv {
 	int resulta[] = {10000, 100000, 1000000, 10000000, 100000000};
 	int factor2 = resulta[[MathHelper rndFrom:0 to:4]];
-	int result = [MathHelper rndFrom:1 to:20] * factor2;
+	int result = [MathHelper rndFrom:2 to:9] * factor2;
 	
     int factor3a[] = {1, 10};
     int factor3 = factor3a[[MathHelper rndFrom:0 to:1]];
-    int arg2 = [MathHelper rndFrom:1 to:20] * factor3;
+    int arg2 = [MathHelper rndFrom:2 to:9] * factor3;
 
     return [[OperatorsPair alloc] initWith:(result * arg2) andWithArg2: arg2];
 }

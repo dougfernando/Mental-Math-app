@@ -66,42 +66,44 @@
     }];
 }
 
+-(int)getPrecision: (NSString *)input {
+    NSArray *percOps = [self getOperationsBySymbol:input];
+    if ([percOps count] == 0) return 0;
+    NSArray *rightOps = [self getRightOperations:percOps];
+    return (int)((float)[rightOps count]*100/[percOps count]);
+}
 
--(NSString *)detailedResult {
-    NSArray *addOps = [self getOperationsBySymbol:@"+"];
-    NSArray *rightAddOps = [self getRightOperations:addOps];
+-(int)addPrecision {
+    return [self getPrecision:@"+"];
+}
 
-    NSArray *subOps = [self getOperationsBySymbol:@"-"];
-    NSArray *rightSubOps = [self getRightOperations:subOps];
+-(int)addTotal {
+    return  [[self getOperationsBySymbol:@"+"] count];
+}
+-(int)subPrecision {
+    return [self getPrecision:@"-"];
 
-    NSArray *multipOps = [self getOperationsBySymbol:@"*"];
-    NSArray *rightMultipOps = [self getRightOperations:multipOps];
-
-    NSArray *divOps = [self getOperationsBySymbol:@"/"];
-    NSArray *rightDivOps = [self getRightOperations:divOps];
-
-    NSArray *percOps = [self getOperationsBySymbol:@"+"];
-    NSArray *rightPercOps = [self getRightOperations:percOps];
-    
-    NSArray *rightOps = [self getRightOperations:_pastOperations];
-
-    return [NSString stringWithFormat:
-            @"Operation  Right  Wrong  Total\n"
-            "________________________________\n"
-            "ADD         %i        %i     %i \n"
-            "SUB         %i        %i     %i \n"
-            "MULTIP      %i        %i     %i \n"
-            "DIV         %i        %i     %i \n"
-            "PERC        %i        %i     %i \n"
-            "________________________________\n"
-            "TOTAL       %i        %i     %i \n",
-            [rightAddOps count], ([addOps count] - [rightAddOps count]), [addOps count],
-            [rightSubOps count], ([subOps count] - [rightSubOps count]), [subOps count],
-            [rightMultipOps count], ([multipOps count] - [rightMultipOps count]), [multipOps count],
-            [rightDivOps count], ([divOps count] - [rightDivOps count]), [divOps count],
-            [rightPercOps count], ([percOps count] - [rightPercOps count]), [percOps count],
-            [rightOps count], ([_pastOperations count] - [rightOps count]), [_pastOperations count]
-    ];
+}
+-(int)subTotal {
+    return  [[self getOperationsBySymbol:@"-"] count];
+}
+-(int)multipPrecision {
+    return [self getPrecision:@"*"];
+}
+-(int)multipTotal {
+    return  [[self getOperationsBySymbol:@"*"] count];
+}
+-(int)divPrecision {
+    return [self getPrecision:@"/"];
+}
+-(int)divTotal {
+    return  [[self getOperationsBySymbol:@"/"] count];
+};
+-(int)percPrecision {
+    return [self getPrecision:@"%"];
+}
+-(int)percTotal {
+    return  [[self getOperationsBySymbol:@"%"] count];
 }
 
 -(NSString *)macroScore {

@@ -82,7 +82,7 @@
     lbl.textColor = [UIColor whiteColor];
     lbl.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
     lbl.shadowOffset = CGSizeMake(0, -1);
-    lbl.font = [UIFont boldSystemFontOfSize:25];
+    lbl.font = [UIFont boldSystemFontOfSize:20];
     lbl.text = message;
     lbl.textAlignment = NSTextAlignmentCenter;
     [v addSubview:lbl];
@@ -211,10 +211,12 @@
 }
 
 - (void) deleteLastNumber {
-    NSString *current = self.resultLabel.text;
-    if ([current length] > 0) {
+    NSString *currentLabel = self.resultLabel.text;
+    if ([currentLabel length] > 0) {
+        NSString *current = [currentNumber stringValue];
         NSString *new = [current substringToIndex:[current length] - 1];
-        self.resultLabel.text = new;
+        currentNumber = [MathHelper asNumber:new];
+        self.resultLabel.text = [MathHelper formatAsString:currentNumber];
     }
 }
 
