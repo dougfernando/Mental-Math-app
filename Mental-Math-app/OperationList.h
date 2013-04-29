@@ -10,14 +10,14 @@
 #import "Operation.h"
 #import "OperationFactory.h"
 
-@interface OperationList : NSObject
+@interface OperationList : NSObject<NSCoding>
 {
     OperationFactory *_factory;
 	Operation *_currentOperation;
 	NSMutableArray *_pastOperations;
 }
 
-
+@property (readwrite) NSDate *practiceDatetime;
 -(id) initWithFactory:(OperationFactory *)factory;
 -(Operation *)currentOperation;
 -(Operation *)nextOperation;

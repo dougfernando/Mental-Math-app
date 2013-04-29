@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "OperatorsPair.h"
 
-@interface Operation : NSObject
+@interface Operation : NSObject<NSCoding>
 
 @property (readwrite) float arg1;
 @property (readwrite) float arg2;

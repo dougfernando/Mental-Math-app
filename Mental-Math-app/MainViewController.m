@@ -20,10 +20,9 @@
     [super viewDidLoad];
     
     UIColor *color = [UIHelper getBlueButtonColor];
-//    self.runButton.color = color;
-   [self.runButton setType:BButtonTypeSuccess];
+    [self.runButton setType:BButtonTypeSuccess];
     self.settingsButton.color = color;
-//    [UIHelper addBackground:self];
+    [self.pastResultsButton setType:BButtonTypeWarning];
 }
 
 - (void)didReceiveMemoryWarning

@@ -142,4 +142,30 @@
     return @"Great!";
 }
 
+#pragma mark NSCoding
+-(id)initWithCoder:(NSCoder*)decoder {
+    self = [super init];
+    if( self != nil) {
+        self.practiceDatetime = [decoder decodeObjectForKey:@"practiceDatetime"];
+        NSArray* encodedOps = [decoder decodeObjectForKey:@"_pastOperations"];
+        _pastOperations = [NSMutableArray arrayWithCapacity:[encodedOps count]];
+        for (NSData* encodedOp in encodedOps) {
+            Operation* decodedOp = (Operation*)[NSKeyedUnarchiver unarchiveObjectWithData:encodedOp];
+            [_pastOperations addObject:decodedOp];
+        }
+    }
+    
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder*)encoder {
+    [encoder encodeObject:self.practiceDatetime forKey:@"practiceDatetime"];
+    NSMutableArray* encodedOps = [NSMutableArray arrayWithCapacity:[_pastOperations count]];
+    for (Operation *op in _pastOperations) {
+        NSData* encodedOp = [NSKeyedArchiver archivedDataWithRootObject:op];
+        [encodedOps addObject:encodedOp];
+    }
+    [encoder encodeObject:encodedOps forKey:@"_pastOperations"];
+}
+
 @end

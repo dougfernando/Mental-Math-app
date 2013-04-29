@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OperationList.h"
 
 @interface ConfigHelper : NSObject
 
@@ -27,4 +28,7 @@
 +(void) saveTime:(NSInteger) time;
 +(NSInteger) getTime;
 +(NSString *)getLevelDescr;
++(void)saveOperationList:(OperationList *)operationList;
++(NSArray *)getAllOperationLists;
++(void)clearOperationLists;
 @end

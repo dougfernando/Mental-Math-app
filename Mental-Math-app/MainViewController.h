@@ -12,5 +12,6 @@
 @interface MainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet BButton *runButton;
 @property (weak, nonatomic) IBOutlet BButton *settingsButton;
+@property (weak, nonatomic) IBOutlet BButton *pastResultsButton;
 
 @end

@@ -16,6 +16,7 @@ NSString *kSettingsMultipOpKey = @"kSettingsMultipOpKey";
 NSString *kSettingsDivOpKey = @"kSettingsDivOpKey";
 NSString *kSettingsPercOpKey = @"kSettingsPercOpKey";
 NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
+NSString *kDataOperationsList = @"kDataOperationsList";
 
 @implementation ConfigHelper
 
@@ -126,5 +127,30 @@ NSString *kSettingsTimeOpKey = @"kSettingsTimeOpKey";
     return result;
 }
 
++(void)saveOperationList:(OperationList *)operationList {
+    NSArray *currentOperationLists = [self getAllOperationLists];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithArray:currentOperationLists];
+    [result addObject:operationList];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:result];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:data forKey:kDataOperationsList];
+}
+
++(NSArray *)getAllOperationLists {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *current = [defaults objectForKey:kDataOperationsList];
+
+    if (current == nil) {
+        return [[NSMutableArray alloc] init];
+    }
+    
+    return [NSKeyedUnarchiver unarchiveObjectWithData:current];
+}
+
++(void)clearOperationLists {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:kDataOperationsList];
+}
 
 @end

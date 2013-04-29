@@ -137,6 +137,8 @@
     if ([[segue identifier] isEqualToString:@"toSummarySegue"]) {
         SummaryViewController *vc = [segue destinationViewController];
         vc.operationList = self.operationList;
+        self.operationList.practiceDatetime = [[NSDate alloc] init];
+        [ConfigHelper saveOperationList:self.operationList];
     }
 }
 
