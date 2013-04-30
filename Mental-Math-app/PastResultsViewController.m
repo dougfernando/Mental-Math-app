@@ -9,6 +9,7 @@
 #import "PastResultsViewController.h"
 #import "OperationList.h"
 #import "ConfigHelper.h"
+#import "SummaryViewController.h"
 
 @interface PastResultsViewController ()
 {
@@ -118,6 +119,29 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+
+}
+
+- (IBAction)clearButtonCllick:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: NSLocalizedString(@"Clear results history",nil)
+                          message: NSLocalizedString(@"Are you sure you want to delete all previous results?",nil)
+                          delegate: self
+                          cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
+                          otherButtonTitles: NSLocalizedString(@"Delete",nil), nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"Delete was cancelled by the user");
+            break;
+        case 1:
+            [ConfigHelper clearOperationLists];
+            break;
+    }
 }
 
 @end

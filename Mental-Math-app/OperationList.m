@@ -63,7 +63,8 @@
 
 -(NSArray *)getOperationsBySymbol:(NSString *)operationSymbol {
     return [_pastOperations filter:^BOOL(Operation *op) {
-        return [[op operationAsString] isEqualToString:operationSymbol];
+        BOOL result = [[op operatorAsString] isEqualToString:operationSymbol];
+        return result;
     }];
 }
 

@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/CalculatorViewController.m"
-         timestampString = "388896393.84883"
+         timestampString = "388983975.816979"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "212"
-         endingLineNumber = "212"
+         startingLineNumber = "222"
+         endingLineNumber = "222"
          landmarkName = "-appendNumber:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/Operation.m"
-         timestampString = "388900965.725331"
+         timestampString = "388983404.157156"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "179"
-         endingLineNumber = "179"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-execute"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/CalculatorViewController.m"
-         timestampString = "388896393.84883"
+         timestampString = "388983975.816979"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "199"
-         endingLineNumber = "199"
+         startingLineNumber = "201"
+         endingLineNumber = "201"
          landmarkName = "-confirmButtonClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/OperationList.m"
-         timestampString = "388791345.518799"
+         timestampString = "388983042.145698"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-globalScore"
          landmarkType = "5">
       </FileBreakpoint>
@@ -274,6 +274,45 @@
          startingLineNumber = "61"
          endingLineNumber = "61"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mental-Math-app/CalculatorViewController.m"
+         timestampString = "388983975.816979"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "202"
+         endingLineNumber = "202"
+         landmarkName = "-confirmButtonClick:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mental-Math-app/CalculatorViewController.m"
+         timestampString = "388983975.816979"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "230"
+         endingLineNumber = "230"
+         landmarkName = "-deleteLastNumber"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mental-Math-app/CalculatorViewController.m"
+         timestampString = "388983975.816979"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "227"
+         endingLineNumber = "227"
+         landmarkName = "-deleteLastNumber"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

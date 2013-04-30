@@ -14,7 +14,7 @@
 @property (readwrite) float arg1;
 @property (readwrite) float arg2;
 @property (readwrite) float result;
-@property (readwrite) char operation;
+@property (readwrite) char operationOperator;
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2;
 -(id)initWithPair: (OperatorsPair *)pair;
@@ -22,6 +22,7 @@
 -(NSString *)executeAsString;
 -(NSString *)arg1AsString;
 -(NSString *)arg2AsString;
+-(NSString *)operatorAsString;
 -(NSString *)operationAsString;
 -(NSString *)description;
 -(BOOL)isCorrect;

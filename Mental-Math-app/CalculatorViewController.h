@@ -29,9 +29,7 @@
 @property (weak, nonatomic) IBOutlet BButton *button000;
 @property (weak, nonatomic) IBOutlet BButton *buttonDel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
-@property (weak, nonatomic) IBOutlet UILabel *arg1Label;
-@property (weak, nonatomic) IBOutlet UILabel *arg2Label;
-@property (weak, nonatomic) IBOutlet UILabel *operatorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *operationLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *restartButton;
 @property (weak, nonatomic) IBOutlet BButton *myConfirmButton;
 @property (readwrite) OperationList *operationList;

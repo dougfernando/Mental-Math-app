@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PastResultsViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+- (IBAction)clearButtonCllick:(id)sender;
 
 @end

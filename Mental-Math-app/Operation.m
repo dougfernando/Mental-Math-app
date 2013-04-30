@@ -48,12 +48,16 @@
     return [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg2]];
 }
 
+-(NSString *)operatorAsString {
+    return [NSString stringWithFormat:@"%c", self.operationOperator];
+}
+
 -(NSString *)operationAsString {
-    return [NSString stringWithFormat:@"%c", self.operation];
+    return [NSString stringWithFormat:@"%@ %c %@", [self arg1AsString], self.operationOperator, [self arg2AsString]];
 }
 
 -(NSString *)description {
-   return [NSString stringWithFormat: @"%i %c %i = %f; is correct? %@", (int)self.arg1, self.operation, (int)self.arg2, self.result, ([self isCorrect] ? @"TRUE" : @"FALSE")];
+   return [NSString stringWithFormat: @"%i %c %i = %f; is correct? %@", (int)self.arg1, self.operationOperator, (int)self.arg2, self.result, ([self isCorrect] ? @"TRUE" : @"FALSE")];
 }
 
 #pragma mark NSCoding
@@ -95,7 +99,7 @@
     [encoder encodeFloat:self.arg1 forKey:@"arg1"];
     [encoder encodeFloat:self.arg2 forKey:@"arg2"];
     [encoder encodeFloat:self.result forKey:@"result"];
-    [encoder encodeObject:[NSString stringWithFormat:@"%c", self.operation] forKey:@"op"];
+    [encoder encodeObject:[NSString stringWithFormat:@"%c", self.operationOperator] forKey:@"op"];
 }
 
 @end
@@ -104,7 +108,7 @@
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
-        self.operation = '+';
+        self.operationOperator = '+';
     }
     
     return self;
@@ -120,7 +124,7 @@
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
-        self.operation = '-';
+        self.operationOperator = '-';
     }
     
     return self;
@@ -136,10 +140,14 @@
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
-        self.operation = '*';
+        self.operationOperator = '*';
     }
     
     return self;
+}
+
+-(NSString *)operationAsString {
+    return [NSString stringWithFormat:@"%@ x %@", [self arg1AsString], [self arg2AsString]];
 }
 
 
@@ -153,7 +161,7 @@
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
-        self.operation = '/';
+        self.operationOperator = '/';
     }
     
     return self;
@@ -169,7 +177,7 @@
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2 {
     if ( self = [super initWith:aArg1 andWithArg2:aArg2] ) {
-        self.operation = '%';
+        self.operationOperator = '%';
     }
     
     return self;
@@ -178,5 +186,10 @@
 -(float)execute {
     return self.arg1 / 100 * self.arg2;
 }
+
+-(NSString *)operationAsString {
+    return [NSString stringWithFormat:@"%@%% of %@", [self arg1AsString], [self arg2AsString]];
+}
+
 
 @end

@@ -13,6 +13,7 @@
 #import "SummaryViewController.h"
 #import "UIHelper.h"
 #import "MathHelper.h"
+#import "TSMessage.h"
 
 @interface CalculatorViewController ()
 {
@@ -32,6 +33,8 @@
     [self startSetup];
     
     [self configButtons];
+    
+    currentNumber = nil;
  }
 
 -(void)configButtons {
@@ -61,9 +64,8 @@
 
 -(void)setNewOperation {
     Operation *currentOperation = [self.operationList currentOperation];
-    self.arg1Label.text = [currentOperation arg1AsString];
-    self.arg2Label.text = [currentOperation arg2AsString];
-    self.operatorLabel.text = [currentOperation operationAsString];
+    // TODO change font size based on the operation length
+    self.operationLabel.text = [currentOperation operationAsString];
     self.numOfQuestionsLabel.text = [NSString stringWithFormat:@"%i", [self.operationList size]];
     self.precisionLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList precision]];
     self.resultLabel.text = @"";
@@ -197,12 +199,20 @@
 
 - (IBAction)confirmButtonClick:(id)sender {
     Operation *currentOperation = [self.operationList currentOperation];
-	currentOperation.result = [currentNumber floatValue];
+    if (currentNumber == nil) {
+        [TSMessage showNotificationInViewController:self
+                                          withTitle:@"No data"
+                                        withMessage:@"You should type a response before proceding..."
+                                           withType:TSMessageNotificationTypeWarning
+                                       withDuration:2.0];
+    } else {
+        currentOperation.result = [currentNumber floatValue];
 	
-    NSLog(@"%@", [currentOperation description]);
+        NSLog(@"%@", [currentOperation description]);
     
-    [self.operationList nextOperation];
-    [self setNewOperation];
+        [self.operationList nextOperation];
+        [self setNewOperation];
+    }
 }
 
 - (void)appendNumber:(id)input {
@@ -217,7 +227,11 @@
     if ([currentLabel length] > 0) {
         NSString *current = [currentNumber stringValue];
         NSString *new = [current substringToIndex:[current length] - 1];
-        currentNumber = [MathHelper asNumber:new];
+        if ([new isEqualToString:@""]) {
+            currentNumber = nil;
+        } else {
+            currentNumber = [MathHelper asNumber:new];
+        }
         self.resultLabel.text = [MathHelper formatAsString:currentNumber];
     }
 }
