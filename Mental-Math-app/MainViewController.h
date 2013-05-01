@@ -10,8 +10,10 @@
 #import "BButton.h"
 
 @interface MainViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet BButton *runButton;
 @property (weak, nonatomic) IBOutlet BButton *settingsButton;
 @property (weak, nonatomic) IBOutlet BButton *pastResultsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end

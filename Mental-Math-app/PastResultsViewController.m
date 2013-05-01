@@ -142,6 +142,7 @@
             break;
         case 1:
             [ConfigHelper clearOperationLists];
+            [self performSegueWithIdentifier:@"toMainViewSegue" sender:self];
             break;
     }
 }

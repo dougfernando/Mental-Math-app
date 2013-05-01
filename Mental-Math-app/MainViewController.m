@@ -19,16 +19,14 @@
 {
     [super viewDidLoad];
     
-    UIColor *color = [UIHelper getBlueButtonColor];
     [self.runButton setType:BButtonTypeSuccess];
-    self.settingsButton.color = color;
+    self.settingsButton.color = [UIHelper getBlueButtonColor];
     [self.pastResultsButton setType:BButtonTypeWarning];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -12,10 +12,6 @@
 #import "BButton.h"
 
 @interface CalculatorViewController : UIViewController
-{
-    NSTimer *timer;
-    int secondsLeft;
-}
 @property (weak, nonatomic) IBOutlet BButton *button1;
 @property (weak, nonatomic) IBOutlet BButton *button2;
 @property (weak, nonatomic) IBOutlet BButton *button3;
@@ -53,10 +49,5 @@
 - (IBAction)buttonDelClick:(id)sender;
 - (IBAction)restartClick:(id)sender;
 - (IBAction)confirmButtonClick:(id)sender;
-- (void) onTimerTick;
-- (void) updateTimeLeft;
-- (void) setNewOperation;
-- (void) appendNumber:(id)input;
-- (void) deleteLastNumber;
 
 @end

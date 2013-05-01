@@ -27,10 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *color = [UIHelper getBlueButtonColor];;
-
-    self.tryAgainButton.color = color;
-    self.settingsButton.color = color;
+    self.settingsButton.color = [UIHelper getBlueButtonColor];;
+    [self.tryAgainButton setType:BButtonTypeSuccess];
 
     int addTotal = [self.operationList addTotal];
     self.numAddLabel.text = [NSString stringWithFormat:@"%i", addTotal];

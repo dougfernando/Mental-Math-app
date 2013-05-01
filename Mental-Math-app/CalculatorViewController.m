@@ -20,6 +20,8 @@
     NSNumber *currentNumber;
     UIProgressView *timeProgressBar;
     UILabel *timeLeftLabel;
+    NSTimer *timer;
+    int secondsLeft;
 }
 
 @end
@@ -29,25 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
     [self startSetup];
-    
-    [self configButtons];
-    
+    [self.myConfirmButton setType:BButtonTypeSuccess];
     currentNumber = nil;
  }
-
--(void)configButtons {
-    UIColor *color = [UIHelper getBlueButtonColor];
-    NSArray  *buttons = [NSArray arrayWithObjects: self.button1, self.button2, self.button3,
-                        self.button4, self.button5, self.button6, self.button7,
-                        self.button8, self.button9, self.button0, self.button000, self.buttonDel,
-                         nil ];
-    for (BButton *button in buttons) {
-        button.color = color;
-    }
-    [self.myConfirmButton setType:BButtonTypeSuccess];
-}
 
 -(void)startSetup {
     self.operationList = [[OperationList alloc] initWithFactory:[[RandomOperationFactory alloc] init]];
@@ -141,6 +128,9 @@
         vc.operationList = self.operationList;
         self.operationList.practiceDatetime = [[NSDate alloc] init];
         [ConfigHelper saveOperationList:self.operationList];
+    }
+    if ([[segue identifier] isEqualToString:@"backToMainSegue"]) {
+        [timer invalidate];
     }
 }
 
