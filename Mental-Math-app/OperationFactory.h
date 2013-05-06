@@ -13,6 +13,8 @@
 @interface OperationFactory : NSObject
 -(id)init;
 -(Operation *)create;
+@property (readwrite) NSInteger practiceLevel;
+@property (readwrite) NSInteger maxTimeInSeconds;
 @end
 
 @interface RandomOperationFactory: OperationFactory

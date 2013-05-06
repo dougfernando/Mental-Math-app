@@ -8,6 +8,8 @@
 
 #import "SummaryViewController.h"
 #import "UIHelper.h"
+#import "Social/Social.h"
+
 
 @interface SummaryViewController ()
 
@@ -27,8 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.settingsButton.color = [UIHelper getBlueButtonColor];;
     [self.tryAgainButton setType:BButtonTypeSuccess];
+    [self.mainButton setType:BButtonTypeWarning];
+    [self.tweetButton setType:BButtonTypeTwitter];
+    [self.facebookButton setType:BButtonTypeFacebook];    
 
     int addTotal = [self.operationList addTotal];
     self.numAddLabel.text = [NSString stringWithFormat:@"%i", addTotal];
@@ -58,9 +62,11 @@
         self.totalPrecLabel.text = [NSString stringWithFormat:@"%i%%", totalPrec];
     }
     
-    self.summaryResult.text = [NSString stringWithFormat:@"%.02f", [self.operationList globalScore]];
+    self.summaryResult.text = [NSString stringWithFormat:@"%.01f%%", [self.operationList globalScore]];
 
     self.phraseResultLabel.text = [self.operationList globalScoreRange];
+    
+    [UIHelper addBackground:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,5 +79,60 @@
 }
 
 - (IBAction)settingsClick:(id)sender {
+}
+
+- (IBAction)postToFacebook:(id)sender {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result) {
+            if (result == SLComposeViewControllerResultCancelled) {
+                NSLog(@"Cancelled");
+            } else {
+                NSLog(@"Done");
+            }
+            
+            [controller dismissViewControllerAnimated:YES completion:Nil];
+        };
+
+        controller.completionHandler =myBlock;
+
+        [controller setInitialText:[NSString stringWithFormat:@"My score at Mental Math was %@. Try you too: ", self.summaryResult.text]];
+        [controller addURL:[NSURL URLWithString:@"www.google.com.br/search?q=mental+math"]];
+        [controller addImage:[UIImage imageNamed:@"mental-math-icon.png"]];
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    } else {
+        NSLog(@"UnAvailable");
+    }
+}
+
+- (IBAction)tweetResult:(id)sender {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result) {
+            if (result == SLComposeViewControllerResultCancelled) {
+                NSLog(@"Cancelled");
+            } else {
+                NSLog(@"Done");
+            }
+            
+            [controller dismissViewControllerAnimated:YES completion:Nil];
+        };
+        
+        controller.completionHandler =myBlock;
+        
+        [controller setInitialText:[NSString stringWithFormat:@"My score at Mental Math was %@. Try you too: %@", self.summaryResult.text, @"www.google.com.br/search?q=mental+math"]];
+        [controller addImage:[UIImage imageNamed:@"mental-math-icon.png"]];
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+        
+    } else {
+        NSLog(@"UnAvailable");
+    }
 }
 @end

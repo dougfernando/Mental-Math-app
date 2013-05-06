@@ -64,7 +64,8 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     cell.textLabel.text = [dateFormatter stringFromDate:list.practiceDatetime];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.02f", [list globalScore]];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.01f%%", [list globalScore]];
     
     return cell;
 }

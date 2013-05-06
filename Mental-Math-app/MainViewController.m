@@ -22,6 +22,7 @@
     [self.runButton setType:BButtonTypeSuccess];
     self.settingsButton.color = [UIHelper getBlueButtonColor];
     [self.pastResultsButton setType:BButtonTypeWarning];
+//    [UIHelper addBackground:self];
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,12 +8,15 @@
 
 #import "OperationFactory.h"
 #import "ConfigHelper.h"
-#import "LevelFactory.h"
 
 @implementation OperationFactory
 
 -(id)init {
     self = [super init];
+    
+    self.practiceLevel = [ConfigHelper getLevel];
+    self.maxTimeInSeconds = [ConfigHelper maxDuration];
+    
     return self;
 }
 
@@ -30,13 +33,25 @@
     return self;
 }
 
+-(OperatorsFactory *)createOperatorsFactory {
+    NSInteger level = self.practiceLevel;
+    
+    if (level == 0) {
+       	return [[EasyOperatorsFactory alloc] init];
+    } else if (level == 1) {
+       	return [[MediumOperatorsFactory alloc] init];
+    }
+    
+	return [[HardOperatorsFactory alloc] init];
+}
+
 -(Operation *)create {
     NSArray *operations = [ConfigHelper operationsToConsider];
     int position = arc4random() % [operations count];
     
 	char operationChar = [[operations objectAtIndex:position] characterAtIndex:0];
     Operation *op = nil;
-	OperatorsFactory *factory = [LevelFactory createOperatorsFactory];
+	OperatorsFactory *factory = [self createOperatorsFactory];
     switch (operationChar) {
         case '+':
             op = [[PlusOperation alloc] initWithPair:[factory createPairForAdd]];

@@ -15,6 +15,9 @@
     OperationFactory *_factory;
 	Operation *_currentOperation;
 	NSMutableArray *_pastOperations;
+    NSInteger _practiceLevel;
+    NSInteger _timeInSeconds;
+
 }
 
 @property (readwrite) NSDate *practiceDatetime;

@@ -7,7 +7,6 @@
 //
 
 #import "ConfigHelper.h"
-#import "LevelFactory.h"
 
 NSString *kSettingsLevelKey = @"kSettingsLevelKey";
 NSString *kSettingsAddOpKey = @"kSettingsAddOpKey";

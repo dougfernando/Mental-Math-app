@@ -33,8 +33,22 @@
     [super viewDidLoad];
     [self startSetup];
     [self.myConfirmButton setType:BButtonTypeSuccess];
+    self.myConfirmButton.alpha = 0.8;
     currentNumber = nil;
- }
+    [UIHelper addBackground:self];
+    [self configButtons];
+}
+
+-(void)configButtons {
+    UIColor *color = [UIColor colorWithRed:9.0/255 green:113.0/255 blue:178.0/255 alpha:0.7];
+    NSArray  *buttons = [NSArray arrayWithObjects: self.button1, self.button2, self.button3,
+                         self.button4, self.button5, self.button6, self.button7,
+                         self.button8, self.button9, self.button0, self.button000, self.buttonDel,
+                         nil ];
+    for (BButton *button in buttons) {
+        button.color = color;
+    }
+}
 
 -(void)startSetup {
     self.operationList = [[OperationList alloc] initWithFactory:[[RandomOperationFactory alloc] init]];
@@ -55,7 +69,7 @@
     self.operationLabel.text = [currentOperation operationAsString];
     self.numOfQuestionsLabel.text = [NSString stringWithFormat:@"%i", [self.operationList size]];
     self.precisionLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList precision]];
-    self.resultLabel.text = @"";
+    self.resultLabel.text = @"answer!";
     self.myConfirmButton.enabled = true;
     currentNumber = nil;
 }

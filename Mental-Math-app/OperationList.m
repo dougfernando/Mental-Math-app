@@ -8,7 +8,6 @@
 
 #import "OperationList.h"
 #import "OperationFactory.h"
-#import "ConfigHelper.h"
 #import <OCTotallyLazy/OCTotallyLazy.h>
 
 @implementation OperationList
@@ -18,6 +17,8 @@
         _pastOperations = [[NSMutableArray alloc] init];
 		_factory = factory;
 		_currentOperation = [factory create];
+        _practiceLevel = _factory.practiceLevel;
+        _timeInSeconds = _factory.maxTimeInSeconds;
     }
     	
     return self;
@@ -42,7 +43,7 @@
         return [op isCorrect];
     }];
     
-    return [result count];
+    return result == nil? 0 : [result count];
 }
 
 -(int)precision {
@@ -108,8 +109,8 @@
     return  [[self getOperationsBySymbol:@"%"] count];
 }
 -(float)globalScore {
-    int level = [ConfigHelper getLevel];
-    int minutes = [ConfigHelper maxDuration] / 60;
+    int level = _practiceLevel;
+    int minutes = _timeInSeconds / 60;
     int factor = 0;
     switch (level) {
         case 0:
@@ -125,20 +126,16 @@
             break;
     }
     
-    float rightness = (float)[self rightAnswers] / [self size];
-
-    float total = (float)[self size] / (factor * minutes);
-    
-    if (rightness < 0.5)
-        return total * rightness + rightness * (1 - rightness);
-
-    return(total * 0.5 + rightness * 0.5);
+    int numOfQuestionsExptected = factor * minutes;
+    float qtyFactor = 1 - (float)(numOfQuestionsExptected - [self size]) / numOfQuestionsExptected;
+    float scorePrecition = [self precision];
+    return qtyFactor * scorePrecition;
 }
 
 -(NSString *)globalScoreRange {
-    if ([self globalScore] < 0.5)
+    if ([self globalScore] < 50)
         return @"Not good!";
-    else if ([self globalScore] < 0.7)
+    else if ([self globalScore] < 70)
         return @"Good!";
     return @"Great!";
 }
@@ -154,6 +151,8 @@
             Operation* decodedOp = (Operation*)[NSKeyedUnarchiver unarchiveObjectWithData:encodedOp];
             [_pastOperations addObject:decodedOp];
         }
+        _timeInSeconds = [decoder decodeIntegerForKey:@"_timeInSeconds"];
+        _practiceLevel = [decoder decodeIntegerForKey:@"_practiceLevel"];
     }
     
     return self;
@@ -161,6 +160,9 @@
 
 -(void)encodeWithCoder:(NSCoder*)encoder {
     [encoder encodeObject:self.practiceDatetime forKey:@"practiceDatetime"];
+    [encoder encodeInteger:_practiceLevel forKey:@"_practiceLevel"];
+    [encoder encodeInteger:_timeInSeconds forKey:@"_timeInSeconds"];
+    
     NSMutableArray* encodedOps = [NSMutableArray arrayWithCapacity:[_pastOperations count]];
     for (Operation *op in _pastOperations) {
         NSData* encodedOp = [NSKeyedArchiver archivedDataWithRootObject:op];

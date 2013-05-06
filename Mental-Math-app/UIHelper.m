@@ -15,7 +15,7 @@ static UIImage *backgroundImage;
 
 +(UIImage *)getBackgroundImage {
     if (backgroundImage == nil) {
-        backgroundImage = [UIImage imageNamed:@"main-background.png"];
+        backgroundImage = [UIImage imageNamed:@"background.png"];
         backgroundImage = [UIImage imageWithCGImage:backgroundImage.CGImage scale:2 orientation:backgroundImage.imageOrientation];
     }
     return backgroundImage;
@@ -25,6 +25,7 @@ static UIImage *backgroundImage;
     UIImage *imageToReturn = [self getBackgroundImage];
     
     UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:imageToReturn];
+    backgroundImage.alpha = 0.8;
     
     [viewController.view addSubview:backgroundImage];
     [viewController.view sendSubviewToBack:backgroundImage];

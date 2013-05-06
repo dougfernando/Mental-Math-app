@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *summaryResult;
 @property (weak, nonatomic) IBOutlet BButton *tryAgainButton;
 @property (weak, nonatomic) IBOutlet BButton *settingsButton;
+@property (weak, nonatomic) IBOutlet BButton *mainButton;
+@property (weak, nonatomic) IBOutlet BButton *tweetButton;
+
+@property (weak, nonatomic) IBOutlet BButton *facebookButton;
 @property (readwrite) OperationList *operationList;
 @property (weak, nonatomic) IBOutlet UILabel *subPrecLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addPrecLabel;
@@ -31,6 +35,8 @@
 
 - (IBAction)tryAgainClick:(id)sender;
 - (IBAction)settingsClick:(id)sender;
+- (IBAction)postToFacebook:(id)sender;
+- (IBAction)tweetResult:(id)sender;
 
 
 @end

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A5191EC2171E1FD300CA83A6"
-               BuildableName = "Mental-Math-app.app"
+               BuildableName = "Mental Math.app"
                BlueprintName = "Mental-Math-app"
                ReferencedContainer = "container:Mental-Math-app.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5191EC2171E1FD300CA83A6"
-            BuildableName = "Mental-Math-app.app"
+            BuildableName = "Mental Math.app"
             BlueprintName = "Mental-Math-app"
             ReferencedContainer = "container:Mental-Math-app.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5191EC2171E1FD300CA83A6"
-            BuildableName = "Mental-Math-app.app"
+            BuildableName = "Mental Math.app"
             BlueprintName = "Mental-Math-app"
             ReferencedContainer = "container:Mental-Math-app.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5191EC2171E1FD300CA83A6"
-            BuildableName = "Mental-Math-app.app"
+            BuildableName = "Mental Math.app"
             BlueprintName = "Mental-Math-app"
             ReferencedContainer = "container:Mental-Math-app.xcodeproj">
          </BuildableReference>

@@ -28,7 +28,7 @@
 }
 
 -(OperatorsPair *)createPairForSub {
-    int arg1 = [MathHelper rndFrom:1 to:40];
+    int arg1 = [MathHelper rndFrom:2 to:40];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }

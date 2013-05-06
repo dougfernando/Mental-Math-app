@@ -10,6 +10,9 @@
 		3641A91E3EE64EB88834A0D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B64E679F964E63AB7E7DF8 /* libPods.a */; };
 		A511C35A1728A78E002CC6B1 /* main-background2.png in Resources */ = {isa = PBXBuildFile; fileRef = A511C3581728A78E002CC6B1 /* main-background2.png */; };
 		A511C35B1728A78E002CC6B1 /* Splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = A511C3591728A78E002CC6B1 /* Splash2.png */; };
+		A515CF04173593820054EC16 /* main-background5.png in Resources */ = {isa = PBXBuildFile; fileRef = A515CF03173593820054EC16 /* main-background5.png */; };
+		A515CF06173593950054EC16 /* Splash3.png in Resources */ = {isa = PBXBuildFile; fileRef = A515CF05173593950054EC16 /* Splash3.png */; };
+		A515CF081735A6090054EC16 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A515CF071735A6090054EC16 /* background.png */; };
 		A5169BD01724BD3D0075E873 /* OCTotallyLazy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */; };
 		A5169BD31724DA350075E873 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5169BD21724DA350075E873 /* SplashViewController.m */; };
 		A5169BD51724E0570075E873 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = A5169BD41724E0570075E873 /* Splash.png */; };
@@ -32,15 +35,16 @@
 		A5191F03171E1FD400CA83A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5191F01171E1FD400CA83A6 /* InfoPlist.strings */; };
 		A5191F06171E1FD400CA83A6 /* Mental_Math_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */; };
 		A5191F11171E3F7200CA83A6 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F10171E3F7200CA83A6 /* Operation.m */; };
-		A53A62801721566D00B7DE87 /* LevelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A627F1721566D00B7DE87 /* LevelFactory.m */; };
 		A5404C721722228500B1A69E /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C6B1722228500B1A69E /* BButton.m */; };
 		A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */; };
 		A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5404C6F1722228500B1A69E /* FontAwesome.ttf */; };
 		A5404C751722228500B1A69E /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C711722228500B1A69E /* UIColor+BButton.m */; };
+		A54330751737313200FB1E18 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330741737313200FB1E18 /* Social.framework */; };
 		A5526C171723655C007967AA /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5526C161723655C007967AA /* SummaryViewController.m */; };
 		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
 		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
 		A57DA8CC1730BF8900265445 /* main-background3.png in Resources */ = {isa = PBXBuildFile; fileRef = A57DA8CB1730BF8900265445 /* main-background3.png */; };
+		A58EEE481734797300C40694 /* mental-math-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A58EEE471734797300C40694 /* mental-math-icon.png */; };
 		A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909083171F6DA3005C63AF /* OperationFactory.m */; };
 		A5964CD2172E0E32004B349E /* PastResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5964CD1172E0E32004B349E /* PastResultsViewController.m */; };
 		A5A6FE8817233204003D3EB4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A6FE8717233204003D3EB4 /* SettingsViewController.m */; };
@@ -66,11 +70,14 @@
 		39B64E679F964E63AB7E7DF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A511C3581728A78E002CC6B1 /* main-background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background2.png"; sourceTree = "<group>"; };
 		A511C3591728A78E002CC6B1 /* Splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash2.png; sourceTree = "<group>"; };
+		A515CF03173593820054EC16 /* main-background5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background5.png"; sourceTree = "<group>"; };
+		A515CF05173593950054EC16 /* Splash3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash3.png; sourceTree = "<group>"; };
+		A515CF071735A6090054EC16 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCTotallyLazy.framework; path = "../External-Libs/OCTotallyLazy.framework"; sourceTree = "<group>"; };
 		A5169BD11724DA350075E873 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		A5169BD21724DA350075E873 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		A5169BD41724E0570075E873 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
-		A5191EC3171E1FD300CA83A6 /* Mental-Math-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mental-Math-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5191EC3171E1FD300CA83A6 /* Mental Math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mental Math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5191EC6171E1FD300CA83A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5191EC8171E1FD300CA83A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5191ECA171E1FD300CA83A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,8 +104,6 @@
 		A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mental_Math_appTests.m; sourceTree = "<group>"; };
 		A5191F0F171E3F7200CA83A6 /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
 		A5191F10171E3F7200CA83A6 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
-		A53A627E1721566D00B7DE87 /* LevelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFactory.h; sourceTree = "<group>"; };
-		A53A627F1721566D00B7DE87 /* LevelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFactory.m; sourceTree = "<group>"; };
 		A5404C6A1722228500B1A69E /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
 		A5404C6B1722228500B1A69E /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
 		A5404C6C1722228500B1A69E /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		A5404C6F1722228500B1A69E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		A5404C701722228500B1A69E /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
 		A5404C711722228500B1A69E /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
+		A54330741737313200FB1E18 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A5526C151723655C007967AA /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		A5526C161723655C007967AA /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		A567115D17220056009A6414 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 		A57C8508171ECEED00C5C4F0 /* OperationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationList.h; sourceTree = "<group>"; };
 		A57C8509171ECEED00C5C4F0 /* OperationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationList.m; sourceTree = "<group>"; };
 		A57DA8CB1730BF8900265445 /* main-background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background3.png"; sourceTree = "<group>"; };
+		A58EEE471734797300C40694 /* mental-math-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mental-math-icon.png"; path = "../mental-math-icon.png"; sourceTree = "<group>"; };
 		A5909082171F6DA3005C63AF /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
 		A5909083171F6DA3005C63AF /* OperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactory.m; sourceTree = "<group>"; };
 		A5964CD0172E0E32004B349E /* PastResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastResultsViewController.h; sourceTree = "<group>"; };
@@ -135,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54330751737313200FB1E18 /* Social.framework in Frameworks */,
 				A5169BD01724BD3D0075E873 /* OCTotallyLazy.framework in Frameworks */,
 				A5191EC7171E1FD300CA83A6 /* UIKit.framework in Frameworks */,
 				A5191EC9171E1FD300CA83A6 /* Foundation.framework in Frameworks */,
@@ -159,6 +167,7 @@
 		A5191EBA171E1FD300CA83A6 = {
 			isa = PBXGroup;
 			children = (
+				A54330741737313200FB1E18 /* Social.framework */,
 				A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */,
 				A5404C691722228500B1A69E /* BButton */,
 				A5191ECC171E1FD300CA83A6 /* Mental-Math-app */,
@@ -172,7 +181,7 @@
 		A5191EC4171E1FD300CA83A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5191EC3171E1FD300CA83A6 /* Mental-Math-app.app */,
+				A5191EC3171E1FD300CA83A6 /* Mental Math.app */,
 				A5191EF7171E1FD400CA83A6 /* Mental-Math-appTests.octest */,
 			);
 			name = Products;
@@ -208,6 +217,10 @@
 		A5191ECD171E1FD300CA83A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A58EEE471734797300C40694 /* mental-math-icon.png */,
+				A515CF071735A6090054EC16 /* background.png */,
+				A515CF05173593950054EC16 /* Splash3.png */,
+				A515CF03173593820054EC16 /* main-background5.png */,
 				A57DA8CB1730BF8900265445 /* main-background3.png */,
 				A511C3581728A78E002CC6B1 /* main-background2.png */,
 				A511C3591728A78E002CC6B1 /* Splash2.png */,
@@ -275,8 +288,6 @@
 				A5909083171F6DA3005C63AF /* OperationFactory.m */,
 				A5B904FE1720DB9D00AD889B /* OperatorsPair.h */,
 				A5B904FF1720DB9D00AD889B /* OperatorsPair.m */,
-				A53A627E1721566D00B7DE87 /* LevelFactory.h */,
-				A53A627F1721566D00B7DE87 /* LevelFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -335,7 +346,7 @@
 			);
 			name = "Mental-Math-app";
 			productName = "Mental-Math-app";
-			productReference = A5191EC3171E1FD300CA83A6 /* Mental-Math-app.app */;
+			productReference = A5191EC3171E1FD300CA83A6 /* Mental Math.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A5191EF6171E1FD400CA83A6 /* Mental-Math-appTests */ = {
@@ -401,6 +412,10 @@
 				A511C35A1728A78E002CC6B1 /* main-background2.png in Resources */,
 				A511C35B1728A78E002CC6B1 /* Splash2.png in Resources */,
 				A57DA8CC1730BF8900265445 /* main-background3.png in Resources */,
+				A58EEE481734797300C40694 /* mental-math-icon.png in Resources */,
+				A515CF04173593820054EC16 /* main-background5.png in Resources */,
+				A515CF06173593950054EC16 /* Splash3.png in Resources */,
+				A515CF081735A6090054EC16 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +488,6 @@
 				A5B904FD1720DB6800AD889B /* OperatorsFactory.m in Sources */,
 				A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */,
 				A5B905031720E6FB00AD889B /* MathHelper.m in Sources */,
-				A53A62801721566D00B7DE87 /* LevelFactory.m in Sources */,
 				A567115F17220056009A6414 /* ConfigHelper.m in Sources */,
 				A5404C721722228500B1A69E /* BButton.m in Sources */,
 				A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */,
@@ -552,7 +566,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "doug.fernando@gmail.com";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "doug.fernando@gmail.com";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -567,6 +582,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -584,7 +601,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "doug.fernando@gmail.com";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "doug.fernando@gmail.com";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -592,6 +610,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -602,6 +622,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 228FBDC3563A4BB2BB6EF173 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../External-Libs\"",
@@ -609,7 +631,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mental-Math-app/Mental-Math-app-Prefix.pch";
 				INFOPLIST_FILE = "Mental-Math-app/Mental-Math-app-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mental Math";
+				PROVISIONING_PROFILE = "E31B95CF-883D-4911-9A47-CB8483775A24";
+				"PROVISIONING_PROFILE[sdk=*]" = "471AFBEA-BA75-4F3A-94EA-5CC5DB1D7707";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -619,6 +643,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 228FBDC3563A4BB2BB6EF173 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../External-Libs\"",
@@ -626,7 +652,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mental-Math-app/Mental-Math-app-Prefix.pch";
 				INFOPLIST_FILE = "Mental-Math-app/Mental-Math-app-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mental Math";
+				PROVISIONING_PROFILE = "E31B95CF-883D-4911-9A47-CB8483775A24";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "471AFBEA-BA75-4F3A-94EA-5CC5DB1D7707";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
