@@ -29,10 +29,6 @@
 		A5191F03171E1FD400CA83A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5191F01171E1FD400CA83A6 /* InfoPlist.strings */; };
 		A5191F06171E1FD400CA83A6 /* Mental_Math_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */; };
 		A5191F11171E3F7200CA83A6 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F10171E3F7200CA83A6 /* Operation.m */; };
-		A5404C721722228500B1A69E /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C6B1722228500B1A69E /* BButton.m */; };
-		A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */; };
-		A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5404C6F1722228500B1A69E /* FontAwesome.ttf */; };
-		A5404C751722228500B1A69E /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A5404C711722228500B1A69E /* UIColor+BButton.m */; };
 		A54330751737313200FB1E18 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330741737313200FB1E18 /* Social.framework */; };
 		A5526C171723655C007967AA /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5526C161723655C007967AA /* SummaryViewController.m */; };
 		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
@@ -95,13 +91,6 @@
 		A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mental_Math_appTests.m; sourceTree = "<group>"; };
 		A5191F0F171E3F7200CA83A6 /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
 		A5191F10171E3F7200CA83A6 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
-		A5404C6A1722228500B1A69E /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
-		A5404C6B1722228500B1A69E /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
-		A5404C6C1722228500B1A69E /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
-		A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
-		A5404C6F1722228500B1A69E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		A5404C701722228500B1A69E /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
-		A5404C711722228500B1A69E /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		A54330741737313200FB1E18 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A5526C151723655C007967AA /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		A5526C161723655C007967AA /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
@@ -165,7 +154,6 @@
 				A5D590391738A6EE00449814 /* Default-568h@2x.png */,
 				A54330741737313200FB1E18 /* Social.framework */,
 				A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */,
-				A5404C691722228500B1A69E /* BButton */,
 				A5191ECC171E1FD300CA83A6 /* Mental-Math-app */,
 				A5191EFE171E1FD400CA83A6 /* Mental-Math-appTests */,
 				A5191EC5171E1FD300CA83A6 /* Frameworks */,
@@ -298,28 +286,6 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		A5404C691722228500B1A69E /* BButton */ = {
-			isa = PBXGroup;
-			children = (
-				A5404C6A1722228500B1A69E /* BButton.h */,
-				A5404C6B1722228500B1A69E /* BButton.m */,
-				A5404C6C1722228500B1A69E /* NSString+FontAwesome.h */,
-				A5404C6D1722228500B1A69E /* NSString+FontAwesome.m */,
-				A5404C6E1722228500B1A69E /* resources */,
-				A5404C701722228500B1A69E /* UIColor+BButton.h */,
-				A5404C711722228500B1A69E /* UIColor+BButton.m */,
-			);
-			path = BButton;
-			sourceTree = "<group>";
-		};
-		A5404C6E1722228500B1A69E /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				A5404C6F1722228500B1A69E /* FontAwesome.ttf */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,7 +362,6 @@
 				A5191ED1171E1FD300CA83A6 /* InfoPlist.strings in Resources */,
 				A5191EE0171E1FD400CA83A6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				A5191EE3171E1FD400CA83A6 /* MainStoryboard_iPad.storyboard in Resources */,
-				A5404C741722228500B1A69E /* FontAwesome.ttf in Resources */,
 				A58EEE481734797300C40694 /* mental-math-icon.png in Resources */,
 				A515CF04173593820054EC16 /* main-background-568h@2x.png in Resources */,
 				A515CF06173593950054EC16 /* splash-568h@2x.png in Resources */,
@@ -478,9 +443,6 @@
 				A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */,
 				A5B905031720E6FB00AD889B /* MathHelper.m in Sources */,
 				A567115F17220056009A6414 /* ConfigHelper.m in Sources */,
-				A5404C721722228500B1A69E /* BButton.m in Sources */,
-				A5404C731722228500B1A69E /* NSString+FontAwesome.m in Sources */,
-				A5404C751722228500B1A69E /* UIColor+BButton.m in Sources */,
 				A5A6FE8817233204003D3EB4 /* SettingsViewController.m in Sources */,
 				A5526C171723655C007967AA /* SummaryViewController.m in Sources */,
 				A5169BD31724DA350075E873 /* SplashViewController.m in Sources */,
@@ -570,7 +532,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=*]" = "";
@@ -598,7 +560,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -621,6 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mental-Math-app/Mental-Math-app-Prefix.pch";
 				INFOPLIST_FILE = "Mental-Math-app/Mental-Math-app-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Mental Math";
 				PROVISIONING_PROFILE = "E31B95CF-883D-4911-9A47-CB8483775A24";
 				"PROVISIONING_PROFILE[sdk=*]" = "471AFBEA-BA75-4F3A-94EA-5CC5DB1D7707";
@@ -642,6 +605,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mental-Math-app/Mental-Math-app-Prefix.pch";
 				INFOPLIST_FILE = "Mental-Math-app/Mental-Math-app-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Mental Math";
 				PROVISIONING_PROFILE = "E31B95CF-883D-4911-9A47-CB8483775A24";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "471AFBEA-BA75-4F3A-94EA-5CC5DB1D7707";
