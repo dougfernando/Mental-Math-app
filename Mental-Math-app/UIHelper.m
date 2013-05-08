@@ -8,30 +8,25 @@
 
 #import "UIHelper.h"
 
-static UIImage *backgroundImage;
-
-
 @implementation UIHelper
 
-+(UIImage *)getBackgroundImage {
-    if (backgroundImage == nil) {
-        backgroundImage = [UIImage imageNamed:@"background.png"];
-        backgroundImage = [UIImage imageWithCGImage:backgroundImage.CGImage scale:2 orientation:backgroundImage.imageOrientation];
-    }
-    return backgroundImage;
++(void)addBackground:(UIViewController *)viewController image:(NSString *) imageName alpha:(float)alphaValue {
+    viewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:imageName]];
+    
+//    UIImage *imageToReturn = [UIImage imageNamed:imageName];
+//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:imageToReturn];
+//    backgroundImage.contentMode = UIViewContentModeScaleToFill;
+//    backgroundImage.alpha = alphaValue;
+//
+//    [viewController.view addSubview:backgroundImage];
+//    [viewController.view sendSubviewToBack:backgroundImage];
+
 }
 
-+(void)addBackground:(UIViewController *)viewController {
-    UIImage *imageToReturn = [self getBackgroundImage];
-    
-    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:imageToReturn];
-    backgroundImage.alpha = 0.8;
-    
-    [viewController.view addSubview:backgroundImage];
-    [viewController.view sendSubviewToBack:backgroundImage];
++(void)addBackground:(UIViewController *)viewController image:(NSString *) imageName {
+    [self addBackground:viewController image:imageName alpha:1.0];
 }
 
-+(UIColor *)getBlueButtonColor {
-    return [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
-}
+
+
 @end

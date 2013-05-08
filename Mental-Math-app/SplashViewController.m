@@ -7,6 +7,7 @@
 //
 
 #import "SplashViewController.h"
+#import "UIHelper.h"
 
 @interface SplashViewController ()
 {
@@ -19,9 +20,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -29,14 +27,14 @@
 {
     [super viewDidLoad];
     timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
+    [UIHelper addBackground:self image:@"splash.png"];
 
-    UIImage *imageToReturn = [UIImage imageNamed:@"Splash3.png"];
-    imageToReturn = [UIImage imageWithCGImage:imageToReturn.CGImage scale:2 orientation:imageToReturn.imageOrientation];
-    
-    self.backgroundImage.image = imageToReturn;
-    
-    [self.view addSubview:self.backgroundImage];
-    [self.view sendSubviewToBack:self.backgroundImage];
+//    UIImage *imageToReturn = [UIImage imageNamed:@"splash.png"];
+//    self.backgroundImage.image = imageToReturn;
+//    
+//    [self.view addSubview:self.backgroundImage];
+//    [self.view sendSubviewToBack:self.backgroundImage];
+
 }
 
 -(void)onTimerTick {

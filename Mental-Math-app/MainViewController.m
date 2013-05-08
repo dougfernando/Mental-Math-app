@@ -20,9 +20,9 @@
     [super viewDidLoad];
     
     [self.runButton setType:BButtonTypeSuccess];
-    self.settingsButton.color = [UIHelper getBlueButtonColor];
+    self.settingsButton.color = [UIColor blueColor];
     [self.pastResultsButton setType:BButtonTypeWarning];
-//    [UIHelper addBackground:self];
+    [UIHelper addBackground:self image:@"main-background.png"];
 }
 
 - (void)didReceiveMemoryWarning

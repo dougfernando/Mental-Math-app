@@ -35,7 +35,7 @@
     [self.myConfirmButton setType:BButtonTypeSuccess];
     self.myConfirmButton.alpha = 0.8;
     currentNumber = nil;
-    [UIHelper addBackground:self];
+    [UIHelper addBackground:self image:@"background.png" alpha:0.8];
     [self configButtons];
 }
 

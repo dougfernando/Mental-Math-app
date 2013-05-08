@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface UIHelper : NSObject
-+(void)addBackground:(UIViewController *)viewController;
-+(UIColor *)getBlueButtonColor;
++(void)addBackground:(UIViewController *)viewController image:(NSString *) imageName alpha:(float)alphaValue;
++(void)addBackground:(UIViewController *)viewController image:(NSString *) imageName;
 @end
