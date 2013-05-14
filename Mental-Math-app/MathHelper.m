@@ -27,6 +27,18 @@ NSNumberFormatter *formatter;
     return [formatter stringFromNumber:input];
 }
 
++(NSString *)formatAsString:(NSNumber *)input precision:(NSInteger)precision {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setMaximumFractionDigits:precision];
+    [formatter setMinimumFractionDigits:precision];
+    
+    NSString *result = [formatter stringFromNumber:input];
+    
+    return result;
+}
+
+
 +(NSNumber *)asNumber:(NSString *)input {
     if (formatter == nil) {
         formatter = [[NSNumberFormatter alloc] init];

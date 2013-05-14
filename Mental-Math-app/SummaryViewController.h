@@ -34,7 +34,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *phraseResultLabel;
 
 - (IBAction)tryAgainClick:(id)sender;
-- (IBAction)settingsClick:(id)sender;
 - (IBAction)postToFacebook:(id)sender;
 - (IBAction)tweetResult:(id)sender;
 

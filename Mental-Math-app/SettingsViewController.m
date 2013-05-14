@@ -35,7 +35,8 @@
     self.divOp.on = [ConfigHelper getDivOp];
     self.percOp.on = [ConfigHelper getPercOp];
     self.timeSegment.selectedSegmentIndex = [ConfigHelper getTime];
-//    [UIHelper addBackground:self];
+    [UIHelper addBackground:self image:@"background.png" alpha:0.8];
+    self.tableView.backgroundView = nil;
 }
 
 - (void)didReceiveMemoryWarning

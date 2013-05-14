@@ -38,5 +38,6 @@
 -(int)percPrecision;
 -(int)percTotal;
 -(float)globalScore;
+-(Operation *)operationAt:(NSUInteger)index;
 -(NSString *)globalScoreRange;
 @end

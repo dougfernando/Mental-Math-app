@@ -38,6 +38,10 @@
     return [_pastOperations count];
 }
 
+-(Operation *)operationAt:(NSUInteger)index {
+    return [_pastOperations objectAtIndex:index];
+}
+
 -(int)rightAnswers {
     NSArray *result = [_pastOperations filter:^BOOL(Operation *op) {
         return [op isCorrect];

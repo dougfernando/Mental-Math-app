@@ -28,13 +28,6 @@
     [super viewDidLoad];
     timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
     [UIHelper addBackground:self image:@"splash.png"];
-
-//    UIImage *imageToReturn = [UIImage imageNamed:@"splash.png"];
-//    self.backgroundImage.image = imageToReturn;
-//    
-//    [self.view addSubview:self.backgroundImage];
-//    [self.view sendSubviewToBack:self.backgroundImage];
-
 }
 
 -(void)onTimerTick {

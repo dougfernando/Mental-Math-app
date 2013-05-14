@@ -11,5 +11,6 @@
 @interface MathHelper : NSObject
 +(int)rndFrom:(int)arg1 to:(int)arg2;
 +(NSString *)formatAsString:(NSNumber *)input;
++(NSString *)formatAsString:(NSNumber *)input precision:(NSInteger)precision;
 +(NSNumber *)asNumber:(NSString *)input;
 @end

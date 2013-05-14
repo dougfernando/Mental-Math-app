@@ -63,7 +63,7 @@
 }
 
 -(OperatorsPair *)createPairForSub {
-    int arg1 = [MathHelper rndFrom:1 to:200];
+    int arg1 = [MathHelper rndFrom:2 to:200];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }
@@ -112,7 +112,7 @@
 }
 
 -(OperatorsPair *)createPairForSub {
-    int arg1 = [MathHelper rndFrom:1 to:500];
+    int arg1 = [MathHelper rndFrom:2 to:500];
     int arg2 = [MathHelper rndFrom:1 to:arg1];
     return [[OperatorsPair alloc] initWith: arg1 andWithArg2: arg2];
 }

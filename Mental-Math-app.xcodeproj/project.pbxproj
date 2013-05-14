@@ -46,6 +46,7 @@
 		A5D590381738A6D700449814 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D590351738A6D700449814 /* splash@2x.png */; };
 		A5D5903A1738A6EE00449814 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D590391738A6EE00449814 /* Default-568h@2x.png */; };
 		A5EF3E3D17261F8300BCE63E /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF3E3C17261F8300BCE63E /* UIHelper.m */; };
+		A5F9BBF01741EC5900A64C26 /* ViewOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F9BBEF1741EC5800A64C26 /* ViewOperationsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,9 +117,11 @@
 		A5D590331738A6D700449814 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		A5D590341738A6D700449814 /* main-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background@2x.png"; sourceTree = "<group>"; };
 		A5D590351738A6D700449814 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
-		A5D590391738A6EE00449814 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A5D590391738A6EE00449814 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		A5EF3E3B17261F8300BCE63E /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
 		A5EF3E3C17261F8300BCE63E /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
+		A5F9BBEE1741EC5800A64C26 /* ViewOperationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewOperationsViewController.h; sourceTree = "<group>"; };
+		A5F9BBEF1741EC5800A64C26 /* ViewOperationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewOperationsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +154,6 @@
 		A5191EBA171E1FD300CA83A6 = {
 			isa = PBXGroup;
 			children = (
-				A5D590391738A6EE00449814 /* Default-568h@2x.png */,
 				A54330741737313200FB1E18 /* Social.framework */,
 				A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */,
 				A5191ECC171E1FD300CA83A6 /* Mental-Math-app */,
@@ -201,6 +203,7 @@
 		A5191ECD171E1FD300CA83A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5D590391738A6EE00449814 /* Default-568h@2x.png */,
 				A5D590331738A6D700449814 /* background@2x.png */,
 				A5D590341738A6D700449814 /* main-background@2x.png */,
 				A5D590351738A6D700449814 /* splash@2x.png */,
@@ -250,6 +253,8 @@
 				A5169BD21724DA350075E873 /* SplashViewController.m */,
 				A5964CD0172E0E32004B349E /* PastResultsViewController.h */,
 				A5964CD1172E0E32004B349E /* PastResultsViewController.m */,
+				A5F9BBEE1741EC5800A64C26 /* ViewOperationsViewController.h */,
+				A5F9BBEF1741EC5800A64C26 /* ViewOperationsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				A5EF3E3D17261F8300BCE63E /* UIHelper.m in Sources */,
 				A5964CD2172E0E32004B349E /* PastResultsViewController.m in Sources */,
 				A5BE443D1739C4F400B40F92 /* UIImage+H568.m in Sources */,
+				A5F9BBF01741EC5900A64C26 /* ViewOperationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

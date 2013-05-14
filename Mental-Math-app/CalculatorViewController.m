@@ -65,7 +65,6 @@
 
 -(void)setNewOperation {
     Operation *currentOperation = [self.operationList currentOperation];
-    // TODO change font size based on the operation length
     self.operationLabel.text = [currentOperation operationAsString];
     self.numOfQuestionsLabel.text = [NSString stringWithFormat:@"%i", [self.operationList size]];
     self.precisionLabel.text = [NSString stringWithFormat:@"%i%%", [self.operationList precision]];
