@@ -47,6 +47,7 @@
 		A5D5903A1738A6EE00449814 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D590391738A6EE00449814 /* Default-568h@2x.png */; };
 		A5EF3E3D17261F8300BCE63E /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF3E3C17261F8300BCE63E /* UIHelper.m */; };
 		A5F9BBF01741EC5900A64C26 /* ViewOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F9BBEF1741EC5800A64C26 /* ViewOperationsViewController.m */; };
+		A5F9BBF31743DCBC00A64C26 /* OperationTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F9BBF21743DCBB00A64C26 /* OperationTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		A5EF3E3C17261F8300BCE63E /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		A5F9BBEE1741EC5800A64C26 /* ViewOperationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewOperationsViewController.h; sourceTree = "<group>"; };
 		A5F9BBEF1741EC5800A64C26 /* ViewOperationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewOperationsViewController.m; sourceTree = "<group>"; };
+		A5F9BBF11743DCBB00A64C26 /* OperationTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTableCell.h; sourceTree = "<group>"; };
+		A5F9BBF21743DCBB00A64C26 /* OperationTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +258,8 @@
 				A5964CD1172E0E32004B349E /* PastResultsViewController.m */,
 				A5F9BBEE1741EC5800A64C26 /* ViewOperationsViewController.h */,
 				A5F9BBEF1741EC5800A64C26 /* ViewOperationsViewController.m */,
+				A5F9BBF11743DCBB00A64C26 /* OperationTableCell.h */,
+				A5F9BBF21743DCBB00A64C26 /* OperationTableCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				A5964CD2172E0E32004B349E /* PastResultsViewController.m in Sources */,
 				A5BE443D1739C4F400B40F92 /* UIImage+H568.m in Sources */,
 				A5F9BBF01741EC5900A64C26 /* ViewOperationsViewController.m in Sources */,
+				A5F9BBF31743DCBC00A64C26 /* OperationTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

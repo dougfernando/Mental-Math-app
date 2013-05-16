@@ -33,7 +33,13 @@
     [self.mainButton setType:BButtonTypeWarning];
     [self.tweetButton setType:BButtonTypeTwitter];
     [self.facebookButton setType:BButtonTypeFacebook];
-    
+    [UIHelper addBackground:self image:@"background.png" alpha:0.8];
+    [self setResults];
+}
+
+
+- (void)setResults
+{
     int addTotal = [self.operationList addTotal];
     self.numAddLabel.text = [NSString stringWithFormat:@"%i", addTotal];
     int subTotal = [self.operationList subTotal];
@@ -63,6 +69,7 @@
     self.phraseResultLabel.text = [self.operationList globalScoreRange];
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -75,7 +82,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"toOperationsSegue"]) {
-        ViewOperationsViewController *vc = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        ViewOperationsViewController *vc = [segue destinationViewController];
         vc.operationList = self.operationList;
     }
 }

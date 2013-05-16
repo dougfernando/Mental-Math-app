@@ -20,14 +20,6 @@
 
 @implementation PastResultsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -35,6 +27,10 @@
 
     pastResults = [ConfigHelper getAllOperationLists];
 
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [super viewWillAppear:YES];
+    
     [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]]];
     self.tableView.backgroundView = nil;
 }

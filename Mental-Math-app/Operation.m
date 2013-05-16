@@ -56,15 +56,39 @@
     return [NSString stringWithFormat:@"%@ %c %@", [self arg1AsString], self.operationOperator, [self arg2AsString]];
 }
 
--(NSString *)description {
-   return [NSString stringWithFormat: @"%i %c %i = %f; is correct? %@", (int)self.arg1, self.operationOperator, (int)self.arg2, self.result, ([self isCorrect] ? @"TRUE" : @"FALSE")];
+-(NSNumber *)durationInSeconds {
+    return [NSNumber numberWithDouble:[self.endTime timeIntervalSinceDate:self.startTime]];
 }
+
+-(NSString *)description {
+    NSString *arg1 = [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg1]];
+    NSString *arg2 = [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg2]];
+    NSString *operator = [self operatorAsString];
+    NSString *result = [MathHelper formatAsString:[NSNumber numberWithFloat:self.result]];
+    NSString *isRight = [self isCorrect] ? @"RIGHT" : @"WRONG";
+    
+    
+   return [NSString stringWithFormat: @"%@ %@ %@ = %@ => %@", arg1, operator, arg2, result, isRight];
+}
+
+-(NSString *)operationDescription {
+    NSString *arg1 = [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg1]];
+    NSString *arg2 = [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg2]];
+    NSString *operator = [self operatorAsString];
+    NSString *result = [MathHelper formatAsString:[NSNumber numberWithFloat:self.result]];
+    
+    return [NSString stringWithFormat: @"%@ %@ %@ = %@", arg1, operator, arg2, result];
+}
+
 
 #pragma mark NSCoding
 -(id)initWithCoder:(NSCoder*)decoder {
     float arg1 = [decoder decodeFloatForKey:@"arg1"];
     float arg2 = [decoder decodeFloatForKey:@"arg2"];
     float result = [decoder decodeFloatForKey:@"result"];
+    NSDate *start = [decoder decodeObjectForKey:@"start"];
+    NSDate *end = [decoder decodeObjectForKey:@"end"];
+
     NSString *opstr = [decoder decodeObjectForKey:@"op"];
     char op = [opstr characterAtIndex:0];
     Operation *resultOp = nil;
@@ -91,6 +115,8 @@
     }
     
     resultOp.result = result;
+    resultOp.startTime = start;
+    resultOp.endTime = end;
     
     return resultOp;
 }
@@ -99,6 +125,9 @@
     [encoder encodeFloat:self.arg1 forKey:@"arg1"];
     [encoder encodeFloat:self.arg2 forKey:@"arg2"];
     [encoder encodeFloat:self.result forKey:@"result"];
+    [encoder encodeObject:self.startTime forKey:@"start"];
+    [encoder encodeObject:self.endTime forKey:@"end"];
+    
     [encoder encodeObject:[NSString stringWithFormat:@"%c", self.operationOperator] forKey:@"op"];
 }
 

@@ -8,6 +8,8 @@
 
 #import "ViewOperationsViewController.h"
 #import "SummaryViewController.h"
+#import "MathHelper.h"
+#import "OperationTableCell.h"
 
 @interface ViewOperationsViewController ()
 
@@ -15,24 +17,12 @@
 
 @implementation ViewOperationsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [super viewWillAppear:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,18 +46,25 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    OperationTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     Operation *operation = [self.operationList operationAt:indexPath.row];
-    cell.textLabel.text = [operation description];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Right: %@", [operation executeAsString]];
+    cell.operationLabel.text = [operation operationDescription];
+    cell.rightAnswerLabel.text = [NSString stringWithFormat:@"Right: %@",
+                                 [MathHelper formatAsString: [NSNumber numberWithFloat:[operation execute]]]];
+    cell.resultLabel.text = [operation isCorrect] ? @"right" : @"wrong";
+    cell.resultLabel.textColor =
+        [operation isCorrect] ?
+            [UIColor colorWithRed:0.15 green:0.31 blue:0.07 alpha:1.0] :
+            [UIColor colorWithRed:0.36 green:0.06 blue:0.00 alpha:1.0];
+    cell.durationLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[operation durationInSeconds] precision:1]];
     
     return cell;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"goBackSegue"]) {
-        SummaryViewController *vc = [[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        SummaryViewController *vc = [segue destinationViewController];
         vc.operationList = self.operationList;
     }
 }

@@ -17,6 +17,7 @@
         _pastOperations = [[NSMutableArray alloc] init];
 		_factory = factory;
 		_currentOperation = [factory create];
+        _currentOperation.startTime = [NSDate date];
         _practiceLevel = _factory.practiceLevel;
         _timeInSeconds = _factory.maxTimeInSeconds;
     }
@@ -29,8 +30,10 @@
 }
 
 -(Operation *)nextOperation {
+    _currentOperation.endTime = [NSDate date];
 	[_pastOperations addObject:_currentOperation];
 	_currentOperation = [_factory create];
+    _currentOperation.startTime = [NSDate date];
 	return _currentOperation;
 }
 

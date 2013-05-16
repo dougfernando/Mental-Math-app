@@ -14,6 +14,8 @@
 @property (readwrite) float arg1;
 @property (readwrite) float arg2;
 @property (readwrite) float result;
+@property (readwrite) NSDate *startTime;
+@property (readwrite) NSDate *endTime;
 @property (readwrite) char operationOperator;
 
 -(id)initWith: (float)aArg1 andWithArg2:(float)aArg2;
@@ -25,7 +27,9 @@
 -(NSString *)operatorAsString;
 -(NSString *)operationAsString;
 -(NSString *)description;
+-(NSString *)operationDescription;
 -(BOOL)isCorrect;
+-(NSNumber *)durationInSeconds;
 @end
 
 @interface PlusOperation: Operation

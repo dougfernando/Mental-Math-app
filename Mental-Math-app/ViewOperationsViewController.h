@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "OperationList.h"
 
-@interface ViewOperationsViewController : UITableViewController
+@interface ViewOperationsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (readwrite) OperationList *operationList;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

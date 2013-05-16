@@ -21,7 +21,7 @@
     
     [self.runButton setType:BButtonTypeSuccess];
     self.settingsButton.color = [UIColor blueColor];
-    [self.pastResultsButton setType:BButtonTypeWarning];
+    self.pastResultsButton.color = [UIColor blueColor];
     [UIHelper addBackground:self image:@"main-background.png"];
 }
 
