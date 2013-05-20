@@ -20,7 +20,6 @@
 		A5191ED3171E1FD300CA83A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191ED2171E1FD300CA83A6 /* main.m */; };
 		A5191ED7171E1FD300CA83A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191ED6171E1FD300CA83A6 /* AppDelegate.m */; };
 		A5191EE0171E1FD400CA83A6 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5191EDE171E1FD400CA83A6 /* MainStoryboard_iPhone.storyboard */; };
-		A5191EE3171E1FD400CA83A6 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5191EE1171E1FD400CA83A6 /* MainStoryboard_iPad.storyboard */; };
 		A5191EE6171E1FD400CA83A6 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191EE5171E1FD400CA83A6 /* CalculatorViewController.m */; };
 		A5191EED171E1FD400CA83A6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191EEC171E1FD400CA83A6 /* MainViewController.m */; };
 		A5191EF9171E1FD400CA83A6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5191EF8171E1FD400CA83A6 /* SenTestingKit.framework */; };
@@ -30,10 +29,10 @@
 		A5191F06171E1FD400CA83A6 /* Mental_Math_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F05171E1FD400CA83A6 /* Mental_Math_appTests.m */; };
 		A5191F11171E3F7200CA83A6 /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5191F10171E3F7200CA83A6 /* Operation.m */; };
 		A54330751737313200FB1E18 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330741737313200FB1E18 /* Social.framework */; };
+		A54FFAFC174A3C07008DD56F /* mental-math-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54FFAFB174A3C07008DD56F /* mental-math-icon.png */; };
 		A5526C171723655C007967AA /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5526C161723655C007967AA /* SummaryViewController.m */; };
 		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
 		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
-		A58EEE481734797300C40694 /* mental-math-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A58EEE471734797300C40694 /* mental-math-icon.png */; };
 		A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909083171F6DA3005C63AF /* OperationFactory.m */; };
 		A5964CD2172E0E32004B349E /* PastResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5964CD1172E0E32004B349E /* PastResultsViewController.m */; };
 		A5A6FE8817233204003D3EB4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A6FE8717233204003D3EB4 /* SettingsViewController.m */; };
@@ -41,8 +40,6 @@
 		A5B905001720DB9D00AD889B /* OperatorsPair.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B904FF1720DB9D00AD889B /* OperatorsPair.m */; };
 		A5B905031720E6FB00AD889B /* MathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B905021720E6FB00AD889B /* MathHelper.m */; };
 		A5BE443D1739C4F400B40F92 /* UIImage+H568.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BE443C1739C4F400B40F92 /* UIImage+H568.m */; };
-		A5C2E5531747EAC1007A0622 /* 2-blue-menu-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C2E5511747EAC1007A0622 /* 2-blue-menu-bar.png */; };
-		A5C2E5541747EAC1007A0622 /* 2-blue-menu-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C2E5521747EAC1007A0622 /* 2-blue-menu-bar@2x.png */; };
 		A5D590361738A6D700449814 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D590331738A6D700449814 /* background@2x.png */; };
 		A5D590371738A6D700449814 /* main-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D590341738A6D700449814 /* main-background@2x.png */; };
 		A5D590381738A6D700449814 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D590351738A6D700449814 /* splash@2x.png */; };
@@ -82,7 +79,6 @@
 		A5191ED5171E1FD300CA83A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5191ED6171E1FD300CA83A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A5191EDF171E1FD400CA83A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		A5191EE2171E1FD400CA83A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A5191EE4171E1FD400CA83A6 /* CalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		A5191EE5171E1FD400CA83A6 /* CalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		A5191EEB171E1FD400CA83A6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -96,13 +92,13 @@
 		A5191F0F171E3F7200CA83A6 /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
 		A5191F10171E3F7200CA83A6 /* Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
 		A54330741737313200FB1E18 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		A54FFAFB174A3C07008DD56F /* mental-math-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mental-math-icon.png"; sourceTree = "<group>"; };
 		A5526C151723655C007967AA /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		A5526C161723655C007967AA /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		A567115D17220056009A6414 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
 		A567115E17220056009A6414 /* ConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHelper.m; sourceTree = "<group>"; };
 		A57C8508171ECEED00C5C4F0 /* OperationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationList.h; sourceTree = "<group>"; };
 		A57C8509171ECEED00C5C4F0 /* OperationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationList.m; sourceTree = "<group>"; };
-		A58EEE471734797300C40694 /* mental-math-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mental-math-icon.png"; path = "../mental-math-icon.png"; sourceTree = "<group>"; };
 		A5909082171F6DA3005C63AF /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
 		A5909083171F6DA3005C63AF /* OperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationFactory.m; sourceTree = "<group>"; };
 		A5964CD0172E0E32004B349E /* PastResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PastResultsViewController.h; sourceTree = "<group>"; };
@@ -117,8 +113,6 @@
 		A5B905021720E6FB00AD889B /* MathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathHelper.m; sourceTree = "<group>"; };
 		A5BE443B1739C4F400B40F92 /* UIImage+H568.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+H568.h"; sourceTree = "<group>"; };
 		A5BE443C1739C4F400B40F92 /* UIImage+H568.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+H568.m"; sourceTree = "<group>"; };
-		A5C2E5511747EAC1007A0622 /* 2-blue-menu-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-blue-menu-bar.png"; sourceTree = "<group>"; };
-		A5C2E5521747EAC1007A0622 /* 2-blue-menu-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-blue-menu-bar@2x.png"; sourceTree = "<group>"; };
 		A5D590331738A6D700449814 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		A5D590341738A6D700449814 /* main-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background@2x.png"; sourceTree = "<group>"; };
 		A5D590351738A6D700449814 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
@@ -201,7 +195,6 @@
 				A5191ED5171E1FD300CA83A6 /* AppDelegate.h */,
 				A5191ED6171E1FD300CA83A6 /* AppDelegate.m */,
 				A5191EDE171E1FD400CA83A6 /* MainStoryboard_iPhone.storyboard */,
-				A5191EE1171E1FD400CA83A6 /* MainStoryboard_iPad.storyboard */,
 				A5191ECD171E1FD300CA83A6 /* Supporting Files */,
 			);
 			path = "Mental-Math-app";
@@ -210,13 +203,11 @@
 		A5191ECD171E1FD300CA83A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A5C2E5511747EAC1007A0622 /* 2-blue-menu-bar.png */,
-				A5C2E5521747EAC1007A0622 /* 2-blue-menu-bar@2x.png */,
+				A54FFAFB174A3C07008DD56F /* mental-math-icon.png */,
 				A5D590391738A6EE00449814 /* Default-568h@2x.png */,
 				A5D590331738A6D700449814 /* background@2x.png */,
 				A5D590341738A6D700449814 /* main-background@2x.png */,
 				A5D590351738A6D700449814 /* splash@2x.png */,
-				A58EEE471734797300C40694 /* mental-math-icon.png */,
 				A515CF071735A6090054EC16 /* background-568h@2x.png */,
 				A515CF05173593950054EC16 /* splash-568h@2x.png */,
 				A515CF03173593820054EC16 /* main-background-568h@2x.png */,
@@ -377,8 +368,6 @@
 			files = (
 				A5191ED1171E1FD300CA83A6 /* InfoPlist.strings in Resources */,
 				A5191EE0171E1FD400CA83A6 /* MainStoryboard_iPhone.storyboard in Resources */,
-				A5191EE3171E1FD400CA83A6 /* MainStoryboard_iPad.storyboard in Resources */,
-				A58EEE481734797300C40694 /* mental-math-icon.png in Resources */,
 				A515CF04173593820054EC16 /* main-background-568h@2x.png in Resources */,
 				A515CF06173593950054EC16 /* splash-568h@2x.png in Resources */,
 				A515CF081735A6090054EC16 /* background-568h@2x.png in Resources */,
@@ -386,8 +375,7 @@
 				A5D590371738A6D700449814 /* main-background@2x.png in Resources */,
 				A5D590381738A6D700449814 /* splash@2x.png in Resources */,
 				A5D5903A1738A6EE00449814 /* Default-568h@2x.png in Resources */,
-				A5C2E5531747EAC1007A0622 /* 2-blue-menu-bar.png in Resources */,
-				A5C2E5541747EAC1007A0622 /* 2-blue-menu-bar@2x.png in Resources */,
+				A54FFAFC174A3C07008DD56F /* mental-math-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,14 +493,6 @@
 				A5191EDF171E1FD400CA83A6 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		A5191EE1171E1FD400CA83A6 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A5191EE2171E1FD400CA83A6 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		A5191F01171E1FD400CA83A6 /* InfoPlist.strings */ = {
