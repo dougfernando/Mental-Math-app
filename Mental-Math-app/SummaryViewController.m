@@ -12,7 +12,7 @@
 #import "MathHelper.h"
 #import "TSMessage.h"
 #import "ViewOperationsViewController.h"
-
+#import "CalculatorViewController.h"
 
 @interface SummaryViewController ()
 
@@ -29,11 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tryAgainButton setType:BButtonTypeSuccess];
-    [self.mainButton setType:BButtonTypeWarning];
-    [self.tweetButton setType:BButtonTypeTwitter];
-    [self.facebookButton setType:BButtonTypeFacebook];
+    [UIHelper configBlueButton:self.tweetButton];
+    [UIHelper configBlueButton:self.tryAgainButton];
+    [UIHelper configBlueButton:self.analyzeButton];
+
     [UIHelper addBackground:self image:@"background.png" alpha:0.8];
+
     [self setResults];
 }
 
@@ -66,7 +67,7 @@
     NSNumber *score = [NSNumber numberWithFloat:[self.operationList globalScore]];
     self.summaryResult.text = [NSString stringWithFormat:@"%@%%", [MathHelper formatAsString:score precision:2]];
     
-    self.phraseResultLabel.text = [self.operationList globalScoreRange];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Your result: %@", [self.operationList globalScoreRange]];
 }
 
 
@@ -87,56 +88,35 @@
     }
 }
 
--(SLComposeViewControllerCompletionHandler)getBlock:(SLComposeViewController *)controller {
-    SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result) {
-        if (result == SLComposeViewControllerResultCancelled) {
-            NSLog(@"Cancelled");
+- (IBAction)tweetResult:(id)sender {
+    NSString *textObject = [NSString stringWithFormat:@"My score at Mental Math was %@. Try you too: %@", self.summaryResult.text, [NSURL URLWithString:@"www.google.com.br/search?q=mental+math"]];
+    UIImage *image = [UIImage imageNamed:@"mental-math-icon.png"];
+    NSArray *activityItems = [NSArray arrayWithObjects:textObject, [NSURL URLWithString:@"www.google.com.br/search?q=mental+math"], image, nil];
+    
+    UIActivityViewController *avc = [[UIActivityViewController alloc]
+                                     initWithActivityItems:activityItems
+                                     applicationActivities:nil];
+    
+    
+    avc.completionHandler = ^(NSString *activityType, BOOL completed){
+        NSLog(@"Activity Type selected: %@", activityType);
+        if (completed) {
+            NSLog(@"Selected activity was performed.");
         } else {
-            NSLog(@"Done");
+            if (activityType == NULL) {
+                NSLog(@"User dismissed the view controller without making a selection.");
+            } else {
+                NSLog(@"Activity was not performed.");
+            }
         }
-        
-        [controller dismissViewControllerAnimated:YES completion:Nil];
     };
     
-    return myBlock;
+    avc.excludedActivityTypes = @[UIActivityTypePostToWeibo, UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeSaveToCameraRoll, UIActivityTypePrint];
+    
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
-- (IBAction)postToFacebook:(id)sender {
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        controller.completionHandler = [self getBlock:controller];
-        [controller setInitialText:[NSString stringWithFormat:@"My score at Mental Math was %@. Try you too: ", self.summaryResult.text]];
-        [controller addURL:[NSURL URLWithString:@"www.google.com.br/search?q=mental+math"]];
-        [controller addImage:[UIImage imageNamed:@"mental-math-icon.png"]];
-        [self presentViewController:controller animated:YES completion:Nil];
-        
-    } else {
-        NSLog(@"UnAvailable");
-        [TSMessage showNotificationInViewController:self
-                                          withTitle:@"Facebook not configured"
-                                        withMessage:@"You must first configure you Facebook account (iPhone Settings)..."
-                                           withType:TSMessageNotificationTypeWarning
-                                       withDuration:2.0];
+- (IBAction)goBack:(id)sender {
 
-    }
-}
-
-- (IBAction)tweetResult:(id)sender {
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        controller.completionHandler = [self getBlock:controller];
-        [controller setInitialText:[NSString stringWithFormat:@"My score at Mental Math was %@. Try you too: %@", self.summaryResult.text, @"www.google.com.br/search?q=mental+math"]];
-        [controller addImage:[UIImage imageNamed:@"mental-math-icon.png"]];
-        
-        [self presentViewController:controller animated:YES completion:Nil];
-        
-    } else {
-        NSLog(@"UnAvailable");
-        [TSMessage showNotificationInViewController:self
-                                          withTitle:@"Twitter not configured"
-                                        withMessage:@"You must first configure you Twitter account (iPhone Settings)..."
-                                           withType:TSMessageNotificationTypeWarning
-                                       withDuration:2.0];
-    }
 }
 @end

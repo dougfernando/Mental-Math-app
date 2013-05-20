@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "UIHelper.h"
+#import "UIColor+FlatUI.h"
+
 
 @interface MainViewController ()
 
@@ -18,16 +20,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.runButton setType:BButtonTypeSuccess];
-    self.settingsButton.color = [UIColor blueColor];
-    self.pastResultsButton.color = [UIColor blueColor];
     [UIHelper addBackground:self image:@"main-background.png"];
+    [UIHelper configGreenButton:self.runButton];
+    [UIHelper configBlueButton:self.settingsButton];
+    [UIHelper configBlueButton:self.pastResultsButton];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(IBAction)returnActionForSegue:(UIStoryboardSegue *)returnSegue {
+    
+    // do useful actions here.
+    
 }
 
 @end

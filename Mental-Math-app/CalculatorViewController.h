@@ -10,24 +10,25 @@
 #import "Operation.h"
 #import "OperationList.h"
 #import "BButton.h"
+#import "FUIButton.h"
 
 @interface CalculatorViewController : UIViewController
-@property (weak, nonatomic) IBOutlet BButton *button1;
-@property (weak, nonatomic) IBOutlet BButton *button2;
-@property (weak, nonatomic) IBOutlet BButton *button3;
-@property (weak, nonatomic) IBOutlet BButton *button4;
-@property (weak, nonatomic) IBOutlet BButton *button5;
-@property (weak, nonatomic) IBOutlet BButton *button6;
-@property (weak, nonatomic) IBOutlet BButton *button7;
-@property (weak, nonatomic) IBOutlet BButton *button8;
-@property (weak, nonatomic) IBOutlet BButton *button9;
-@property (weak, nonatomic) IBOutlet BButton *button0;
-@property (weak, nonatomic) IBOutlet BButton *button000;
-@property (weak, nonatomic) IBOutlet BButton *buttonDel;
+@property (weak, nonatomic) IBOutlet FUIButton *button1;
+@property (weak, nonatomic) IBOutlet FUIButton *button2;
+@property (weak, nonatomic) IBOutlet FUIButton *button3;
+@property (weak, nonatomic) IBOutlet FUIButton *button4;
+@property (weak, nonatomic) IBOutlet FUIButton *button5;
+@property (weak, nonatomic) IBOutlet FUIButton *button6;
+@property (weak, nonatomic) IBOutlet FUIButton *button7;
+@property (weak, nonatomic) IBOutlet FUIButton *button8;
+@property (weak, nonatomic) IBOutlet FUIButton *button9;
+@property (weak, nonatomic) IBOutlet FUIButton *button0;
+@property (weak, nonatomic) IBOutlet FUIButton *button000;
+@property (weak, nonatomic) IBOutlet FUIButton *buttonDel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *operationLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *restartButton;
-@property (weak, nonatomic) IBOutlet BButton *myConfirmButton;
+@property (weak, nonatomic) IBOutlet FUIButton *myConfirmButton;
 @property (readwrite) OperationList *operationList;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;

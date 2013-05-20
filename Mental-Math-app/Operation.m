@@ -72,12 +72,10 @@
 }
 
 -(NSString *)operationDescription {
-    NSString *arg1 = [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg1]];
-    NSString *arg2 = [MathHelper formatAsString:[NSNumber numberWithFloat:self.arg2]];
-    NSString *operator = [self operatorAsString];
+    NSString *op = [self operationAsString];
     NSString *result = [MathHelper formatAsString:[NSNumber numberWithFloat:self.result]];
     
-    return [NSString stringWithFormat: @"%@ %@ %@ = %@", arg1, operator, arg2, result];
+    return [NSString stringWithFormat: @"%@ = %@", op, result];
 }
 
 

@@ -14,6 +14,10 @@
 #import "UIHelper.h"
 #import "MathHelper.h"
 #import "TSMessage.h"
+#import "UIBarButtonItem+FlatUI.h"
+#import "UIColor+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+#import "UIFont+FlatUI.h"
 
 @interface CalculatorViewController ()
 {
@@ -32,22 +36,22 @@
 {
     [super viewDidLoad];
     [self startSetup];
-    [self.myConfirmButton setType:BButtonTypeSuccess];
-    self.myConfirmButton.alpha = 0.8;
     currentNumber = nil;
-    [UIHelper addBackground:self image:@"background.png" alpha:0.8];
-    [self configButtons];
+    [self configUI];
 }
 
--(void)configButtons {
-    UIColor *color = [UIColor colorWithRed:9.0/255 green:113.0/255 blue:178.0/255 alpha:0.7];
+-(void)configUI {
+    [UIHelper addBackground:self image:@"background.png" alpha:0.8];
+
     NSArray  *buttons = [NSArray arrayWithObjects: self.button1, self.button2, self.button3,
                          self.button4, self.button5, self.button6, self.button7,
                          self.button8, self.button9, self.button0, self.button000, self.buttonDel,
                          nil ];
-    for (BButton *button in buttons) {
-        button.color = color;
+    for (FUIButton *button in buttons) {
+        [UIHelper configBlueButton:button];
     }
+    
+    [UIHelper configGreenButton:self.myConfirmButton];
 }
 
 -(void)startSetup {
@@ -84,23 +88,24 @@
     lbl.textColor = [UIColor whiteColor];
     lbl.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
     lbl.shadowOffset = CGSizeMake(0, -1);
-    lbl.font = [UIFont boldSystemFontOfSize:20];
+    lbl.font = [UIFont fontWithName:@"Avenir Next" size:22];
     lbl.text = message;
     lbl.textAlignment = NSTextAlignmentCenter;
     [v addSubview:lbl];
     
     timeProgressBar = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
-    timeProgressBar.frame = CGRectMake(0, 36-timeProgressBar.frame.size.height, 185, timeProgressBar.frame.size.height);
+    timeProgressBar.frame = CGRectMake(0, 34-timeProgressBar.frame.size.height, 185, timeProgressBar.frame.size.height);
     timeProgressBar.progress = progress/100.0;
+    [timeProgressBar setTransform:CGAffineTransformMakeScale(1.0, 0.5)];
     [v addSubview:timeProgressBar];
     
     timeLeftLabel = [[UILabel alloc] init];
-    timeLeftLabel.frame = CGRectMake(182,33-timeProgressBar.frame.size.height, 40, 15);
+    timeLeftLabel.frame = CGRectMake(182,27-timeProgressBar.frame.size.height, 40, 15);
     timeLeftLabel.backgroundColor = [UIColor clearColor];
     timeLeftLabel.textColor = [UIColor whiteColor];
     timeLeftLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.3];
     timeLeftLabel.shadowOffset = CGSizeMake(0, -1);
-    timeLeftLabel.font = [UIFont boldSystemFontOfSize:12];
+    timeLeftLabel.font = [UIFont fontWithName:@"Avenir Next" size:12];
     timeLeftLabel.text = @"60s";
     timeLeftLabel.textAlignment = NSTextAlignmentCenter;
     [v addSubview:timeLeftLabel];

@@ -9,6 +9,9 @@
 #import "SettingsViewController.h"
 #import "ConfigHelper.h"
 #import "UIHelper.h"
+#import "UIColor+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+
 
 @interface SettingsViewController ()
 
@@ -35,8 +38,6 @@
     self.divOp.on = [ConfigHelper getDivOp];
     self.percOp.on = [ConfigHelper getPercOp];
     self.timeSegment.selectedSegmentIndex = [ConfigHelper getTime];
-    [UIHelper addBackground:self image:@"background.png" alpha:0.8];
-    self.tableView.backgroundView = nil;
 }
 
 - (void)didReceiveMemoryWarning

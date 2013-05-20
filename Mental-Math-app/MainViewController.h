@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "BButton.h"
+#import "FUIButton.h"
 
 @interface MainViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet BButton *runButton;
-@property (weak, nonatomic) IBOutlet BButton *settingsButton;
-@property (weak, nonatomic) IBOutlet BButton *pastResultsButton;
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (weak, nonatomic) IBOutlet FUIButton *runButton;
+@property (weak, nonatomic) IBOutlet FUIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet FUIButton *pastResultsButton;
 
+-(IBAction)returnActionForSegue:(UIStoryboardSegue *)returnSegue;
 @end
+

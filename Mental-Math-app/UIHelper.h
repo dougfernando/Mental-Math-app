@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FUIButton.h"
 
 @interface UIHelper : NSObject
 +(void)addBackground:(UIViewController *)viewController image:(NSString *) imageName alpha:(float)alphaValue;
 +(void)addBackground:(UIViewController *)viewController image:(NSString *) imageName;
++(void)configGreenButton:(FUIButton *)button;
++(void)configBlueButton:(FUIButton *)button;
 @end

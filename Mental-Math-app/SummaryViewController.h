@@ -7,17 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BButton.h"
 #import "OperationList.h"
+#import "FUIButton.h"
 
 @interface SummaryViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *summaryResult;
-@property (weak, nonatomic) IBOutlet BButton *tryAgainButton;
-@property (weak, nonatomic) IBOutlet BButton *settingsButton;
-@property (weak, nonatomic) IBOutlet BButton *mainButton;
-@property (weak, nonatomic) IBOutlet BButton *tweetButton;
+@property (weak, nonatomic) IBOutlet FUIButton *tryAgainButton;
+@property (weak, nonatomic) IBOutlet FUIButton *tweetButton;
+@property (weak, nonatomic) IBOutlet FUIButton *analyzeButton;
 
-@property (weak, nonatomic) IBOutlet BButton *facebookButton;
 @property (readwrite) OperationList *operationList;
 @property (weak, nonatomic) IBOutlet UILabel *subPrecLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addPrecLabel;
@@ -31,11 +29,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *numDivLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numPercLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numTotalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phraseResultLabel;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 - (IBAction)tryAgainClick:(id)sender;
-- (IBAction)postToFacebook:(id)sender;
 - (IBAction)tweetResult:(id)sender;
+- (IBAction)goBack:(id)sender;
 
 
 @end
