@@ -64,7 +64,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zv-34-74b" customClass="FUIButton">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="kR1-SL-ftF"/>
+                                    <constraint firstAttribute="height" constant="45" id="8v9-md-xuC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="See your past results...">
@@ -86,19 +86,38 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="31"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-Af-VXo" customClass="FUIButton">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" type="user" id="8po-0J-3OB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Show Leaderboard">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showBoard:" destination="ulv-Zm-Ain" eventType="touchUpInside" id="kDi-QT-yNA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="stP-PW-O0i" secondAttribute="bottom" constant="123" id="8fO-yH-EKc"/>
+                            <constraint firstItem="Ec4-Af-VXo" firstAttribute="trailing" secondItem="dvj-Q6-TPf" secondAttribute="trailing" type="default" id="7NN-SJ-dBu"/>
+                            <constraint firstItem="Ec4-Af-VXo" firstAttribute="trailing" secondItem="0zv-34-74b" secondAttribute="trailing" type="default" id="9ru-uo-bYo"/>
+                            <constraint firstAttribute="bottom" secondItem="Ec4-Af-VXo" secondAttribute="bottom" constant="232" type="user" id="HfA-ZP-RL9"/>
                             <constraint firstItem="0zv-34-74b" firstAttribute="trailing" secondItem="stP-PW-O0i" secondAttribute="trailing" type="default" id="J1y-mJ-S81"/>
-                            <constraint firstItem="0zv-34-74b" firstAttribute="trailing" secondItem="dvj-Q6-TPf" secondAttribute="trailing" type="default" id="U13-AN-njH"/>
                             <constraint firstItem="8bB-TU-FsP" firstAttribute="trailing" secondItem="dvj-Q6-TPf" secondAttribute="trailing" type="default" id="WrD-Ii-ylt"/>
                             <constraint firstItem="dvj-Q6-TPf" firstAttribute="leading" secondItem="8bB-TU-FsP" secondAttribute="leading" type="default" id="X3Q-ny-Fx9"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="stP-PW-O0i" secondAttribute="bottom" constant="120" type="user" id="Zxj-7o-y0f"/>
+                            <constraint firstItem="Ec4-Af-VXo" firstAttribute="leading" secondItem="0zv-34-74b" secondAttribute="leading" type="default" id="aYf-JF-7qd"/>
                             <constraint firstItem="0zv-34-74b" firstAttribute="leading" secondItem="stP-PW-O0i" secondAttribute="leading" type="default" id="dHQ-CZ-v44"/>
+                            <constraint firstItem="Ec4-Af-VXo" firstAttribute="centerX" secondItem="0sn-Ez-fYo" secondAttribute="centerX" type="default" id="jdI-UI-HMA"/>
                             <constraint firstItem="stP-PW-O0i" firstAttribute="top" secondItem="0zv-34-74b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="leL-ZE-xmP"/>
-                            <constraint firstItem="0zv-34-74b" firstAttribute="centerX" secondItem="0sn-Ez-fYo" secondAttribute="centerX" type="default" id="q2d-81-5hr"/>
-                            <constraint firstItem="dvj-Q6-TPf" firstAttribute="leading" secondItem="0zv-34-74b" secondAttribute="leading" type="default" id="tkd-bt-UM2"/>
+                            <constraint firstItem="dvj-Q6-TPf" firstAttribute="leading" secondItem="Ec4-Af-VXo" secondAttribute="leading" type="default" id="o0w-5E-Jso"/>
+                            <constraint firstAttribute="bottom" secondItem="0zv-34-74b" secondAttribute="bottom" constant="176" id="oE9-ke-BoV"/>
                             <constraint firstItem="dvj-Q6-TPf" firstAttribute="top" secondItem="0sn-Ez-fYo" secondAttribute="top" constant="90" id="wgo-lH-4Ct"/>
                             <constraint firstItem="8bB-TU-FsP" firstAttribute="top" secondItem="0sn-Ez-fYo" secondAttribute="top" constant="13" id="xj8-vo-d9C"/>
                         </constraints>
@@ -106,6 +125,7 @@
                     <navigationItem key="navigationItem" id="HE9-de-gL3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="leaderboardButton" destination="Ec4-Af-VXo" id="JMa-ec-wHz"/>
                         <outlet property="pastResultsButton" destination="0zv-34-74b" id="3nb-Vd-O7M"/>
                         <outlet property="runButton" destination="dvj-Q6-TPf" id="z4D-nQ-Dmz"/>
                         <outlet property="settingsButton" destination="stP-PW-O0i" id="p3d-3m-HEY"/>
@@ -1397,8 +1417,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KSy-n8-wbd"/>
-        <segue reference="4uC-se-TJy"/>
+        <segue reference="WJc-Jt-D9g"/>
         <segue reference="1NK-mh-RWG"/>
+        <segue reference="4uC-se-TJy"/>
     </inferredMetricsTieBreakers>
 </document>

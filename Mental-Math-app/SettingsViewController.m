@@ -8,9 +8,6 @@
 
 #import "SettingsViewController.h"
 #import "ConfigHelper.h"
-#import "UIHelper.h"
-#import "UIColor+FlatUI.h"
-#import "UINavigationBar+FlatUI.h"
 
 
 @interface SettingsViewController ()

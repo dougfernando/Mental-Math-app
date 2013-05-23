@@ -115,6 +115,7 @@
 -(int)percTotal {
     return  [[self getOperationsBySymbol:@"%"] count];
 }
+
 -(float)globalScore {
     int level = _practiceLevel;
     int minutes = _timeInSeconds / 60;
@@ -136,13 +137,20 @@
     int numOfQuestionsExptected = factor * minutes;
     float qtyFactor = 1 - (float)(numOfQuestionsExptected - [self size]) / numOfQuestionsExptected;
     float scorePrecition = [self precision];
-    return qtyFactor * scorePrecition;
+	float timeBonus = 0.05 * minutes + 0.95; // linear: 1min = 0% --> 5min = +20%
+    float result = qtyFactor * scorePrecition * timeBonus;
+    NSLog(@"Global score: %f", result);
+    return result;
 }
 
 -(NSString *)globalScoreRange {
-    if ([self globalScore] < 50)
+    float listGlobalScore = [self globalScore];
+	
+	if (listGlobalScore < 25)
         return @"Not good!";
-    else if ([self globalScore] < 70)
+	else if ([self globalScore] < 50)
+		return @"So so!";
+    else if ([self globalScore] < 75)
         return @"Good!";
     return @"Great!";
 }

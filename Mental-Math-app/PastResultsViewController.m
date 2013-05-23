@@ -11,11 +11,6 @@
 #import "ConfigHelper.h"
 #import "SummaryViewController.h"
 #import "MathHelper.h"
-#import "UIColor+FlatUI.h"
-#import "UINavigationBar+FlatUI.h"
-#import "UIFont+FlatUI.h"
-#import "UIBarButtonItem+FlatUI.h"
-#import "UIColor+FlatUI.h"
 
 @interface PastResultsViewController ()
 {

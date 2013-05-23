@@ -14,10 +14,8 @@
 #import "UIHelper.h"
 #import "MathHelper.h"
 #import "TSMessage.h"
-#import "UIBarButtonItem+FlatUI.h"
-#import "UIColor+FlatUI.h"
-#import "UINavigationBar+FlatUI.h"
-#import "UIFont+FlatUI.h"
+#import "GameCenterHelper.h"
+#import <GameKit/GameKit.h>
 
 @interface CalculatorViewController ()
 {
@@ -146,10 +144,22 @@
         vc.operationList = self.operationList;
         self.operationList.practiceDatetime = [[NSDate alloc] init];
         [ConfigHelper saveOperationList:self.operationList];
+        [self reportScore:[self.operationList globalScore]];
     }
     if ([[segue identifier] isEqualToString:@"backToMainSegue"]) {
         [timer invalidate];
     }
+}
+
+- (void) reportScore: (float) score
+{
+    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:kLeaderboardID];
+    scoreReporter.value = score;
+    scoreReporter.context = 0;
+    
+    [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
+        NSLog(@"Error reporting score: %@",[error localizedDescription]);
+    }];
 }
 
 - (IBAction)button1Click:(id)sender {

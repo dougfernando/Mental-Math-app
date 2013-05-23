@@ -31,7 +31,9 @@
 		A54330751737313200FB1E18 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330741737313200FB1E18 /* Social.framework */; };
 		A54FFAFC174A3C07008DD56F /* mental-math-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54FFAFB174A3C07008DD56F /* mental-math-icon.png */; };
 		A5526C171723655C007967AA /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5526C161723655C007967AA /* SummaryViewController.m */; };
+		A55E4D8F174D9EC40006D6BB /* GameCenterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A55E4D8E174D9EC40006D6BB /* GameCenterHelper.m */; };
 		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
+		A5714B6A174B861700ECFEBF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5714B69174B861700ECFEBF /* GameKit.framework */; };
 		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
 		A5909084171F6DA3005C63AF /* OperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909083171F6DA3005C63AF /* OperationFactory.m */; };
 		A5964CD2172E0E32004B349E /* PastResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5964CD1172E0E32004B349E /* PastResultsViewController.m */; };
@@ -95,8 +97,11 @@
 		A54FFAFB174A3C07008DD56F /* mental-math-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mental-math-icon.png"; sourceTree = "<group>"; };
 		A5526C151723655C007967AA /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		A5526C161723655C007967AA /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		A55E4D8D174D9EC40006D6BB /* GameCenterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterHelper.h; sourceTree = "<group>"; };
+		A55E4D8E174D9EC40006D6BB /* GameCenterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterHelper.m; sourceTree = "<group>"; };
 		A567115D17220056009A6414 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
 		A567115E17220056009A6414 /* ConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHelper.m; sourceTree = "<group>"; };
+		A5714B69174B861700ECFEBF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A57C8508171ECEED00C5C4F0 /* OperationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationList.h; sourceTree = "<group>"; };
 		A57C8509171ECEED00C5C4F0 /* OperationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationList.m; sourceTree = "<group>"; };
 		A5909082171F6DA3005C63AF /* OperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationFactory.h; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5714B6A174B861700ECFEBF /* GameKit.framework in Frameworks */,
 				A54330751737313200FB1E18 /* Social.framework in Frameworks */,
 				A5169BD01724BD3D0075E873 /* OCTotallyLazy.framework in Frameworks */,
 				A5191EC7171E1FD300CA83A6 /* UIKit.framework in Frameworks */,
@@ -155,6 +161,7 @@
 		A5191EBA171E1FD300CA83A6 = {
 			isa = PBXGroup;
 			children = (
+				A5714B69174B861700ECFEBF /* GameKit.framework */,
 				A54330741737313200FB1E18 /* Social.framework */,
 				A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */,
 				A5191ECC171E1FD300CA83A6 /* Mental-Math-app */,
@@ -289,6 +296,8 @@
 				A5EF3E3C17261F8300BCE63E /* UIHelper.m */,
 				A5BE443B1739C4F400B40F92 /* UIImage+H568.h */,
 				A5BE443C1739C4F400B40F92 /* UIImage+H568.m */,
+				A55E4D8D174D9EC40006D6BB /* GameCenterHelper.h */,
+				A55E4D8E174D9EC40006D6BB /* GameCenterHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -457,6 +466,7 @@
 				A5BE443D1739C4F400B40F92 /* UIImage+H568.m in Sources */,
 				A5F9BBF01741EC5900A64C26 /* ViewOperationsViewController.m in Sources */,
 				A5F9BBF31743DCBC00A64C26 /* OperationTableCell.m in Sources */,
+				A55E4D8F174D9EC40006D6BB /* GameCenterHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
