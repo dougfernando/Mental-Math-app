@@ -34,7 +34,6 @@
 {
     [super viewDidLoad];
     [self startSetup];
-    currentNumber = nil;
     [self configUI];
 }
 
@@ -63,6 +62,7 @@
     self.diffLabel.text = [ConfigHelper getLevelDescr];
     timeProgressBar.progress = 0;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimerTick) userInfo:nil repeats:YES];
+    currentNumber = nil;
 }
 
 -(void)setNewOperation {
@@ -144,23 +144,13 @@
         vc.operationList = self.operationList;
         self.operationList.practiceDatetime = [[NSDate alloc] init];
         [ConfigHelper saveOperationList:self.operationList];
-        [self reportScore:[self.operationList globalScore]];
+        [GameCenterHelper reportScore:[self.operationList globalScore]];
     }
     if ([[segue identifier] isEqualToString:@"backToMainSegue"]) {
         [timer invalidate];
     }
 }
 
-- (void) reportScore: (float) score
-{
-    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:kLeaderboardID];
-    scoreReporter.value = score;
-    scoreReporter.context = 0;
-    
-    [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
-        NSLog(@"Error reporting score: %@",[error localizedDescription]);
-    }];
-}
 
 - (IBAction)button1Click:(id)sender {
     [self appendNumber: @"1"];

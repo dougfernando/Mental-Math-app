@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet FUIButton *pastResultsButton;
 @property (weak, nonatomic) IBOutlet FUIButton *leaderboardButton;
 - (IBAction)showBoard:(id)sender;
-- (IBAction)addScore:(id)sender;
-
 -(IBAction)returnActionForSegue:(UIStoryboardSegue *)returnSegue;
 @end
 

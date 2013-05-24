@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface GameCenterHelper : NSObject
-FOUNDATION_EXPORT NSString *const kLeaderboardID;
-
++(void)reportScore: (int16_t) score;
++(void)authenticateOnGameCenter;
 @end

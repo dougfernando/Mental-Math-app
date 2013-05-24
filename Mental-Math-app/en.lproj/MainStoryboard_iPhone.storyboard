@@ -32,7 +32,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvj-Q6-TPf" customClass="FUIButton">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="KBJ-9o-igR"/>
+                                    <constraint firstAttribute="height" constant="50" id="nHH-ar-rpE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <state key="normal" title="Do the math!">
@@ -78,12 +78,12 @@
                                     <segue destination="AUj-Yd-aBz" kind="modal" id="qG7-kP-XeU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MENTAL MATH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bB-TU-FsP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FAST MENTAL MATH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bB-TU-FsP">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="GuZ-XA-6n0"/>
-                                    <constraint firstAttribute="width" constant="237" id="JN3-aP-MoH"/>
+                                    <constraint firstAttribute="height" constant="43" id="6PQ-w8-837"/>
+                                    <constraint firstAttribute="width" constant="307" id="IYc-4h-8SC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="31"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec4-Af-VXo" customClass="FUIButton">
@@ -102,23 +102,34 @@
                                     <action selector="showBoard:" destination="ulv-Zm-Ain" eventType="touchUpInside" id="kDi-QT-yNA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Find how fast you can do math in your head!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="273" translatesAutoresizingMaskIntoConstraints="NO" id="EeO-qY-Xg4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="ItV-Lt-HiF"/>
+                                    <constraint firstAttribute="width" constant="273" id="rJk-7M-rtY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
+                            <constraint firstItem="8bB-TU-FsP" firstAttribute="trailing" secondItem="dvj-Q6-TPf" secondAttribute="trailing" type="default" id="3Ji-Xe-Eut"/>
                             <constraint firstItem="Ec4-Af-VXo" firstAttribute="trailing" secondItem="dvj-Q6-TPf" secondAttribute="trailing" type="default" id="7NN-SJ-dBu"/>
+                            <constraint firstItem="dvj-Q6-TPf" firstAttribute="top" secondItem="0sn-Ez-fYo" secondAttribute="top" constant="119" id="82e-hj-y90"/>
                             <constraint firstItem="Ec4-Af-VXo" firstAttribute="trailing" secondItem="0zv-34-74b" secondAttribute="trailing" type="default" id="9ru-uo-bYo"/>
-                            <constraint firstAttribute="bottom" secondItem="Ec4-Af-VXo" secondAttribute="bottom" constant="232" type="user" id="HfA-ZP-RL9"/>
+                            <constraint firstItem="EeO-qY-Xg4" firstAttribute="centerX" secondItem="0sn-Ez-fYo" secondAttribute="centerX" type="default" id="FIC-Lb-DOS"/>
                             <constraint firstItem="0zv-34-74b" firstAttribute="trailing" secondItem="stP-PW-O0i" secondAttribute="trailing" type="default" id="J1y-mJ-S81"/>
-                            <constraint firstItem="8bB-TU-FsP" firstAttribute="trailing" secondItem="dvj-Q6-TPf" secondAttribute="trailing" type="default" id="WrD-Ii-ylt"/>
-                            <constraint firstItem="dvj-Q6-TPf" firstAttribute="leading" secondItem="8bB-TU-FsP" secondAttribute="leading" type="default" id="X3Q-ny-Fx9"/>
+                            <constraint firstItem="0zv-34-74b" firstAttribute="top" secondItem="Ec4-Af-VXo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="U8w-Yn-RkK"/>
+                            <constraint firstAttribute="bottom" secondItem="Ec4-Af-VXo" secondAttribute="bottom" constant="229" id="W3J-Vu-tML"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="stP-PW-O0i" secondAttribute="bottom" constant="120" type="user" id="Zxj-7o-y0f"/>
                             <constraint firstItem="Ec4-Af-VXo" firstAttribute="leading" secondItem="0zv-34-74b" secondAttribute="leading" type="default" id="aYf-JF-7qd"/>
+                            <constraint firstItem="EeO-qY-Xg4" firstAttribute="centerX" secondItem="8bB-TU-FsP" secondAttribute="centerX" type="default" id="aiZ-DU-d96"/>
                             <constraint firstItem="0zv-34-74b" firstAttribute="leading" secondItem="stP-PW-O0i" secondAttribute="leading" type="default" id="dHQ-CZ-v44"/>
-                            <constraint firstItem="Ec4-Af-VXo" firstAttribute="centerX" secondItem="0sn-Ez-fYo" secondAttribute="centerX" type="default" id="jdI-UI-HMA"/>
                             <constraint firstItem="stP-PW-O0i" firstAttribute="top" secondItem="0zv-34-74b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="leL-ZE-xmP"/>
                             <constraint firstItem="dvj-Q6-TPf" firstAttribute="leading" secondItem="Ec4-Af-VXo" secondAttribute="leading" type="default" id="o0w-5E-Jso"/>
-                            <constraint firstAttribute="bottom" secondItem="0zv-34-74b" secondAttribute="bottom" constant="176" id="oE9-ke-BoV"/>
-                            <constraint firstItem="dvj-Q6-TPf" firstAttribute="top" secondItem="0sn-Ez-fYo" secondAttribute="top" constant="90" id="wgo-lH-4Ct"/>
+                            <constraint firstItem="EeO-qY-Xg4" firstAttribute="top" secondItem="0sn-Ez-fYo" secondAttribute="top" constant="59" id="thw-aC-Q3W"/>
+                            <constraint firstItem="dvj-Q6-TPf" firstAttribute="leading" secondItem="8bB-TU-FsP" secondAttribute="leading" type="default" id="vUI-cr-2T5"/>
                             <constraint firstItem="8bB-TU-FsP" firstAttribute="top" secondItem="0sn-Ez-fYo" secondAttribute="top" constant="13" id="xj8-vo-d9C"/>
                         </constraints>
                     </view>

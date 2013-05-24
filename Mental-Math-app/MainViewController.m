@@ -12,26 +12,12 @@
 #import "GameCenterHelper.h"
 
 @interface MainViewController ()
-
 @end
 
+/*
+ * Main interface in which the users select the funcionalities available
+ */
 @implementation MainViewController
-
-- (void)authenticateOnGameCenter
-{
-    GKLocalPlayer *player = [GKLocalPlayer localPlayer];
-    __weak GKLocalPlayer *blockLocalPlayer = player;
-    
-    player.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-        if (blockLocalPlayer.isAuthenticated) {
-            NSLog(@"Game Center Authenticated");
-        } else {
-            NSLog(@"Game Center Disabled");
-        }
-        
-        if (error) NSLog(@"Error authenticating Game Center: %@", error);
-    };
-}
 
 - (void)viewDidLoad
 {
@@ -41,52 +27,33 @@
     [UIHelper configBlueButton:self.settingsButton];
     [UIHelper configBlueButton:self.pastResultsButton];
     [UIHelper configBlueButton:self.leaderboardButton];
-    [self authenticateOnGameCenter];
+    [GameCenterHelper authenticateOnGameCenter];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
+#pragma mark - Table view data source
 - (IBAction)showBoard:(id)sender {
-    NSString *leaderboardID = kLeaderboardID;
-    
     GKGameCenterViewController *gameCenterController = [[GKGameCenterViewController alloc] init];
     if (gameCenterController != nil)
     {
         gameCenterController.gameCenterDelegate = self;
         gameCenterController.viewState = GKGameCenterViewControllerStateLeaderboards;
         gameCenterController.leaderboardTimeScope = GKLeaderboardTimeScopeAllTime;
-        gameCenterController.leaderboardCategory = leaderboardID;
         [self presentViewController: gameCenterController animated: YES completion:nil];
     }
 }
 
-// For testing only
-- (IBAction)addScore:(id)sender {
-    int64_t score = 1.4 * 100;
-    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:kLeaderboardID];
-    scoreReporter.value = score;
-
-    NSLog(@"A");
-    scoreReporter.context = 0;
-
-        NSLog(@"B");
-    
-    [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
-        NSLog(@"Error reporting score: %@",[error localizedDescription]);
-    }];
-}
-
--(IBAction)returnActionForSegue:(UIStoryboardSegue *)returnSegue {
-    
-    // do useful actions here.
-    
-}
-
 -(void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/*
+ * Just to enable using the "Exit" functionality of Storyboard
+ */
+-(IBAction)returnActionForSegue:(UIStoryboardSegue *)returnSegue {
 }
 
 @end

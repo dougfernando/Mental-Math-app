@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/CalculatorViewController.m"
-         timestampString = "390963271.505466"
+         timestampString = "391053716.817679"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "-updateTimeLeft"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/PastResultsViewController.m"
-         timestampString = "390609428.707897"
+         timestampString = "391053716.817679"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "125"
-         endingLineNumber = "125"
+         startingLineNumber = "120"
+         endingLineNumber = "120"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mental-Math-app/CalculatorViewController.m"
-         timestampString = "390963271.505466"
+         timestampString = "391053716.817679"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
+         startingLineNumber = "132"
+         endingLineNumber = "132"
          landmarkName = "-updateTimeLeft"
          landmarkType = "5">
       </FileBreakpoint>
@@ -105,19 +105,6 @@
          startingLineNumber = "32"
          endingLineNumber = "32"
          landmarkName = "+formatAsString:precision:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Mental-Math-app/MainViewController.m"
-         timestampString = "390998736.916294"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
-         landmarkName = "-addScore:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
