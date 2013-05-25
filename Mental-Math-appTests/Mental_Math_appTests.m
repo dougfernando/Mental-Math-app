@@ -7,6 +7,7 @@
 //
 
 #import "Mental_Math_appTests.h"
+#import "Operation.h"
 
 @implementation Mental_Math_appTests
 
@@ -26,7 +27,11 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in Mental-Math-appTests");
+    PercOperation *op = [[PercOperation alloc] initWith:30.0 andWithArg2:90.0];
+    op.result = 27;
+    BOOL result = [op isCorrect];
+    STAssertFalse(result, @"Failed to calc");
+//    STFail(@"Unit tests are not implemented yet in Mental-Math-appTests");
 }
 
 @end

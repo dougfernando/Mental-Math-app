@@ -33,7 +33,7 @@
 
 -(BOOL)isCorrect {
     float executeResult = [self execute];
-    return fabs(executeResult - self.result) < 0.0000001;
+    return fabs(executeResult - self.result) < 0.001;
 }
 
 -(NSString *)executeAsString {

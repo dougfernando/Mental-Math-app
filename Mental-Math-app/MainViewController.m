@@ -27,7 +27,12 @@
     [UIHelper configBlueButton:self.settingsButton];
     [UIHelper configBlueButton:self.pastResultsButton];
     [UIHelper configBlueButton:self.leaderboardButton];
-    [GameCenterHelper authenticateOnGameCenter];
+    if (![GameCenterHelper isAuthenticated]) {
+        self.leaderboardButton.enabled = FALSE;
+        [GameCenterHelper authenticateOnGameCenter: ^{
+            self.leaderboardButton.enabled = TRUE;
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning

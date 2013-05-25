@@ -14,6 +14,7 @@
 NSString *const kLeaderboardID_Easy = @"Mental_Math_Score";
 NSString *const kLeaderboardID_Medium = @"Mental_Math_Score_2";
 NSString *const kLeaderboardID_Hard = @"Mental_Math_Score_3";
+BOOL _isAuthenticated = FALSE;
 
 +(void)reportScore: (int16_t) score
 {
@@ -41,7 +42,7 @@ NSString *const kLeaderboardID_Hard = @"Mental_Math_Score_3";
     }
 }
 
-+(void)authenticateOnGameCenter
++(void)authenticateOnGameCenter: (void (^)(void)) block
 {
     GKLocalPlayer *player = [GKLocalPlayer localPlayer];
     __weak GKLocalPlayer *blockLocalPlayer = player;
@@ -49,12 +50,18 @@ NSString *const kLeaderboardID_Hard = @"Mental_Math_Score_3";
     player.authenticateHandler = ^(UIViewController *viewController, NSError *error){
         if (blockLocalPlayer.isAuthenticated) {
             NSLog(@"Game Center Authenticated");
+            _isAuthenticated = TRUE;
+            block();
         } else {
             NSLog(@"Game Center Disabled");
         }
         
         if (error) NSLog(@"Error authenticating Game Center: %@", error);
     };
+}
+
++(BOOL)isAuthenticated {
+    return _isAuthenticated;
 }
 
 @end

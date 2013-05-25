@@ -10,5 +10,6 @@
 
 @interface GameCenterHelper : NSObject
 +(void)reportScore: (int16_t) score;
-+(void)authenticateOnGameCenter;
++(void)authenticateOnGameCenter: (void (^)(void)) block;
++(BOOL)isAuthenticated;
 @end
