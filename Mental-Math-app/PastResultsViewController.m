@@ -127,24 +127,19 @@
 }
 
 - (IBAction)clearButtonCllick:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: NSLocalizedString(@"Clear results history",nil)
-                          message: NSLocalizedString(@"Are you sure you want to delete all previous results?",nil)
-                          delegate: self
-                          cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
-                          otherButtonTitles: NSLocalizedString(@"Delete",nil), nil];
-    [alert show];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Clear results history?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Clear all" otherButtonTitles:nil];
+    popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [popupQuery showInView:self.view];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            NSLog(@"Delete was cancelled by the user");
-            break;
-        case 1:
             [ConfigHelper clearOperationLists];
             [self performSegueWithIdentifier:@"toMainViewSegue" sender:self];
+            break;
+        case 1:
+            NSLog(@"Delete was cancelled by the user");
             break;
     }
 }

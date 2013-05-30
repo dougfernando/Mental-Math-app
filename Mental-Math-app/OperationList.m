@@ -83,6 +83,47 @@
     return (int)((float)[rightOps count]*100/[percOps count]);
 }
 
+-(NSNumber * )getAvgTime:(NSArray  *) operations {
+    int total = [operations count];
+    
+    if (total < 1) return [NSNumber numberWithInt:0];
+    
+    NSArray *times = [operations map:^id(Operation *op) {
+        return [op durationInSeconds];
+    }];
+    
+    NSNumber *totalTime = [times reduce:TL_sum()];
+    
+    float result = [totalTime floatValue] / total;
+    
+    return [NSNumber numberWithFloat:result];
+}
+
+-(NSNumber *)getAvgTimeAdd {
+    return [self getAvgTime:[self getOperationsBySymbol:@"+"]];
+}
+
+-(NSNumber *)getAvgTimeSub {
+    return [self getAvgTime:[self getOperationsBySymbol:@"-"]];
+}
+
+-(NSNumber *)getAvgTimeMul {
+    return [self getAvgTime:[self getOperationsBySymbol:@"*"]];
+}
+
+-(NSNumber *)getAvgTimeDiv {
+    return [self getAvgTime:[self getOperationsBySymbol:@"/"]];
+}
+
+-(NSNumber *)getAvgTimePerc {
+    return [self getAvgTime:[self getOperationsBySymbol:@"%"]];
+}
+
+-(NSNumber *)getAvgTimeTotal {
+    return [self getAvgTime:_pastOperations];
+}
+
+
 -(int)addPrecision {
     return [self getPrecision:@"+"];
 }

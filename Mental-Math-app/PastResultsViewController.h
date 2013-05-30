@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PastResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PastResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
-- (IBAction)clearButtonCllick:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+-(IBAction)clearButtonCllick:(id)sender;
 -(IBAction)returnActionForSegue:(UIStoryboardSegue *)returnSegue;
 @end

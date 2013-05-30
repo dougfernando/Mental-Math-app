@@ -34,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *diffLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numOfQuestionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *precisionLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *answerBackgroundLabel;
 - (IBAction)button1Click:(id)sender;
 - (IBAction)button2Click:(id)sender;
 - (IBAction)button3Click:(id)sender;
@@ -49,5 +49,5 @@
 - (IBAction)buttonDelClick:(id)sender;
 - (IBAction)restartClick:(id)sender;
 - (IBAction)confirmButtonClick:(id)sender;
-
+- (void)changeLabelBackground:(UIColor *)color;
 @end

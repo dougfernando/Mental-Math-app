@@ -10,6 +10,7 @@
 
 @interface GameCenterHelper : NSObject
 +(void)reportScore: (int16_t) score;
-+(void)authenticateOnGameCenter: (void (^)(void)) block;
++(void)authenticateOnGameCenter: (void (^)(void)) block forViewController:(UIViewController *) aViewController
+;
 +(BOOL)isAuthenticated;
 @end

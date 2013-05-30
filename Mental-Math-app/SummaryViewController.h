@@ -29,6 +29,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *numDivLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numPercLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numTotalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeAddLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeSubLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeMulLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeDivLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timePercLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeTotalLabel;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 - (IBAction)tryAgainClick:(id)sender;

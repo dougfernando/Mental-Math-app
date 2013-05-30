@@ -38,6 +38,12 @@
 -(int)percPrecision;
 -(int)percTotal;
 -(float)globalScore;
+-(NSNumber *)getAvgTimeAdd;
+-(NSNumber *)getAvgTimeSub;
+-(NSNumber *)getAvgTimeMul;
+-(NSNumber *)getAvgTimeDiv;
+-(NSNumber *)getAvgTimePerc;
+-(NSNumber *)getAvgTimeTotal;
 -(Operation *)operationAt:(NSUInteger)index;
 -(NSString *)globalScoreRange;
 @end

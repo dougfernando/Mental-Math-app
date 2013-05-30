@@ -15,6 +15,7 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>mental-math-icon.png</string>
+				<string>app-small-icon.png</string>
 			</array>
 		</dict>
 	</dict>

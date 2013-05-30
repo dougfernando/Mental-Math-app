@@ -32,6 +32,11 @@
 		A54FFAFC174A3C07008DD56F /* mental-math-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54FFAFB174A3C07008DD56F /* mental-math-icon.png */; };
 		A5526C171723655C007967AA /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5526C161723655C007967AA /* SummaryViewController.m */; };
 		A55E4D8F174D9EC40006D6BB /* GameCenterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A55E4D8E174D9EC40006D6BB /* GameCenterHelper.m */; };
+		A56579471754102400DE7FA7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A56579441754102400DE7FA7 /* background.png */; };
+		A56579481754102400DE7FA7 /* main-background.png in Resources */ = {isa = PBXBuildFile; fileRef = A56579451754102400DE7FA7 /* main-background.png */; };
+		A56579491754102400DE7FA7 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = A56579461754102400DE7FA7 /* splash.png */; };
+		A565794B175417C600DE7FA7 /* small-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A565794A175417C600DE7FA7 /* small-icon.png */; };
+		A56579501754196100DE7FA7 /* app-small-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A565794E1754185000DE7FA7 /* app-small-icon.png */; };
 		A567115F17220056009A6414 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A567115E17220056009A6414 /* ConfigHelper.m */; };
 		A5714B6A174B861700ECFEBF /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5714B69174B861700ECFEBF /* GameKit.framework */; };
 		A57C850A171ECEED00C5C4F0 /* OperationList.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C8509171ECEED00C5C4F0 /* OperationList.m */; };
@@ -99,6 +104,11 @@
 		A5526C161723655C007967AA /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		A55E4D8D174D9EC40006D6BB /* GameCenterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterHelper.h; sourceTree = "<group>"; };
 		A55E4D8E174D9EC40006D6BB /* GameCenterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterHelper.m; sourceTree = "<group>"; };
+		A56579441754102400DE7FA7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		A56579451754102400DE7FA7 /* main-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-background.png"; sourceTree = "<group>"; };
+		A56579461754102400DE7FA7 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		A565794A175417C600DE7FA7 /* small-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-icon.png"; sourceTree = "<group>"; };
+		A565794E1754185000DE7FA7 /* app-small-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-small-icon.png"; sourceTree = "<group>"; };
 		A567115D17220056009A6414 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
 		A567115E17220056009A6414 /* ConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHelper.m; sourceTree = "<group>"; };
 		A5714B69174B861700ECFEBF /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -161,6 +171,7 @@
 		A5191EBA171E1FD300CA83A6 = {
 			isa = PBXGroup;
 			children = (
+				A565794E1754185000DE7FA7 /* app-small-icon.png */,
 				A5714B69174B861700ECFEBF /* GameKit.framework */,
 				A54330741737313200FB1E18 /* Social.framework */,
 				A5169BCF1724BD3D0075E873 /* OCTotallyLazy.framework */,
@@ -210,6 +221,10 @@
 		A5191ECD171E1FD300CA83A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A565794A175417C600DE7FA7 /* small-icon.png */,
+				A56579441754102400DE7FA7 /* background.png */,
+				A56579451754102400DE7FA7 /* main-background.png */,
+				A56579461754102400DE7FA7 /* splash.png */,
 				A54FFAFB174A3C07008DD56F /* mental-math-icon.png */,
 				A5D590391738A6EE00449814 /* Default-568h@2x.png */,
 				A5D590331738A6D700449814 /* background@2x.png */,
@@ -385,6 +400,11 @@
 				A5D590381738A6D700449814 /* splash@2x.png in Resources */,
 				A5D5903A1738A6EE00449814 /* Default-568h@2x.png in Resources */,
 				A54FFAFC174A3C07008DD56F /* mental-math-icon.png in Resources */,
+				A56579471754102400DE7FA7 /* background.png in Resources */,
+				A56579481754102400DE7FA7 /* main-background.png in Resources */,
+				A56579491754102400DE7FA7 /* splash.png in Resources */,
+				A565794B175417C600DE7FA7 /* small-icon.png in Resources */,
+				A56579501754196100DE7FA7 /* app-small-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,8 +604,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 228FBDC3563A4BB2BB6EF173 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../External-Libs\"",
@@ -595,8 +615,8 @@
 				INFOPLIST_FILE = "Mental-Math-app/Mental-Math-app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Mental Math";
-				PROVISIONING_PROFILE = "E31B95CF-883D-4911-9A47-CB8483775A24";
-				"PROVISIONING_PROFILE[sdk=*]" = "471AFBEA-BA75-4F3A-94EA-5CC5DB1D7707";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -606,8 +626,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 228FBDC3563A4BB2BB6EF173 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Douglas Silva (P2QMDHWVYS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../External-Libs\"",
@@ -617,8 +637,8 @@
 				INFOPLIST_FILE = "Mental-Math-app/Mental-Math-app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Mental Math";
-				PROVISIONING_PROFILE = "E31B95CF-883D-4911-9A47-CB8483775A24";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "471AFBEA-BA75-4F3A-94EA-5CC5DB1D7707";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

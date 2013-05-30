@@ -9,12 +9,12 @@
 #import "GameCenterHelper.h"
 #import <GameKit/GameKit.h>
 #import "ConfigHelper.h"
+#import "AppDelegate.h"
 
 @implementation GameCenterHelper
 NSString *const kLeaderboardID_Easy = @"Mental_Math_Score";
 NSString *const kLeaderboardID_Medium = @"Mental_Math_Score_2";
 NSString *const kLeaderboardID_Hard = @"Mental_Math_Score_3";
-BOOL _isAuthenticated = FALSE;
 
 +(void)reportScore: (int16_t) score
 {
@@ -42,15 +42,16 @@ BOOL _isAuthenticated = FALSE;
     }
 }
 
-+(void)authenticateOnGameCenter: (void (^)(void)) block
++(void)authenticateOnGameCenter: (void (^)(void)) block forViewController:(UIViewController *) aViewController
 {
     GKLocalPlayer *player = [GKLocalPlayer localPlayer];
     __weak GKLocalPlayer *blockLocalPlayer = player;
     
     player.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+        if (viewController != nil) {
+        }
         if (blockLocalPlayer.isAuthenticated) {
             NSLog(@"Game Center Authenticated");
-            _isAuthenticated = TRUE;
             block();
         } else {
             NSLog(@"Game Center Disabled");
@@ -61,7 +62,8 @@ BOOL _isAuthenticated = FALSE;
 }
 
 +(BOOL)isAuthenticated {
-    return _isAuthenticated;
+    BOOL result = [[GKLocalPlayer localPlayer] isAuthenticated];
+    return result;
 }
 
 @end

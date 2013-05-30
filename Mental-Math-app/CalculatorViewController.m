@@ -218,9 +218,26 @@
 	
         NSLog(@"%@", [currentOperation description]);
     
+        [self setFeedbackForAnswer: currentOperation];
+        
         [self.operationList nextOperation];
         [self setNewOperation];
     }
+}
+
+-(void)setFeedbackForAnswer: (Operation *)operation {
+    UIColor *color = [self.answerBackgroundLabel.backgroundColor copy];
+    if ([operation isCorrect]) {
+        self.answerBackgroundLabel.backgroundColor = [UIColor colorWithRed:0.71 green:0.84 blue:0.66 alpha:1.0];
+    } else {
+        self.answerBackgroundLabel.backgroundColor = [UIColor colorWithRed:0.87 green:0.49 blue:0.42 alpha:1.0];
+    }
+
+    [self performSelector:@selector(changeLabelBackground:) withObject:color afterDelay:0.2];
+}
+
+-(void)changeLabelBackground:(UIColor *)color {
+    self.answerBackgroundLabel.backgroundColor = color;
 }
 
 - (void)appendNumber:(id)input {

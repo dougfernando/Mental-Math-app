@@ -64,6 +64,15 @@
         self.totalPrecLabel.text = [NSString stringWithFormat:@"%i%%", totalPrec];
     }
     
+    self.timeAddLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimeAdd] precision:1]];
+    self.timeSubLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimeSub] precision:1]];
+    self.timeMulLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimeMul] precision:1]];
+    self.timeDivLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimeDiv] precision:1]];
+    self.timePercLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimePerc] precision:1]];
+    self.timeTotalLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimeTotal] precision:1]];
+    
+    
+    
     NSNumber *score = [NSNumber numberWithFloat:[self.operationList globalScore]];
     self.summaryResult.text = [NSString stringWithFormat:@"%@%%", [MathHelper formatAsString:score precision:2]];
     
