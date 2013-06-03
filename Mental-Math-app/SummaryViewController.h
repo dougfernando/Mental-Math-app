@@ -36,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timePercLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeTotalLabel;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 
 - (IBAction)tryAgainClick:(id)sender;
 - (IBAction)tweetResult:(id)sender;

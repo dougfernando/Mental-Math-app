@@ -47,6 +47,12 @@ NSString *kDataOperationsList = @"kDataOperationsList";
 +(NSString *)getLevelDescr {
     NSInteger level = [self getLevel];
     
+    return [self getLevelDescrByCode:level];
+}
+
++(NSString *)getLevelDescrByCode: (NSInteger) code {
+    NSInteger level = code;
+    
     if (level == 0) return @"Easy";
     if (level == 1) return @"Medium";
     return @"Hard";

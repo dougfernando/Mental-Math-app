@@ -46,4 +46,6 @@
 -(NSNumber *)getAvgTimeTotal;
 -(Operation *)operationAt:(NSUInteger)index;
 -(NSString *)globalScoreRange;
+-(NSString *)getPracticeLevelDesc;
+-(NSString *)getTimeInMinutesDesc;
 @end

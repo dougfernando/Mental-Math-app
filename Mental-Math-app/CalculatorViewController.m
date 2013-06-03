@@ -56,7 +56,7 @@
     [self setNewOperation];
     secondsLeft = 0;
     timeLeftLabel.text = [NSString stringWithFormat:@"%is", [ConfigHelper maxDuration]];
-    [self progress:0 withMessage:@"Mental Math"];
+    [self progress:0 withMessage:@"Fast Mental Math"];
     self.numOfQuestionsLabel.text = @"0";
     self.precisionLabel.text = @"100%";
     self.diffLabel.text = [ConfigHelper getLevelDescr];

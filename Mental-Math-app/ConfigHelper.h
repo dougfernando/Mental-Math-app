@@ -31,4 +31,5 @@
 +(void)saveOperationList:(OperationList *)operationList;
 +(NSArray *)getAllOperationLists;
 +(void)clearOperationLists;
++(NSString *)getLevelDescrByCode: (NSInteger) code;
 @end

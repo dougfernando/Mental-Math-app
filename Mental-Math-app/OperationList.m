@@ -9,6 +9,7 @@
 #import "OperationList.h"
 #import "OperationFactory.h"
 #import <OCTotallyLazy/OCTotallyLazy.h>
+#import "ConfigHelper.h"
 
 @implementation OperationList
 
@@ -35,6 +36,15 @@
 	_currentOperation = [_factory create];
     _currentOperation.startTime = [NSDate date];
 	return _currentOperation;
+}
+
+-(NSString *)getPracticeLevelDesc {
+    return [ConfigHelper getLevelDescrByCode:_practiceLevel];
+}
+
+-(NSString *)getTimeInMinutesDesc {
+    int minutes = _timeInSeconds / 60;
+    return [NSString stringWithFormat:@"%imin", minutes];
 }
 
 -(int)size {
@@ -189,9 +199,9 @@
 	
 	if (listGlobalScore < 25)
         return @"Not good!";
-	else if ([self globalScore] < 50)
+	else if (listGlobalScore < 50)
 		return @"So so!";
-    else if ([self globalScore] < 75)
+    else if (listGlobalScore < 75)
         return @"Good!";
     return @"Great!";
 }

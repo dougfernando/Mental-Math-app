@@ -13,6 +13,7 @@
 #import "TSMessage.h"
 #import "ViewOperationsViewController.h"
 #import "CalculatorViewController.h"
+#import "ConfigHelper.h"
 
 @interface SummaryViewController ()
 
@@ -71,6 +72,8 @@
     self.timePercLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimePerc] precision:1]];
     self.timeTotalLabel.text = [NSString stringWithFormat:@"%@s", [MathHelper formatAsString:[self.operationList getAvgTimeTotal] precision:1]];
     
+    self.levelLabel.text = [self.operationList getPracticeLevelDesc];
+    self.durationLabel.text = [self.operationList getTimeInMinutesDesc];
     
     
     NSNumber *score = [NSNumber numberWithFloat:[self.operationList globalScore]];
@@ -98,9 +101,9 @@
 }
 
 - (IBAction)tweetResult:(id)sender {
-    NSString *textObject = [NSString stringWithFormat:@"My score at Mental Math was %@. Try you too: %@", self.summaryResult.text, [NSURL URLWithString:@"www.google.com.br/search?q=mental+math"]];
+    NSString *textObject = [NSString stringWithFormat:@"My score at Mental Math was %@. Try it you too: %@", self.summaryResult.text, [NSURL URLWithString:@"https://mentalmathapp.wordpress.com/"]];
     UIImage *image = [UIImage imageNamed:@"mental-math-icon.png"];
-    NSArray *activityItems = [NSArray arrayWithObjects:textObject, [NSURL URLWithString:@"www.google.com.br/search?q=mental+math"], image, nil];
+    NSArray *activityItems = [NSArray arrayWithObjects:textObject, [NSURL URLWithString:@"https://mentalmathapp.wordpress.com/"], image, nil];
     
     UIActivityViewController *avc = [[UIActivityViewController alloc]
                                      initWithActivityItems:activityItems

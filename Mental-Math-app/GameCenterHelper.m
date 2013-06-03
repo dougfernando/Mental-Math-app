@@ -49,6 +49,7 @@ NSString *const kLeaderboardID_Hard = @"Mental_Math_Score_3";
     
     player.authenticateHandler = ^(UIViewController *viewController, NSError *error){
         if (viewController != nil) {
+            [aViewController presentViewController:viewController animated:TRUE completion:nil];
         }
         if (blockLocalPlayer.isAuthenticated) {
             NSLog(@"Game Center Authenticated");
